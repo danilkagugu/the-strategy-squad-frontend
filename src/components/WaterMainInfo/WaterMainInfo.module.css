@@ -1,0 +1,15 @@
+.box {
+  display: flex; /* Встановлюємо flex контейнер */
+  flex-direction: column; /* Встановлюємо напрямок стовпця для вмісту */
+  justify-content: space-between; /* Розташовуємо елементи між собою */
+  align-items: flex-start;
+  background-color: #9be1a0;
+  background-image: url("../../assets/background/dectop/tracker-bg-desctop.png");
+  background-size: 472px 604px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 45px;
+  border-radius: 30px;
+  height: 672px;
+  width: 736px;
+}
