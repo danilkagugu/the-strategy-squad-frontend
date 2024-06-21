@@ -15,8 +15,10 @@
     "modern-normalize": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.0",
     "react-modal": "^3.16.1",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "yap": "^0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
