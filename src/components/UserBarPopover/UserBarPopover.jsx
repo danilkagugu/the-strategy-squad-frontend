@@ -4,13 +4,13 @@ const UserBarPopover = () => {
   return (
     <div className={css.barPopover}>
       <button className={css.btnBar}>
-        <svg className={css.iconSettings}>
+        <svg className={css.icon}>
           <use href={`${sprite}#icon-settings`}></use>
         </svg>
         <p className={css.textBarPopover}>Setting</p>
       </button>
       <button className={css.btnBar}>
-        <svg className={css.iconlogOut}>
+        <svg className={css.icon}>
           <use href={`${sprite}#icon-log-out`}></use>
         </svg>
         <p className={css.textBarPopover}>Log out</p>
