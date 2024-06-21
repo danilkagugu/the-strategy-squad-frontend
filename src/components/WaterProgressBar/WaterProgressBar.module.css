@@ -1,17 +1,50 @@
-.daily_info {
-  background-color: #ffffff;
+.main_box {
+  background-color: var(--white);
+  padding: 20px;
   border-radius: 15px;
-  margin-top: 400px;
-  margin-left: 50px;
-  padding: 14px 18px;
   width: 295px;
   height: 106px;
+  margin-bottom: 10px;
+  align-self: center;
 }
 
-.daily_info__liters {
-  font-weight: bold;
-  font-size: 15;
+.text {
+  color: var(--dark-grey-medium);
+  font-size: 15px;
 }
-.daily_info__text {
-  font-size: 12;
+.progress_container {
+  width: 100%;
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 9px;
+
+  margin-bottom: 10px;
+}
+
+.progress_bar {
+  height: 100%;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 9px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.3s ease-in-out;
+}
+
+.scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.scale_value {
+  color: var(--dark-grey-hard);
+}
+.current_progress {
+  text-align: center;
+  font-size: 12px;
+  color: var(--green-btn);
 }
