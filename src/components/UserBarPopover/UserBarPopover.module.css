@@ -1,0 +1,46 @@
+.barPopover {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 15px;
+  background-color: var(--white);
+  width: 157px;
+}
+
+.btnBar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background-color: transparent;
+}
+
+.iconSettings {
+  fill: var(--dark-grey-medium-gray);
+  width: 16px;
+  height: 16px;
+}
+
+.iconSettings:hover {
+  fill: var(--dark-grey-medium);
+}
+.iconlogOut {
+  fill: var(--dark-grey-medium-gray);
+  width: 16px;
+  height: 16px;
+}
+
+.iconlogOut:hover {
+  fill: var(--dark-grey-medium);
+}
+
+.textBarPopover {
+  color: var(--dark-grey-medium-gray);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22.4px;
+  text-align: left;
+}
+.textBarPopover:hover {
+  color: var(--dark-grey-medium);
+}

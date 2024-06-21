@@ -1,10 +1,12 @@
+import WaterDetailedInfo from "../../components/WaterDetailedInfo/WaterDetailedInfo";
 import WaterMainInfo from "../../components/WaterMainInfo/WaterMainInfo";
 
 const TrackerPage = () => {
   return (
-    <div>
+    <>
       <WaterMainInfo />
-    </div>
+      <WaterDetailedInfo />
+    </>
   );
 };
 

@@ -2,8 +2,7 @@ import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
-const NotFoundPage = lazy(() =>
-  import("../../pages/NotFoundPage/NotFoundPage")
+const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoundPage")
 );
 const SignInPage = lazy(() => import("../../pages/SignInPage/SignInPage"));
 const SignUpPage = lazy(() => import("../../pages/SignUpPage/SignUpPage"));
