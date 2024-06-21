@@ -1,0 +1,17 @@
+.daily_info {
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-top: 70px;
+  margin-left: 50px;
+  padding: 14px 18px;
+  width: 129px;
+  height: 78px;
+}
+
+.daily_info__liters {
+  font-weight: bold;
+  font-size: 15;
+}
+.daily_info__text {
+  font-size: 12;
+}
