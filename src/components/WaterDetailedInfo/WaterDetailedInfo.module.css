@@ -1,4 +1,5 @@
 .waterDetailedInfo {
   background-color: var(--light-gray);
   padding: 32px;
+  border-radius: 30px;
 }
