@@ -3,12 +3,14 @@ import avatar from "../../assets/customers/desktop-tablet/customers1-tab-desc.pn
 import sprite from "../../assets/icons.svg";
 import css from "./UserBar.module.css";
 import { useState } from "react";
+// import ClickOutSide from "../../helpers/ClickOutSide";
 
 const UserBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleToggleBarPopover = () => {
     setIsOpen((prevState) => !prevState);
   };
+
   return (
     <div className={css.userBar}>
       <button className={css.btnUserBar} onClick={handleToggleBarPopover}>
@@ -24,7 +26,11 @@ const UserBar = () => {
           </svg>
         )}
       </button>
-      {isOpen ? <UserBarPopover /> : null}
+      {isOpen ? (
+        // <ClickOutSide onClickOutside={handleToggleBarPopover}>
+        <UserBarPopover />
+      ) : // </ClickOutSide>
+      null}
     </div>
   );
 };
