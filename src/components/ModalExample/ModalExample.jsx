@@ -9,11 +9,7 @@ const ModalExample = () => {
     <div>
       <button onClick={() => setIsOpen(true)}>Open Modal</button>
       <ModalWrapper modalIsOpen={isOpen} onCloseModal={onCloseModal}>
-        <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum totam
-          aperiam, dolores molestias expedita nisi.
-        </div>
-        <button onClick={onCloseModal}>Close Modal</button>
+        <div>Here will be the content</div>
       </ModalWrapper>
     </div>
   );
