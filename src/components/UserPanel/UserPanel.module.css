@@ -1,0 +1,24 @@
+.userPanel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--dark-grey-medium);
+  font-family: Gilroy;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1%;
+  text-align: left;
+}
+
+.userName {
+  color: var(--dark-grey-medium);
+  font-family: Gilroy;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -1%;
+  text-align: left;
+}
