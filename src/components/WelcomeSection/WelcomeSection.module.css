@@ -1,0 +1,135 @@
+.welcomeWrapper {
+  width: 343px;
+  background-color: var(--light-gray);
+  border-radius: 30px;
+  padding-top: 24px;
+  padding-left: 16px;
+  padding-bottom: 67px;
+  color: var(--dark-grey-medium);
+}
+
+.text {
+  margin-top: 74px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.06em;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+
+.linkList {
+  display: flex;
+  gap: 10px;
+}
+
+.tryTrackerBtn {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 14px 19px;
+  width: 116px;
+  height: 46px;
+  background: var(--green-btn);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--dark-grey-medium);
+  transition: background 0.3s ease;
+}
+
+.tryTrackerBtn:hover,
+.tryTrackerBtn:focus {
+  background: var(--green-btn-hover);
+}
+
+.signInBtn {
+  display: inline-block;
+  border: 1px solid var(--dark-grey-medium);
+  border-radius: 30px;
+  padding: 14px 28px;
+  width: 104px;
+  height: 46px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--dark-grey-medium);
+  transition: 0.3s ease;
+}
+
+.signInBtn:hover,
+.signInBtn:focus {
+  border: 1px solid var(--green-btn-hover);
+  color: var(--green-btn-hover);
+}
+
+@media (min-width: 768px) {
+  .welcomeWrapper {
+    width: 704px;
+    padding-top: 32px;
+    padding-left: 32px;
+    padding-bottom: 50px;
+  }
+
+  .mainInfo {
+    margin-left: 32px;
+    width: 547px;
+  }
+
+  .text {
+    margin-top: 50px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+  }
+
+  .title {
+    font-size: 64px;
+    line-height: 1.09;
+    letter-spacing: -0.01em;
+  }
+
+  .linkList {
+    gap: 16px;
+  }
+
+  .tryTrackerBtn {
+    padding: 18px 40px;
+    width: 169px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .signInBtn {
+    padding: 18px 40px;
+    width: 135px;
+    height: 60px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .welcomeWrapper {
+    width: 672px;
+    padding-bottom: 188px;
+  }
+
+  .text {
+    margin-top: 132px;
+  }
+
+  .title {
+    font-size: 80px;
+    line-height: 0.95;
+  }
+}

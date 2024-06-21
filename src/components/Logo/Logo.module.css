@@ -1,0 +1,17 @@
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--dark-grey-medium);
+}
+
+@media (min-width: 768px) {
+  .logo {
+    font-size: 24px; 
+    line-height: 1;
+  }
+} 
+
+
