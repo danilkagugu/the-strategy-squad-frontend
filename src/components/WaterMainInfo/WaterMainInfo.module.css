@@ -1,15 +1,29 @@
 .box {
-  display: flex; /* Встановлюємо flex контейнер */
-  flex-direction: column; /* Встановлюємо напрямок стовпця для вмісту */
-  justify-content: space-between; /* Розташовуємо елементи між собою */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
-  background-color: #9be1a0;
+  background-color: var(--green-btn);
   background-image: url("../../assets/background/dectop/tracker-bg-desctop.png");
-  background-size: 472px 604px;
+  background-size: 262px 335px;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 45px;
+  padding: 16px;
+  padding-top: 28px;
   border-radius: 30px;
-  height: 672px;
-  width: 736px;
+  height: 415px;
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    height: 578px;
+    background-size: 53%;
+    padding: 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .box {
+    width: 50%;
+    background-size: 58%;
+  }
 }

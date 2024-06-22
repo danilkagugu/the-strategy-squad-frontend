@@ -1,0 +1,30 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.svg_plus {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+@media screen and (min-width: 375px) {
+  .svg_plus {
+    margin-right: 10px;
+  }
+}
+.text {
+  color: var(--dark-grey-medium);
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+@media screen and (min-width: 375px) {
+  .text {
+    font-size: 16px;
+  }
+}
