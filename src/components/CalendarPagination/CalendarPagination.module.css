@@ -1,0 +1,13 @@
+.headerCalendar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.calendarInfo {
+  display: flex;
+}
+
+.calendarDate {
+  margin: 0 20px;
+}

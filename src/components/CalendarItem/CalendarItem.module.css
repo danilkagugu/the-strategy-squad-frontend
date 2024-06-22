@@ -1,0 +1,22 @@
+.listDay {
+  display: flex;
+  gap: 43px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dayItem {
+  flex-basis: calc((100% - 301px) / 8);
+}
+
+.dayBox {
+  border-radius: 50%;
+  background-color: var(--white);
+  padding: 7px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+}
