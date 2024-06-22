@@ -69,16 +69,25 @@
 <path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
 </symbol>
 
-<symbol id="icon-vector-minus"  viewBox="0 0 17.1567 1.80005" fill="none" >
+<!-- <symbol id="icon-vector-minus"  viewBox="0 0 17.1567 1.80005" fill="none" >
 	<path  d="M0.89 0.9L16.25 0.9" stroke="#323F47" stroke-opacity="1.000000" stroke-width="1.800000" stroke-linejoin="round" stroke-linecap="round"/>
+</symbol> -->
+
+<!-- <symbol id="icon-plus" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.88" d="M16 6.667v18.667"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.88" d="M6.667 16h18.667"></path>
+</symbol> -->
+
+<symbol id="icon-minus" viewBox="0 0 32 32">
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.2" d="M16 0.6c8.505 0 15.4 6.895 15.4 15.4s-6.895 15.4-15.4 15.4c-8.505 0-15.4-6.895-15.4-15.4s6.895-15.4 15.4-15.4z"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.44" d="M10.286 16h11.429"></path>
 </symbol>
 
 <symbol id="icon-plus" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.88" d="M16 6.667v18.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.88" d="M6.667 16h18.667"></path>
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.2" d="M16 0.6c8.505 0 15.4 6.895 15.4 15.4s-6.895 15.4-15.4 15.4c-8.505 0-15.4-6.895-15.4-15.4s6.895-15.4 15.4-15.4z"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.44" d="M16 10.286v11.429"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.44" d="M10.286 16h11.429"></path>
 </symbol>
-
-
 
 </defs>
 </svg>
