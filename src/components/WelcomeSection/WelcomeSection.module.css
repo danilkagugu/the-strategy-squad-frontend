@@ -73,6 +73,11 @@
   color: var(--green-btn-hover);
 }
 
+.point {
+  color: var(--green-btn);
+  border-radius: 50%;
+} 
+
 @media (min-width: 768px) {
   .welcomeWrapper {
     width: 704px;
