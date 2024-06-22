@@ -1,0 +1,13 @@
+.mainTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-grey-medium);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-grey-medium);
+  margin-bottom: 20px;
+}
