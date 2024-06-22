@@ -1,0 +1,5 @@
+.page_box {
+  display: flex;
+  gap: 32px;
+  padding: 48px;
+}

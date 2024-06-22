@@ -15,22 +15,14 @@
   background-color: transparent;
 }
 
-.iconSettings {
+.icon {
   fill: var(--dark-grey-medium-gray);
   width: 16px;
   height: 16px;
+  transition: fill 0.3s;
 }
 
-.iconSettings:hover {
-  fill: var(--dark-grey-medium);
-}
-.iconlogOut {
-  fill: var(--dark-grey-medium-gray);
-  width: 16px;
-  height: 16px;
-}
-
-.iconlogOut:hover {
+.btnBar:hover .icon {
   fill: var(--dark-grey-medium);
 }
 
@@ -40,7 +32,8 @@
   font-weight: 700;
   line-height: 22.4px;
   text-align: left;
+  transition: color 0.3s;
 }
-.textBarPopover:hover {
+.btnBar:hover .textBarPopover {
   color: var(--dark-grey-medium);
 }
