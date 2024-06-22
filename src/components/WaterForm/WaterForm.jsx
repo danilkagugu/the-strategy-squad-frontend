@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import sprite from "../../assets/icons.svg";
 import css from "./WaterForm.module.css";
 
-const WaterForm = ({ title, text }) => {
+const WaterForm = () => {
   const {
     register,
     handleSubmit,
@@ -16,8 +16,6 @@ const WaterForm = ({ title, text }) => {
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <h2 className={css.mainTitle}>{title}</h2>
-      <h3 className={css.title}>{text}</h3>
       <p className={css.text}>Amount of water:</p>
       <div className={css.counterContainer}>
         <button className={css.btn} type="button">
