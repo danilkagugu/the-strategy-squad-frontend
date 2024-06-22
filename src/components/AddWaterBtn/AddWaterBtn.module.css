@@ -1,0 +1,31 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 30px;
+
+  border-radius: 30px;
+  background-color: var(--dark-grey-medium);
+
+  cursor: pointer;
+  border-radius: 30px;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.svg_plus {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* .svg_plus:hover use {
+  fill: red;
+} */
+.text {
+  color: var(--white);
+  font-size: 16px;
+}
+.text:hover {
+  color: var(--green-btn-hover);
+}
