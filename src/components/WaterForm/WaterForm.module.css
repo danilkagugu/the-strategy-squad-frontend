@@ -32,18 +32,29 @@
 }
 
 .btn {
-  background-color: var(--green-btn);
-  border: 2px solid black;
   display: flex;
   height: 40px;
   width: 40px;
+  background-color: transparent;
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: var(--dark-grey-medium);
   font-size: 36px;
   border-radius: 50px;
   transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  transition: transform 250ms linear;
+}
+
+.btnIcon {
+  stroke: var(--dark-grey-medium);
+  width: 40px;
+  height: 40px;
+  fill: transparent;
 }
 
 .valueContainer {
@@ -81,6 +92,7 @@
 .input:hover,
 .input:focus {
   border: 1px solid rgba(47, 47, 47, 0.4);
+  transition: border 0.3s ease;
 }
 
 .saveBtn {
@@ -96,7 +108,7 @@
   font-weight: 700;
   line-height: 1.28;
   border-radius: 30px;
-  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.3s ease;
 }
 
 .saveBtn:hover,
@@ -120,9 +132,15 @@
   .text {
     font-size: 16px;
   }
+
   .btn {
     height: 43px;
     width: 43px;
+  }
+
+  .btnIcon {
+    height: 42px;
+    width: 42px;
   }
 
   .valueContainer {

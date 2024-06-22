@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 
+import sprite from "../../assets/icons.svg";
 import css from "./WaterForm.module.css";
 
 const WaterForm = () => {
@@ -20,13 +21,17 @@ const WaterForm = () => {
       <p className={css.text}>Amount of water:</p>
       <div className={css.counterContainer}>
         <button className={css.btn} type="button">
-          +
+          <svg className={css.btnIcon} width="40" height="40">
+            <use href={`${sprite}#icon-minus`}></use>
+          </svg>
         </button>
         <div className={css.valueContainer}>
           <span>50 ml</span>
         </div>
         <button className={css.btn} type="button">
-          -
+          <svg className={css.btnIcon} width="40" height="40">
+            <use href={`${sprite}#icon-plus`}></use>
+          </svg>
         </button>
       </div>
       <label className={css.label}>
