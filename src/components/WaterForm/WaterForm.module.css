@@ -1,0 +1,144 @@
+.form {
+  width: 303px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-grey-medium);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-grey-medium);
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--dark-grey-hard);
+}
+
+.counterContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  background-color: var(--green-btn);
+  border: 2px solid black;
+  display: flex;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-grey-medium);
+  font-size: 36px;
+  border-radius: 50px;
+  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.valueContainer {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  height: 40px;
+  min-width: 81px;
+  padding: 0 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-grey-medium);
+}
+
+.label {
+  margin-bottom: 24px;
+}
+
+.input {
+  margin-top: 8px;
+  padding: 14px 16px;
+  width: 100%;
+  height: 46px;
+  border-radius: 15px;
+  border: 1px solid rgba(47, 47, 47, 0.15);
+  outline: none;
+  color: var(--dark-grey-hard);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+.input:hover,
+.input:focus {
+  border: 1px solid rgba(47, 47, 47, 0.4);
+}
+
+.saveBtn {
+  background-color: var(--green-btn);
+  margin-top: 24px;
+  display: block;
+  padding: 14px 40px;
+  height: 46px;
+  width: 116px;
+  text-align: center;
+  color: var(--dark-grey-medium);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.28;
+  border-radius: 30px;
+  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.saveBtn:hover,
+.saveBtn:focus {
+  background-color: var(--green-btn-hover);
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    width: 438px;
+  }
+
+  .mainTitle {
+    font-size: 28px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+  .btn {
+    height: 43px;
+    width: 43px;
+  }
+
+  .valueContainer {
+    font-size: 15px;
+    height: 43px;
+  }
+
+  .input {
+    height: 56px;
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .saveBtn {
+    height: 60px;
+    width: 141px;
+    font-size: 16px;
+  }
+}
