@@ -1,4 +1,5 @@
 import css from "./CalendarPagination.module.css";
+import sprite from "../../assets/icons.svg";
 
 const mounth = {
   0: "January",
@@ -16,16 +17,37 @@ const mounth = {
 };
 
 const CalendarPagination = ({ nextMounth, prevMounth, dateNow }) => {
-  console.log(nextMounth);
+  const featureMouth =
+    dateNow.getFullYear() > new Date().getFullYear() ||
+    (dateNow.getFullYear() === new Date().getFullYear() &&
+      dateNow.getMonth() >= new Date().getMonth());
+  console.log(dateNow.getMonth());
   return (
     <div className={css.headerCalendar}>
-      <p>Mounth</p>
+      <p className={css.mouth}>Mounth</p>
       <div className={css.calendarInfo}>
-        <button onClick={prevMounth}>{"<"}</button>
+        <button onClick={prevMounth}>
+          <svg className={css.icon}>
+            <use href={`${sprite}#icon-cheveron-left`}></use>
+          </svg>
+        </button>
         <p className={css.calendarDate}>
           {mounth[dateNow.getMonth()] + ", " + dateNow.getFullYear()}
         </p>
-        <button onClick={nextMounth}>{">"}</button>
+        <button
+          className={css.btnDisabled}
+          onClick={nextMounth}
+          disabled={featureMouth}
+        >
+          <svg className={css.icon}>
+            <use href={`${sprite}#icon-cheveron-right`}></use>
+          </svg>
+        </button>
+        <button className={css.iconPieChart}>
+          <svg className={css.icon}>
+            <use href={`${sprite}#icon-pie-chart`}></use>
+          </svg>
+        </button>
       </div>
     </div>
   );
