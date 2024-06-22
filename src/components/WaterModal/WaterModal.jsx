@@ -9,7 +9,7 @@ const WaterModal = ({ isOpen, onCloseModal, title, text }) => {
       <ModalWrapper modalIsOpen={isOpen} onCloseModal={onCloseModal}>
         <h2 className={css.mainTitle}>{title}</h2>
         <h3 className={css.title}>{text}</h3>
-        <WaterForm title={title} text={text} />
+        <WaterForm />
       </ModalWrapper>
     </>
   );
