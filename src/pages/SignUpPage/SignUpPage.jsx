@@ -1,5 +1,6 @@
 
 import SingUpFrom from "../../components/SignUpForm/SignUpForm";
+
 import { apiRegisterUser } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
 
