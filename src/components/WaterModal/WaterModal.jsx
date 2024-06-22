@@ -1,9 +1,14 @@
-// import css from './WaterModal.module.css'
+import WaterForm from "../WaterForm/WaterForm";
+import ModalWrapper from "../ModalWrapper/ModalWrapper";
 
-const WaterModal = () => {
+const WaterModal = ({ isOpen, onCloseModal, title, text }) => {
   return (
-    <div>WaterModal</div>
-  )
-}
+    <div>
+      <ModalWrapper modalIsOpen={isOpen} onCloseModal={onCloseModal}>
+        <WaterForm title={title} text={text} />
+      </ModalWrapper>
+    </div>
+  );
+};
 
-export default WaterModal
+export default WaterModal;
