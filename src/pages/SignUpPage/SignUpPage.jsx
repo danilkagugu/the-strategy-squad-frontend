@@ -1,4 +1,4 @@
-import AuthLayout from "../../components/AuthLayout/AuthLayout";
+
 import SingUpFrom from "../../components/SignUpForm/SignUpForm";
 import { apiRegisterUser } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
@@ -13,11 +13,12 @@ const SignUpPage = () => {
 
 
   return (
+    <>
+      <SingUpFrom onRegister={onRegister} />
+      <SingUpFrom onRegister={onRegister} />
+    </>
 
-    <AuthLayout>
-      <SingUpFrom onRegister={onRegister} />
-      <SingUpFrom onRegister={onRegister} />
-    </AuthLayout>)
+  )
 
 };
 

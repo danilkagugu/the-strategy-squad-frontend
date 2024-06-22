@@ -10,13 +10,16 @@
 }
 
 .singUpFormWrapper {
+    display: flex;
+    justify-content: center;
+    /* flex: 0 0 50%; */
     border: 1px solid black;
-    /* width: 100%; */
+    width: 672px;
     height: 736px;
     border-radius: 30px;
     color: black;
     background-color: #F0EFF4;
-    flex: 0 0 50%;
+
 
 }
 
