@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+import Container from "../Container/Container";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const NotFoundPage = lazy(() =>
@@ -11,7 +12,7 @@ const TrackerPage = lazy(() => import("../../pages/TrackerPage/TrackerPage"));
 
 function App() {
   return (
-    <Suspense fallback={null}>
+    <Container> <Suspense fallback={null}>
       <Routes>
         {/* <Route path="/" element={<Navigate to="/"/>}/> */}
         {/* <Route path="/" element={<HomePage />} /> */}
@@ -20,7 +21,7 @@ function App() {
         <Route path="/" element={<TrackerPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Suspense>
+    </Suspense></Container>
   );
 }
 

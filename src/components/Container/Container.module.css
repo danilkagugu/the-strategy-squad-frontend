@@ -11,19 +11,26 @@
     width: 100%;
   }
 }
+
 @media screen and (min-width: 375px) {
   .container {
-    width: 375px;
+    max-width: 375px;
   }
 }
+
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
     padding: 32px;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
     width: 1440px;
     padding: 32px;
   }
