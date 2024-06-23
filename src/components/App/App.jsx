@@ -17,10 +17,10 @@ function App() {
       <Suspense fallback={null}>
         <Routes>
           {/* <Route path="/" element={<Navigate to="/"/>}/> */}
-          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
-          <Route path="/" element={<TrackerPage />} />
+          <Route path="/tracker" element={<TrackerPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
