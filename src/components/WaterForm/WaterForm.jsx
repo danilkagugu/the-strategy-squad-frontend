@@ -14,6 +14,12 @@ const WaterForm = () => {
 
   const [counter, setCounter] = useState(50);
 
+  let data = new Date();
+  let currentTime = `${data.getHours()}:${data.getMinutes()}`;
+  // let currentData = `${data.getFullYear()}-${
+  //   data.getMonth() + 1
+  // }-${data.getDate()}-${data.getHours()}-${data.getMinutes()}`;
+
   const minusValue = () => {
     if (counter <= 0) {
       return;
@@ -63,7 +69,9 @@ const WaterForm = () => {
         <span className={css.text}>Recording time</span>:
         <input
           className={css.input}
+          name="time"
           type="text"
+          defaultValue={currentTime}
           {...register("time", { required: true })}
         />
         {errors.time && <span>This field is required</span>}
@@ -72,9 +80,10 @@ const WaterForm = () => {
         <span className={css.title}>Enter the value of the water used:</span>
         <input
           className={css.input}
-          type="text"
-          defaultValue="50"
-          {...register("water")}
+          name="amount"
+          type="number"
+          value={counter}
+          {...register("amount")}
         />
       </label>
       <button className={css.saveBtn} type="submit">
