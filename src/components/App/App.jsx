@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+import Container from "../Container/Container";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const NotFoundPage = lazy(() =>
@@ -8,21 +9,22 @@ const NotFoundPage = lazy(() =>
 const SignInPage = lazy(() => import("../../pages/SignInPage/SignInPage"));
 const SignUpPage = lazy(() => import("../../pages/SignUpPage/SignUpPage"));
 const TrackerPage = lazy(() => import("../../pages/TrackerPage/TrackerPage"));
-const TestPage = lazy(() => import("../../pages/TestPage/TestPage"));
 
 function App() {
   return (
-    <Suspense fallback={null}>
-      <Routes>
-        {/* <Route path="/" element={<Navigate to="/"/>}/> */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/signin" element={<SignInPage />} />
-        <Route path="/tracker" element={<TrackerPage />} />
-        <Route path="/test" element={<TestPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Suspense>
+    <Container>
+      {" "}
+      <Suspense fallback={null}>
+        <Routes>
+          {/* <Route path="/" element={<Navigate to="/"/>}/> */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/tracker" element={<TrackerPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </Container>
   );
 }
 

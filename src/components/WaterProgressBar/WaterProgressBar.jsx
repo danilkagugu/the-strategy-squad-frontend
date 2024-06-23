@@ -1,8 +1,6 @@
-import { useState } from "react";
 import style from "./WaterProgressBar.module.css";
 
-export default function WaterProgressBar() {
-  const [progress, setProgress] = useState(87);
+export default function WaterProgressBar({ progress }) {
   return (
     <div className={style.main_box}>
       <p className={style.text}>Today</p>
