@@ -1,24 +1,46 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import clsx from "clsx";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 import sprite from "../../assets/icons.svg";
 import css from "./WaterForm.module.css";
+
+let data = new Date();
+let hours = String(data.getHours()).padStart(2, "0");
+let minutes = String(data.getMinutes()).padStart(2, "0");
+let currentTime = `${hours}:${minutes}`;
+
+const schema = yup
+  .object({
+    time: yup
+      .string()
+      .required("This field is required. Add time in hh:mm format.")
+      .matches(
+        /^\d(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
+        "Add time in hh:mm format."
+      ),
+    amount: yup
+      .number()
+      .positive()
+      .integer()
+      .min(0, "Too Short! Must be a positive number.")
+      .max(5000, "Too Long!")
+      .required("This field is required"),
+  })
+  .required();
 
 const WaterForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   const [counter, setCounter] = useState(50);
-
-  let data = new Date();
-  let currentTime = `${data.getHours()}:${data.getMinutes()}`;
-  // let currentData = `${data.getFullYear()}-${
-  //   data.getMonth() + 1
-  // }-${data.getDate()}-${data.getHours()}-${data.getMinutes()}`;
 
   const minusValue = () => {
     if (counter <= 0) {
@@ -79,7 +101,7 @@ const WaterForm = () => {
           {...register("time", { required: true })}
         />
         {errors.time && (
-          <span className={css.errorMessage}>This field is required</span>
+          <span className={css.errorMessage}>{errors.time.message}</span>
         )}
       </label>
       <label>
@@ -87,13 +109,13 @@ const WaterForm = () => {
         <input
           className={css.input}
           name="amount"
-          type="text"
+          type="number"
           value={counter}
           onInput={handleChangeAmount}
-          {...register("amount")}
+          {...register("amount", { required: true, min: 0, max: 5000 })}
         />
         {errors.amount && (
-          <span className={css.errorMessage}>This field is required</span>
+          <span className={css.errorMessage}>{errors.amount.message}</span>
         )}
       </label>
       <button className={css.saveBtn} type="submit">
