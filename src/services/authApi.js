@@ -19,6 +19,7 @@ export const requestSignUp = async (formData) => {
     return data;
 };
 export const requestSignIn = async (formData) => {
+    console.log(formData)
     const { data } = await instance.post("/users/login", formData);
     setToken(data.token)
     return data;
