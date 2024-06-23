@@ -12,16 +12,19 @@ const TrackerPage = lazy(() => import("../../pages/TrackerPage/TrackerPage"));
 
 function App() {
   return (
-    <Container> <Suspense fallback={null}>
-      <Routes>
-        {/* <Route path="/" element={<Navigate to="/"/>}/> */}
-        {/* <Route path="/" element={<HomePage />} /> */}
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/signin" element={<SignInPage />} />
-        <Route path="/" element={<TrackerPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Suspense></Container>
+    <Container>
+      {" "}
+      <Suspense fallback={null}>
+        <Routes>
+          {/* <Route path="/" element={<Navigate to="/"/>}/> */}
+          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/" element={<TrackerPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </Container>
   );
 }
 
