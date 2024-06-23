@@ -16,8 +16,6 @@ const WaterForm = () => {
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <h2 className={css.mainTitle}>Add water</h2>
-      <h3 className={css.title}>Choose a value</h3>
       <p className={css.text}>Amount of water:</p>
       <div className={css.counterContainer}>
         <button className={css.btn} type="button">

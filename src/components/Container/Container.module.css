@@ -1,40 +1,40 @@
 .container {
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    margin: 0 auto;
-    background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--white);
+
 }
 
 @media screen and (min-width: 320px) {
-    .container {
-        flex-direction: column;
-        gap: 32px;
-        padding: 16px;
-        width: 100%;
-    }
+  .container {
+    padding: 16px;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 375px) {
-    .container {
-        flex-direction: column;
-        gap: 32px;
-        max-width: 375px;
-    }
+  .container {
+    width: 375px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 768px;
-        padding: 32px;
-    }
+  .container {
+    width: 768px;
+    padding: 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
-        flex-direction: row;
-        gap: 32px;
-        max-width: 1440px;
-        padding: 32px;
-    }
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    width: 1440px;
+    padding: 32px;
+  }
 }

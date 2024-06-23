@@ -91,5 +91,17 @@
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.44" d="M10.286 16h11.429"></path>
 </symbol>
 
+<symbol id="plusGreen" width="30" height="30" viewBox="0 0 30 30" fill="none" >
+<rect width="30" height="30" rx="15" fill="#9BE1A0"/>
+<path id="Vector" d="M15 9.64288V20.3572" stroke="#323F47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M9.64258 15H20.3569" stroke="#323F47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<symbol id="plusGrey" width="30" height="30" viewBox="0 0 30 30" fill="none" >
+<rect width="30" height="30" rx="15" fill="#323F47"/>
+<path id="Vector" d="M15 9.64288V20.3572" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M9.64258 15H20.3569" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
 </defs>
 </svg>

@@ -1,17 +1,52 @@
 .daily_info {
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 15px;
-
-  margin-top: -40px;
-  padding: 14px 18px;
-  width: 129px;
-  height: 78px;
+  margin-top: -20px;
+  padding: 8px;
 }
-
+@media screen and (min-width: 375px) {
+  .daily_info {
+    padding: 12px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .daily_info {
+    padding: 16px 20px;
+    margin-top: -60px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .daily_info {
+    padding: 16px 20px;
+    margin-top: -60px;
+    margin-left: 30px;
+  }
+}
 .daily_info__liters {
   font-weight: bold;
-  font-size: 15;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: var(--dark-grey-medium);
 }
+@media screen and (min-width: 768px) {
+  .daily_info__liters {
+    font-size: 15px;
+  }
+}
+
 .daily_info__text {
-  font-size: 12;
+  font-family: "Poppins", serif;
+  font-size: 9px;
+  color: var(--dark-grey-hard);
+  opacity: 0.6;
+}
+@media screen and (min-width: 375px) {
+  .daily_info__text {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .daily_info__text {
+    font-size: 12px;
+  }
 }
