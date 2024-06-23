@@ -6,7 +6,7 @@ const ClickOutSide = ({ onClickOutside, children }) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClickOutside();
+        onClickOutside(event);
       }
     };
 
