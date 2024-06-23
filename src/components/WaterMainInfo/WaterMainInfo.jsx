@@ -5,11 +5,22 @@ import WaterProgressBar from "../WaterProgressBar/WaterProgressBar";
 import Logo from "../Logo/Logo";
 import css from "../AddWaterBtn/AddWaterBtn.module.css";
 import { useState } from "react";
+import WaterModal from "../WaterModal/WaterModal";
+import scrollController from "../../services/noScroll";
 
 export default function WaterMainInfo() {
   const [dailyNorma, setDailyNorma] = useState("2.0"); //денна норма води
   const [drunkWater, setDrunkWater] = useState("470"); //кількість випитої води в день
+  const [isOpen, setIsOpen] = useState(false);
 
+  function openModal() {
+    setIsOpen(true);
+    scrollController.disabledScroll();
+  }
+  function closeModal() {
+    setIsOpen(false);
+    scrollController.enabledScroll();
+  }
   const dailyNormaNum = parseFloat(dailyNorma.replace(",", ".")) * 1000;
   const drunkWaterNum = parseFloat(drunkWater);
 
@@ -19,6 +30,7 @@ export default function WaterMainInfo() {
 
   return (
     <div className={style.box}>
+      {isOpen && <WaterModal onCloseModal={closeModal} isOpen={isOpen} />}
       <Logo />
       <WaterDailyNorma dailyNorma={dailyNorma} />
       <WaterProgressBar progress={progress} />
@@ -27,6 +39,7 @@ export default function WaterMainInfo() {
         svgStyle={css.svg_plus}
         textStyle={css.text}
         iconName="plus"
+        openModal={openModal}
       />
     </div>
   );
