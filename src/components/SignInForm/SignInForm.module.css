@@ -1,11 +1,11 @@
-.singUpFormWrapper {
+.signInFormWrapper {
     border-radius: 30px;
     height: 780px;
     background-color: var(--light-gray);
 
 }
 
-.signUpContainer {
+.signInContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@
     row-gap: 16px;
 }
 
-.logoSingUp {
+.logoSingIn {
     padding: 24px 16px 0px 16px;
 
 }
@@ -145,14 +145,14 @@
 
 
 @media screen and (min-width: 375px) {
-    .singUpFormWrapper {
+    .signInFormWrapper {
         border-radius: 30px;
         height: 780px;
         background-color: var(--light-gray);
 
     }
 
-    .signUpContainer {
+    .signInContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -165,7 +165,7 @@
         row-gap: 16px;
     }
 
-    .logoSingUp {
+    .logoSingIn {
         padding: 24px 16px 0px 16px;
 
     }
@@ -288,12 +288,12 @@
 
 @media screen and (min-width: 768px) {
 
-    .singUpFormWrapper {
+    .signInFormWrapper {
 
         height: 960px;
     }
 
-    .signUpContainer {
+    .signInContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -313,7 +313,7 @@
 
 
 
-    .logoSingUp {
+    .logoSingIn {
         padding: 32px 488px 0px 33px;
 
     }
@@ -446,13 +446,13 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .singUpFormWrapper {
+    .signInFormWrapper {
 
         height: 736px;
 
     }
 
-    .signUpContainer {
+    .signInContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -468,7 +468,7 @@
 
 
 
-    .logoSingUp {
+    .logoSingIn {
         padding: 32px 488px 0px 33px;
 
     }

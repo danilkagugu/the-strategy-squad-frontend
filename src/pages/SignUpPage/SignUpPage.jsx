@@ -1,6 +1,6 @@
 
-import SingUpFrom from "../../components/SignUpForm/SignUpForm";
-
+import SingUpForm from "../../components/SignUpForm/SignUpForm";
+import AdvantagesSection from "../../components/AdvantagesSection/AdvantagesSection";
 import { apiRegisterUser } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
 
@@ -15,8 +15,9 @@ const SignUpPage = () => {
 
   return (
     <>
-      <SingUpFrom onRegister={onRegister} />
-      <SingUpFrom onRegister={onRegister} />
+      <SingUpForm onRegister={onRegister} />
+      <AdvantagesSection isHideMobile={true} />
+
     </>
 
   )
