@@ -117,6 +117,12 @@
   background-color: var(--green-btn-hover);
 }
 
+.errorMessage {
+  display: block;
+  padding: 10px;
+  color: #ef5050;
+}
+
 @media screen and (min-width: 768px) {
   .form {
     width: 438px;

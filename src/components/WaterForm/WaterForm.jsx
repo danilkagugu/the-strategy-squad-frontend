@@ -34,6 +34,10 @@ const WaterForm = () => {
     setCounter((prev) => prev + 50);
   };
 
+  const handleChangeAmount = (ev) => {
+    setCounter(ev.target.value);
+  };
+
   const onSubmit = (data) => console.log(data);
 
   return (
@@ -74,17 +78,23 @@ const WaterForm = () => {
           defaultValue={currentTime}
           {...register("time", { required: true })}
         />
-        {errors.time && <span>This field is required</span>}
+        {errors.time && (
+          <span className={css.errorMessage}>This field is required</span>
+        )}
       </label>
       <label>
         <span className={css.title}>Enter the value of the water used:</span>
         <input
           className={css.input}
           name="amount"
-          type="number"
+          type="text"
           value={counter}
+          onInput={handleChangeAmount}
           {...register("amount")}
         />
+        {errors.amount && (
+          <span className={css.errorMessage}>This field is required</span>
+        )}
       </label>
       <button className={css.saveBtn} type="submit">
         Save
