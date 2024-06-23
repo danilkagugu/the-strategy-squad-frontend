@@ -44,9 +44,17 @@
 }
 
 .btnIcon {
-  stroke: var(--dark-grey-medium);
   width: 40px;
   height: 40px;
+}
+
+.disable {
+  stroke: rgba(47, 47, 47, 0.3);
+  fill: transparent;
+}
+
+.enable {
+  stroke: var(--dark-grey-medium);
   fill: transparent;
 }
 
