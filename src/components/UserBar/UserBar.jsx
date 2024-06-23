@@ -2,18 +2,30 @@ import UserBarPopover from "../UserBarPopover/UserBarPopover";
 import avatar from "../../assets/customers/desktop-tablet/customers1-tab-desc.png";
 import sprite from "../../assets/icons.svg";
 import css from "./UserBar.module.css";
-import { useState } from "react";
-// import ClickOutSide from "../../helpers/ClickOutSide";
+import { useRef, useState } from "react";
+import ClickOutSide from "../../helpers/ClickOutSide";
 
 const UserBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef(null);
   const handleToggleBarPopover = () => {
     setIsOpen((prevState) => !prevState);
   };
 
+  const handleClickOutside = (event) => {
+    if (buttonRef.current && buttonRef.current.contains(event.target)) {
+      return;
+    }
+    setIsOpen(false);
+  };
+
   return (
     <div className={css.userBar}>
-      <button className={css.btnUserBar} onClick={handleToggleBarPopover}>
+      <button
+        ref={buttonRef}
+        className={css.btnUserBar}
+        onClick={handleToggleBarPopover}
+      >
         <p className={css.userName}>Nadia</p>
         <img src={avatar} />
         {isOpen ? (
@@ -27,10 +39,10 @@ const UserBar = () => {
         )}
       </button>
       {isOpen ? (
-        // <ClickOutSide onClickOutside={handleToggleBarPopover}>
-        <UserBarPopover />
-      ) : // </ClickOutSide>
-      null}
+        <ClickOutSide onClickOutside={handleClickOutside}>
+          <UserBarPopover />
+        </ClickOutSide>
+      ) : null}
     </div>
   );
 };
