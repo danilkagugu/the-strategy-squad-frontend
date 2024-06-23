@@ -1,12 +1,16 @@
-import style from "./AddWaterBtn.module.css";
 import sprite from "../../assets/icons.svg";
-export default function AddWaterBtn() {
+export default function AddWaterBtn({
+  buttonStyle,
+  svgStyle,
+  textStyle,
+  iconName,
+}) {
   return (
-    <button className={style.btn}>
-      <svg className={style.svg_plus}>
-        <use href={`${sprite}#plus`}></use>
+    <button className={buttonStyle}>
+      <svg className={svgStyle}>
+        <use href={`${sprite}#${iconName}`}></use>
       </svg>
-      <p className={style.text}>Add water</p>
+      <p className={textStyle}>Add water</p>
     </button>
   );
 }
