@@ -10,7 +10,10 @@ import { apiLogoutUser } from "../auth/operations";
 
 const initialState = {
   items: {
-    perDay: [],
+    perDay: {
+      data: [],
+      waterAmount: 0,
+    },
     perMonth: [],
   },
   isLoading: false,
@@ -52,7 +55,9 @@ const waterSlice = createSlice({
       .addCase(addWaterRecord.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items.perDay.push(action.payload);
+        state.items.perDay.data.push(action.payload);
+        state.items.perMonth.push(action.payload);
+        state.items.perDay.waterAmount += action.payload.amount;
       })
       .addCase(addWaterRecord.rejected, handleRejected)
 
@@ -60,10 +65,15 @@ const waterSlice = createSlice({
       .addCase(deleteWaterRecord.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        const index = state.items.perDay.findIndex(
+        const index = state.items.perDay.data.findIndex(
           (record) => record._id === action.payload._id
         );
-        state.items.splice(index, 1);
+        state.items.perDay.data.splice(index, 1);
+        state.items.perDay.waterAmount -= action.payload.amount;
+        const indexMonth = state.items.perMonth.findIndex(
+          (record) => record._id === action.payload._id
+        );
+        state.items.perMonth.splice(indexMonth, 1);
       })
       .addCase(deleteWaterRecord.rejected, handleRejected)
 

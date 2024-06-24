@@ -9,9 +9,9 @@ import {
 
 export const getWaterPerDay = createAsyncThunk(
   "water/perDay",
-  async (_, thunkAPI) => {
+  async (query, thunkAPI) => {
     try {
-      const response = await recordsPerDay();
+      const response = await recordsPerDay(query);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -21,9 +21,9 @@ export const getWaterPerDay = createAsyncThunk(
 
 export const getWaterPerMonth = createAsyncThunk(
   "water/perMonth",
-  async (_, thunkAPI) => {
+  async (query, thunkAPI) => {
     try {
-      const response = await recordsPerMonth();
+      const response = await recordsPerMonth(query);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

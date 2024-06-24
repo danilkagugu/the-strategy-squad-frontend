@@ -1,7 +1,7 @@
-export const selectWaterPerDay = (state) => state.contacts.items.perDay;
+export const selectWaterPerDay = (state) => state.water.items.perDay;
 
-export const selectWaterPerMonth = (state) => state.contacts.items.perMonth;
+export const selectWaterPerMonth = (state) => state.water.items.perMonth;
 
-export const selectIsLoading = (state) => state.contacts.isLoading;
+export const selectIsLoading = (state) => state.water.isLoading;
 
-export const selectError = (state) => state.contacts.error;
+export const selectError = (state) => state.water.error;
