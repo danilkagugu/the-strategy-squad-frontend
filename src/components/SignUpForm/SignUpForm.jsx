@@ -11,7 +11,7 @@ import { useState } from "react";
 const UserRegisterSchema = Yup.object().shape({
     email: Yup.string().email("Must be a valid email!").required("Email is required"),
     password: Yup.string().min(6, "Too Short!").max(50, "Too Long!").required("Password is required"),
-    confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required("Confirm Password is required")
+    repeatPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required("Repeat Password is required")
 
 });
 
@@ -19,7 +19,7 @@ const UserRegisterSchema = Yup.object().shape({
 const INITIAL_FORM_DATA = {
     email: "",
     password: "",
-    confirmPassword: ""
+    repeatPassword: ""
 }
 
 const SingUpFrom = ({ onRegister }) => {
@@ -77,7 +77,7 @@ const SingUpFrom = ({ onRegister }) => {
                                 <Field
                                     className={css.formInputRegistration}
                                     type={isVisible ? "text" : "password"}
-                                    name="confirmPassword"
+                                    name="repeatPassword"
                                     autoComplete="new-password"
                                     placeholder="Repeat your password"
                                 />
