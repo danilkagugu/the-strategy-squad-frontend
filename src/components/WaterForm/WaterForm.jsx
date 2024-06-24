@@ -41,7 +41,7 @@ const WaterForm = () => {
   const [counter, setCounter] = useState(50);
 
   const minusValue = () => {
-    if (counter < 50) {
+    if (counter <= 50) {
       return;
     }
     setCounter((prev) => prev - 50);
@@ -59,11 +59,10 @@ const WaterForm = () => {
     if (inputValue < 0 || inputValue > 5000) {
       return;
     }
-    console.log(typeof inputValue);
     setCounter(inputValue);
   };
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => console.log({ ...data, amount: counter });
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
@@ -71,7 +70,10 @@ const WaterForm = () => {
       <div className={css.counterContainer}>
         <button className={css.btn} onClick={minusValue} type="button">
           <svg
-            className={clsx("btnIcon", counter < 50 ? css.disable : css.enable)}
+            className={clsx(
+              "btnIcon",
+              counter <= 50 ? css.disable : css.enable
+            )}
             width="40"
             height="40"
           >
@@ -115,7 +117,7 @@ const WaterForm = () => {
           type="number"
           value={counter}
           onInput={handleChangeAmount}
-          {...register("amount", { required: true, min: 0, max: 5000 })}
+          {...register("amount", { required: true, min: 50, max: 5000 })}
         />
         {errors.amount && (
           <span className={css.errorMessage}>{errors.amount.message}</span>
