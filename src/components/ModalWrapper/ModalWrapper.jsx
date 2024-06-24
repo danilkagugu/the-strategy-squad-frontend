@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import css from "./ModalWrapper.module.css";
-import { IoIosClose } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 
 const customStyles = {
   content: {
@@ -34,7 +34,7 @@ const ModalWrapper = ({
     >
       <div className={css.modalContent}>
         <button className={css.closeBtn} type="button" onClick={onCloseModal}>
-          <IoIosClose className={css.closeIcon} />
+          <IoClose className={css.closeIcon} />
         </button>
         {children}
       </div>
