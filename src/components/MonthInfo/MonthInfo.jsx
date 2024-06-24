@@ -24,7 +24,7 @@ const MonthInfo = () => {
   for (let i = 1; i <= currentDate.getDate(); i++) {
     arrayPercent.push(randomNumber());
   }
-  // console.log(arrayPercent);
+  console.log(dayInMounth);
   const prevMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
@@ -50,6 +50,12 @@ const MonthInfo = () => {
     }
     setDayInMounth(days);
   }, [currentDate]);
+
+  const dataRecharts = dayInMounth.map((day, i) => ({
+    date: day,
+    value: arrayPercent[i] / 100,
+  }));
+
   return (
     <>
       <div className={css.block}>
@@ -60,7 +66,7 @@ const MonthInfo = () => {
           openRecharts={toogleOpenRecharts}
         />
         {openRecharts ? (
-          <Recharts dayInMounth={dayInMounth} />
+          <Recharts data={dataRecharts} />
         ) : (
           <Calendar day={dayInMounth} randomNumber={arrayPercent} />
         )}

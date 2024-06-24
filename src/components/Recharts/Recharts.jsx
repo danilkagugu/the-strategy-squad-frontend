@@ -12,16 +12,6 @@ import {
 
 import css from "./Recharts.module.css";
 
-const data = [
-  { date: 16, value: 2.0 },
-  { date: 17, value: 2.5 },
-  { date: 18, value: 2.2 },
-  { date: 19, value: 1.75 },
-  { date: 20, value: 2.0 },
-  { date: 21, value: 2.5 },
-  { date: 22, value: 1.75 },
-];
-
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -51,7 +41,7 @@ const CustomDot = (props) => {
   );
 };
 
-const Recharts = () => {
+const Recharts = ({ data }) => {
   return (
     <ResponsiveContainer width="100%" height={400}>
       <AreaChart data={data}>
