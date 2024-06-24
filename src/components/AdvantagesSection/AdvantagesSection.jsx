@@ -15,9 +15,10 @@ import customers2TabDesc2x from "../../assets/customers/desktop-tablet/customers
 import customers3TabDesc from "../../assets/customers/desktop-tablet/customers3-tab-desc.png";
 import customers3TabDesc2x from "../../assets/customers/desktop-tablet/customers3-tab-desc@2x.png";
 
-const AdvantagesSection = () => {
+const AdvantagesSection = (props) => {
+  const { isHideMobile } = props;
   return (
-    <div className={css.sectionWrapper}>
+    <div className={`${css.sectionWrapper} ${isHideMobile ? css.mobileHide : ''}`}>
       <div className={css.customersWrapper}>
         <div>
           <ul className={css.imgWrapper}>
