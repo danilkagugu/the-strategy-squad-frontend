@@ -8,7 +8,12 @@ const ModalExample = () => {
   return (
     <div>
       <button onClick={() => setIsOpen(true)}>Open Modal</button>
-      <ModalWrapper modalIsOpen={isOpen} onCloseModal={onCloseModal}>
+      <ModalWrapper
+        modalIsOpen={isOpen}
+        onCloseModal={onCloseModal}
+        top="12%"
+        transform="translate(-50%, 0)"
+      >
         <div>Here will be the content</div>
       </ModalWrapper>
     </div>
