@@ -25,8 +25,6 @@ const schema = yup
       .number()
       .positive()
       .integer()
-      .min(0, "Too Short! Must be a positive number.")
-      .max(5000, "Too Long!")
       .required("This field is required"),
   })
   .required();
@@ -43,21 +41,26 @@ const WaterForm = () => {
   const [counter, setCounter] = useState(50);
 
   const minusValue = () => {
-    if (counter <= 0) {
+    if (counter < 50) {
       return;
     }
     setCounter((prev) => prev - 50);
   };
 
   const plusValue = () => {
-    if (counter >= 5000) {
+    if (counter >= 4951) {
       return;
     }
     setCounter((prev) => prev + 50);
   };
 
   const handleChangeAmount = (ev) => {
-    setCounter(ev.target.value);
+    const inputValue = Number(ev.target.value);
+    if (inputValue < 0 || inputValue > 5000) {
+      return;
+    }
+    console.log(typeof inputValue);
+    setCounter(inputValue);
   };
 
   const onSubmit = (data) => console.log(data);
@@ -68,7 +71,7 @@ const WaterForm = () => {
       <div className={css.counterContainer}>
         <button className={css.btn} onClick={minusValue} type="button">
           <svg
-            className={clsx("btnIcon", counter <= 0 ? css.disable : css.enable)}
+            className={clsx("btnIcon", counter < 50 ? css.disable : css.enable)}
             width="40"
             height="40"
           >
@@ -82,7 +85,7 @@ const WaterForm = () => {
           <svg
             className={clsx(
               "btnIcon",
-              counter >= 5000 ? css.disable : css.enable
+              counter >= 4951 ? css.disable : css.enable
             )}
             width="40"
             height="40"
