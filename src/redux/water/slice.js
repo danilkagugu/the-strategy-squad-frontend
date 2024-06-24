@@ -81,9 +81,11 @@ const waterSlice = createSlice({
       .addCase(editWaterRecord.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items.perDay.find((record) => {
+        state.items.perDay.data.find((record) => {
           if (record._id === action.payload._id) {
             record.time = action.payload.time;
+            state.items.perDay.waterAmount -= record.amount;
+            state.items.perDay.waterAmount += action.payload.amount;
             record.amount = action.payload.amount;
           }
         });
