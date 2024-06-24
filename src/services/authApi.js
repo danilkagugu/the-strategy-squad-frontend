@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "",
+    baseURL: "http://localhost:3030",
 });
 
 export const setToken = (token) => {
@@ -13,26 +13,27 @@ export const clearToken = () => {
 };
 
 export const requestSignUp = async (formData) => {
-    console.log(formData)
-    const { data } = await instance.post("/users/signup", formData);
+
+    const { data } = await instance.post("/api/users/register", formData);
     setToken(data.token)
     return data;
 };
 export const requestSignIn = async (formData) => {
-    console.log(formData)
-    const { data } = await instance.post("/users/login", formData);
+
+    const { data } = await instance.post("/api/users/login", formData);
     setToken(data.token)
     return data;
 };
 
 export const requestGetCurrentUser = async () => {
-    const { data } = await instance.get("/users/current");
+    const { data } = await instance.get("/api/users/current");
 
     return data;
 };
 
 export const requestLogOut = async () => {
-    const { data } = await instance.post("/users/logout");
+    const { data } = await instance.post("/api/users/logout");
+
 
     return data;
 };

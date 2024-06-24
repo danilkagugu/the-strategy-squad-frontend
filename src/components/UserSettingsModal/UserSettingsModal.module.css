@@ -1,35 +1,31 @@
-.settingsModal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--white);
-  padding: 20px;
-  z-index: 1000;
-  border-radius: 8px;
-  max-width: 90%;
-  max-height: 90%;
-  overflow-y: auto;
-}
-
-.headerSeatingsModal {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btnClouse {
-  background-color: transparent;
-}
-
-.iconClose {
-  fill: var(--dark-grey-hard);
-  width: 20px;
-  height: 20px;
-}
-
 .title {
-  font-size: 20px;
-  line-height: 1.2;
-  color: var(--dark-grey-hard);
-  font-weight: bold;
+	font-size: 20px;
+	line-height: 1.2;
+	color: var(--dark-grey-hard);
+	font-weight: bold;
+}
+@media screen and (min-width: 320px) {
+	.settingsModal {
+		width: 100%;
+		padding: 40px 20px;
+	}
+}
+
+@media screen and (min-width: 320px) {
+	.settingsModal {
+		width: 343px;
+		padding: 40px 20px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.settingsModal {
+		width: 568px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.settingsModal {
+		width: 920px;
+	}
 }
