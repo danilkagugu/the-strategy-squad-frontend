@@ -3,10 +3,10 @@ import WelcomeSection from "../../components/WelcomeSection/WelcomeSection";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <WelcomeSection />
       <AdvantagesSection />
-    </div>
+    </>
   );
 };
 
