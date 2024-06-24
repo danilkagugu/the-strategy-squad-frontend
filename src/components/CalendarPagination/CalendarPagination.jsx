@@ -16,7 +16,12 @@ const mounth = {
   11: "December",
 };
 
-const CalendarPagination = ({ nextMounth, prevMounth, dateNow }) => {
+const CalendarPagination = ({
+  nextMounth,
+  prevMounth,
+  dateNow,
+  openRecharts,
+}) => {
   const featureMouth =
     dateNow.getFullYear() > new Date().getFullYear() ||
     (dateNow.getFullYear() === new Date().getFullYear() &&
@@ -43,7 +48,7 @@ const CalendarPagination = ({ nextMounth, prevMounth, dateNow }) => {
             <use href={`${sprite}#icon-cheveron-right`}></use>
           </svg>
         </button>
-        <button className={css.iconPieChart}>
+        <button className={css.iconPieChart} onClick={openRecharts}>
           <svg className={css.icon}>
             <use href={`${sprite}#icon-pie-chart`}></use>
           </svg>

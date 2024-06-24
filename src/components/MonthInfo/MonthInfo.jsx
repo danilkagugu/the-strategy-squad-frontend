@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 import CalendarPagination from "../CalendarPagination/CalendarPagination";
 import Calendar from "../Calendar/Calendar";
 import css from "./MonthInfo.module.css";
-// import Recharts from "../Recharts/Recharts";
+import Recharts from "../Recharts/Recharts";
 
 const MonthInfo = () => {
+  const [openRecharts, setOpenRecharts] = useState(false);
+  const toogleOpenRecharts = () => {
+    setOpenRecharts((prevState) => !prevState);
+  };
+  // console.log(openRecharts);
   const randomNumber = () => {
     return Math.floor(Math.random() * 101);
   };
@@ -52,10 +57,14 @@ const MonthInfo = () => {
           dateNow={currentDate}
           prevMounth={prevMounth}
           nextMounth={nextMounth}
+          openRecharts={toogleOpenRecharts}
         />
-        <Calendar day={dayInMounth} randomNumber={arrayPercent} />
+        {openRecharts ? (
+          <Recharts dayInMounth={dayInMounth} />
+        ) : (
+          <Calendar day={dayInMounth} randomNumber={arrayPercent} />
+        )}
       </div>
-      {/* <Recharts dayOfMouth={dayInMounth} percentWater={arrayPercent} /> */}
     </>
   );
 };
