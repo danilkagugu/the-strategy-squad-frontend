@@ -2,7 +2,7 @@ import { useState } from 'react';
 import css from './UserSettingsForm.module.css';
 import { IoIosCloudUpload } from 'react-icons/io';
 
-const UserSettingsForm = ({ onClose }) => {
+const UserSettingsForm = () => {
 	const [avatarUrl, setAvatarUrl] = useState(null);
 
 	const handleAvatarUpload = event => {

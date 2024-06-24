@@ -1,0 +1,40 @@
+.headerCalendar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.calendarInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendarDate {
+  color: var(--dark-grey-medium);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0 20px;
+}
+
+.mouth {
+  color: var(--dark-grey-medium);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btnDisabled:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.iconPieChart {
+  margin-left: 20px;
+}

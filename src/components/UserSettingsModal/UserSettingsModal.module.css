@@ -4,3 +4,28 @@
 	color: var(--dark-grey-hard);
 	font-weight: bold;
 }
+@media screen and (min-width: 320px) {
+	.settingsModal {
+		width: 100%;
+		padding: 40px 20px;
+	}
+}
+
+@media screen and (min-width: 320px) {
+	.settingsModal {
+		width: 343px;
+		padding: 40px 20px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.settingsModal {
+		width: 568px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.settingsModal {
+		width: 920px;
+	}
+}

@@ -1,12 +1,21 @@
+import ModalWrapper from '../ModalWrapper/ModalWrapper';
 import UserSettingsForm from '../UserSettingsForm/UserSettingsForm';
 import css from './UserSettingsModal.module.css';
 
-const UserSettingsModal = ({ onClose }) => {
+const UserSettingsModal = ({ isOpen, onCloseModal }) => {
 	return (
-		<div className={css.settingsModal}>
-			<h3 className={css.title}>Setting</h3>
-			<UserSettingsForm onClose={onClose} />
-		</div>
+		<>
+			<ModalWrapper
+				modalIsOpen={isOpen}
+				onCloseModal={onCloseModal}
+				contentLabel='User Settings'
+			>
+				<div className={css.settingsModal}>
+					<h3 className={css.title}>Setting</h3>
+					<UserSettingsForm />
+				</div>
+			</ModalWrapper>
+		</>
 	);
 };
 
