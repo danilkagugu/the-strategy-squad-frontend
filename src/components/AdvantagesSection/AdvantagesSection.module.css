@@ -6,12 +6,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 209px 16px 32px 16px;
-  }
+}
 
 .mobileHide {
   display: block;
 }
-
 
 @media only screen and (min-resolution: 192dpi) {
   .sectionWrapper {
@@ -171,14 +170,13 @@
   .personal {
     width: 158px;
   }
-
-
 }
 
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .sectionWrapper {
     background-image: url("../../assets/background/tablet/home-bg-tablet@2x.png");
-
+  }
+}
 
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
   .sectionWrapper {
@@ -188,7 +186,6 @@
 
 @media (min-width: 1440px) {
   .sectionWrapper {
-
     width: 672px;
     height: 736px;
     background-image: url("../../assets/background/dectop/home-bg-desctop.png");
@@ -199,7 +196,6 @@
   .benefits {
     margin-top: 56px;
   }
-
 }
 
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
