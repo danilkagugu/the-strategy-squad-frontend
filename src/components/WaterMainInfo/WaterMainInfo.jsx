@@ -9,12 +9,7 @@ import WaterModal from "../WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch } from "react-redux";
 import { addWaterRecord } from "../../redux/water/operations";
-
-let data = new Date();
-let year = data.getFullYear();
-let month = String(data.getMonth() + 1).padStart(2, "0");
-let day = String(data.getDate()).padStart(2, "0");
-let currentDay = `${year}-${month}-${day}`;
+import { currentDay } from "../../services/currentDay";
 
 export default function WaterMainInfo() {
   const [dailyNorma, setDailyNorma] = useState("2.0"); //денна норма води
@@ -44,7 +39,7 @@ export default function WaterMainInfo() {
   const onSubmitData = (data, counter) => {
     addNewWater({
       ...data,
-      time: `${currentDay}-${data.time}`,
+      time: `${currentDay()}-${data.time}`,
       amount: counter,
     });
     closeModal();
