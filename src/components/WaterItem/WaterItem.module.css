@@ -1,0 +1,116 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  padding: 18px 14px;
+  width: fit-content;
+  backdrop-filter: blur(33.599998474121094px);
+  background: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+.card:not(:last-child) {
+  margin-right: 8px;
+}
+@media only screen and (min-width: 768px) {
+  .card:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .card:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.bottleIcon {
+  fill: #9be1a0;
+  min-width: 38px;
+  width: 38px;
+  height: 38px;
+}
+
+@media only screen and (min-width: 768px) {
+  .bottleIcon {
+    width: 44px;
+    height: 45px;
+  }
+}
+
+.button {
+  height: 14px;
+  padding: 0;
+}
+.btnIcon {
+  width: 14px;
+  height: 14px;
+  stroke: #323f47;
+  fill: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .button {
+    height: 16px;
+  }
+  .btnIcon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.textBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .textBox {
+    gap: 0px;
+  }
+}
+
+.btnBox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ml {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  color: #323f47;
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 768px) {
+  .ml {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+.time {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  color: rgba(47, 47, 47, 0.6);
+}
+
+@media only screen and (min-width: 768px) {
+  .time {
+    line-height: 1.9;
+  }
+}

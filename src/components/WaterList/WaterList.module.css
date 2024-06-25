@@ -1,0 +1,47 @@
+.waterList {
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding-bottom: 32px;
+}
+.waterList::-webkit-scrollbar {
+  height: 8px;
+  border-radius: 9px;
+}
+
+.waterList::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background-color: #323f47;
+}
+
+.waterList::-webkit-scrollbar-track {
+  border-radius: 9px;
+  background-color: #fff;
+}
+.empty {
+  padding: 26px;
+  margin: 1px auto;
+  border-radius: 15px;
+  background: #ffffff;
+}
+@media only screen and (min-width: 768px) {
+  .empty {
+    margin: 6.65px auto;
+  }
+}
+
+.empty > p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #323f47;
+}
+@media only screen and (max-width: 370px) {
+  .empty {
+    padding: 26px 10px;
+  }
+
+  .empty > p {
+    font-size: 16px;
+  }
+}
