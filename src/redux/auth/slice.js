@@ -21,23 +21,20 @@ const authSlice = createSlice({
   name: "auth",
   initialState: INITIAL_STATE,
 
-  extraReducers: (builder) =>
-    builder
-      .addCase(apiRegisterUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.userData = action.payload.user;
-        state.token = action.payload.token;
-        state.isLoggedIn = true;
-      })
-      .addCase(apiLoginUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.userData = action.payload.user;
-        state.token = action.payload.token;
-        state.isLoggedIn = true;
-      })
-      .addCase(apiLogoutUser.fulfilled, () => {
-        return INITIAL_STATE;
-      })
+    extraReducers: (builder) =>
+        builder
+            .addCase(apiRegisterUser.fulfilled, (state) => {
+                state.loading = false;
+            })
+            .addCase(apiLoginUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.userData = action.payload.user;
+                state.token = action.payload.token;
+                state.isLoggedIn = true;
+            })
+            .addCase(apiLogoutUser.fulfilled, () => {
+                return INITIAL_STATE;
+            })
 
       .addCase(apiRefreshUser.pending, (state) => {
         state.isRefresh = true;

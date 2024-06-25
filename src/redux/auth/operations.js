@@ -48,14 +48,15 @@ export const apiRefreshUser = createAsyncThunk(
 );
 
 export const apiLogoutUser = createAsyncThunk(
-  "auth/logout",
-  async (_, thunkAPI) => {
-    try {
-      await requestLogOut();
-
-      return;
-    } catch (err) {
-      return thunkAPI.rejectWithValue(err.message);
+    'auth/logout',
+    async (_, thunkAPI) => {
+        try {
+            await requestLogOut();
+            setToken(null);
+            return;
+        } catch (err) {
+            return thunkAPI.rejectWithValue(err.message);
+        }
     }
   }
 );

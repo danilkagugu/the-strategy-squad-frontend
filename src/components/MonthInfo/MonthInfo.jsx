@@ -5,26 +5,23 @@ import CalendarPagination from "../CalendarPagination/CalendarPagination";
 import Calendar from "../Calendar/Calendar";
 import css from "./MonthInfo.module.css";
 import Recharts from "../Recharts/Recharts";
+import { selectWaterPerMonth } from "../../redux/water/selectors";
+import { useSelector } from "react-redux";
+import {
+  getDayFromDateStr,
+  getMonthFromDateStr,
+} from "../../helpers/getAmountForDayAndMonth";
 
 const MonthInfo = () => {
   const [openRecharts, setOpenRecharts] = useState(false);
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [dayInMounth, setDayInMounth] = useState([]);
+  const data = useSelector(selectWaterPerMonth);
+
   const toogleOpenRecharts = () => {
     setOpenRecharts((prevState) => !prevState);
   };
-  // console.log(openRecharts);
-  const randomNumber = () => {
-    return Math.floor(Math.random() * 101);
-  };
 
-  const arrayPercent = [];
-
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [dayInMounth, setDayInMounth] = useState([]);
-  // const [percent, setPercent] = useState([randomNumber()]);
-  for (let i = 1; i <= currentDate.getDate(); i++) {
-    arrayPercent.push(randomNumber());
-  }
-  console.log(dayInMounth);
   const prevMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
@@ -51,11 +48,20 @@ const MonthInfo = () => {
     setDayInMounth(days);
   }, [currentDate]);
 
-  const dataRecharts = dayInMounth.map((day, i) => ({
-    date: day,
-    value: arrayPercent[i] / 100,
-  }));
+  const getAmountForDayAndMonth = (day, month) => {
+    const records = data.filter(
+      (item) =>
+        getDayFromDateStr(item.time) === day &&
+        getMonthFromDateStr(item.time) === month
+    );
+    const totalAmount = records.reduce((sum, record) => sum + record.amount, 0);
+    return Math.round((totalAmount / 2000) * 100);
+  };
 
+  const dataRecharts = dayInMounth.map((day) => ({
+    date: day,
+    value: getAmountForDayAndMonth(day, currentDate.getMonth() + 1),
+  }));
   return (
     <>
       <div className={css.block}>
@@ -68,7 +74,10 @@ const MonthInfo = () => {
         {openRecharts ? (
           <Recharts data={dataRecharts} />
         ) : (
-          <Calendar day={dayInMounth} randomNumber={arrayPercent} />
+          <Calendar
+            day={dayInMounth}
+            currentMonth={currentDate.getMonth() + 1}
+          />
         )}
       </div>
     </>

@@ -6,8 +6,17 @@ import style from "./DailyInfo.module.css";
 import { useState } from "react";
 import WaterModal from "../WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
+import { useDispatch } from "react-redux";
+import { addWaterRecord } from "../../redux/water/operations";
+import { currentDay } from "../../services/currentDay";
+
 export default function DailyInfo() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const dispatch = useDispatch();
+  const addNewWater = (newWater) => {
+    dispatch(addWaterRecord(newWater));
+  };
 
   function openModal() {
     setIsOpen(true);
@@ -17,9 +26,25 @@ export default function DailyInfo() {
     setIsOpen(false);
     scrollController.enabledScroll();
   }
+
+  const onSubmitData = (data, counter) => {
+    addNewWater({
+      ...data,
+      time: `${currentDay()}-${data.time}`,
+      amount: counter,
+    });
+    closeModal();
+  };
+
   return (
     <div className={style.main}>
-      {isOpen && <WaterModal onCloseModal={closeModal} isOpen={isOpen} />}
+      {isOpen && (
+        <WaterModal
+          onCloseModal={closeModal}
+          isOpen={isOpen}
+          onSubmitData={onSubmitData}
+        />
+      )}
       <div className={style.box_flex}>
         <ChooseDate />
         <AddWaterBtn
