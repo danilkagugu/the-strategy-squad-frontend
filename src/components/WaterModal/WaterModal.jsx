@@ -3,15 +3,15 @@ import ModalWrapper from "../ModalWrapper/ModalWrapper";
 
 import css from "./WaterModal.module.css";
 
-const onSubmitDataExam = (data, counter) =>
-  console.log({ ...data, amount: counter });
+// const onSubmitDataExam = (data, counter) =>
+//   console.log({ ...data, amount: counter });
 
 const WaterModal = ({
   isOpen,
   onCloseModal,
   title = "Add water",
   text = "Choose a value:",
-  onSubmitData = onSubmitDataExam,
+  onSubmitData,
   initialState,
 }) => {
   return (
