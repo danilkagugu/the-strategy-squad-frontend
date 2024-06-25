@@ -25,6 +25,7 @@ function App() {
       <Suspense fallback={null}>
         <Routes>
           {/* <Route path="/" element={<Navigate to="/"/>}/> */}
+
           <Route path="/" element={<RestrictedRoute><HomePage /></RestrictedRoute>} />
           <Route path="/signup" element={<RestrictedRoute><SignUpPage /></RestrictedRoute>} />
           <Route path="/signin" element={<RestrictedRoute><SignInPage /></RestrictedRoute>} />
@@ -37,3 +38,5 @@ function App() {
 }
 
 export default App;
+
+

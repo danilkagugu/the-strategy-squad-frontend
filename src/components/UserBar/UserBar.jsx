@@ -7,16 +7,25 @@ import ClickOutSide from "../../helpers/ClickOutSide";
 
 const UserBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenLogOut, setIsOpenLogOut] = useState(false);
   const buttonRef = useRef(null);
   const handleToggleBarPopover = () => {
     setIsOpen((prevState) => !prevState);
   };
 
   const handleClickOutside = (event) => {
-    if (buttonRef.current && buttonRef.current.contains(event.target)) {
+    if ((buttonRef.current && buttonRef.current.contains(event.target)) || isOpenLogOut) {
       return;
     }
     setIsOpen(false);
+  };
+
+  const openModal = () => {
+    setIsOpenLogOut(true);
+  };
+
+  const closeModal = () => {
+    setIsOpenLogOut(false);
   };
 
   return (
@@ -40,7 +49,7 @@ const UserBar = () => {
       </button>
       {isOpen ? (
         <ClickOutSide onClickOutside={handleClickOutside}>
-          <UserBarPopover />
+          <UserBarPopover modalIsOpen={isOpenLogOut} onCloseModal={closeModal} openModal={openModal} />
         </ClickOutSide>
       ) : null}
     </div>

@@ -41,7 +41,7 @@ const SignInForm = ({ onLogin }) => {
                                 <label className={css.labelRegistration}>
                                     <span className={css.formRegistrationText}>Email</span>
                                     <Field
-                                        className={css.formInputRegistration}
+                                        className={`${css.formInputRegistration} ${errors.email && touched.email ? css.formInputError : (touched.email ? css.formInputValid : '')}`}
                                         type="email"
                                         name="email"
                                         autoComplete="email"
@@ -53,18 +53,18 @@ const SignInForm = ({ onLogin }) => {
                                     <span className={css.formRegistrationText}>Password</span>
                                     <div className={css.inputIconWrapper}>
                                         <Field
-                                            className={`${css.formInputRegistration} ${errors.password ? css.errorMsgInput : ""}`}
+                                            className={`${css.formInputRegistration} ${errors.password && touched.password ? css.formInputError : (touched.password ? css.formInputValid : '')}`}
                                             type={isVisible ? "text" : "password"}
                                             name="password"
                                             autoComplete="new-password"
                                             placeholder="Enter your password"
                                         />
-                                        {errors.password && touched.password ?
-                                            <div className={css.errorMsg} >{errors.password}</div> : null}
+
                                         <svg width="20" height="20" className={css.singUpIcon} onClick={() => setIsVisible(!isVisible)}>
                                             <use href={`${sprite}#icon-${isVisible ? 'eye' : 'eye-off'}`}></use>
                                         </svg>
                                     </div>
+                                    {errors.password && touched.password ? <div className={css.errorMsg} >{errors.password}</div> : null}
                                 </label>
                             </div>
                             <button className={css.submitBtn} type="submit" title="Click to register user" aria-label="Add user">Sign in</button>

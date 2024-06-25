@@ -1,34 +1,29 @@
-import { useState } from 'react';
-import sprite from '../../assets/icons.svg';
-import css from './UserBarPopover.module.css';
-// import ModalWrapper from '../ModalWrapper/ModalWrapper';
-import UserSettingsModal from '../UserSettingsModal/UserSettingsModal';
-const UserBarPopover = () => {
-	const [isOpen, setIsOpen] = useState(false);
+import sprite from "../../assets/icons.svg";
+import css from "./UserBarPopover.module.css";
+import LogOutModal from "../LogOutModal/LogOutModal"
 
-	const onOpenModal = () => setIsOpen(true);
-	const onCloseModal = () => setIsOpen(false);
+
+
+const UserBarPopover = ({ modalIsOpen, onCloseModal, openModal }) => {
+
 
 	return (
-		<>
-			{isOpen && (
-				<UserSettingsModal onCloseModal={onCloseModal} isOpen={isOpen} />
-			)}
-			<div className={css.barPopover}>
-				<button className={css.btnBar} onClick={onOpenModal}>
-					<svg className={css.icon}>
-						<use href={`${sprite}#icon-settings`}></use>
-					</svg>
-					<p className={css.textBarPopover}>Setting</p>
-				</button>
-				<button className={css.btnBar}>
-					<svg className={css.icon}>
-						<use href={`${sprite}#icon-log-out`}></use>
-					</svg>
-					<p className={css.textBarPopover}>Log out</p>
-				</button>
-			</div>
-		</>
+		<div className={css.barPopover}>
+			<button className={css.btnBar}>
+				<svg className={css.icon}>
+					<use href={`${sprite}#icon-settings`}></use>
+				</svg>
+				<p className={css.textBarPopover}>Setting</p>
+			</button>
+			<button className={css.btnBar} onClick={openModal}>
+				<svg className={css.icon}>
+					<use href={`${sprite}#icon-log-out`}></use>
+				</svg>
+				<p className={css.textBarPopover}>Log out</p>
+			</button>
+			{modalIsOpen && <LogOutModal modalIsOpen={modalIsOpen} onCloseModal={onCloseModal} />}
+
+		</div>
 	);
 };
 
