@@ -34,3 +34,9 @@ export const requestLogOut = async () => {
 
   return data;
 };
+
+export const requestUpdate = async (body) => {
+  const data = await instance.patch("/api/users/update", body);
+
+  return data;
+};
