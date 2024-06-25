@@ -2,8 +2,8 @@ import { useState } from "react";
 import WaterModal from "./WaterModal";
 import scrollController from "../../services/noScroll";
 
-const title = "Add water";
-const text = "Choose a value:";
+const title = "Edit the entered amount of water";
+const text = "Correct entered data:";
 
 const ExampleWaterModal = () => {
   const [isOpen, setIsOpen] = useState(false);
