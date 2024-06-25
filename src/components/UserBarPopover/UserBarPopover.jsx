@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import sprite from '../../assets/icons.svg';
 import css from './UserBarPopover.module.css';
-// import ModalWrapper from '../ModalWrapper/ModalWrapper';
 import UserSettingsModal from '../UserSettingsModal/UserSettingsModal';
 const UserBarPopover = () => {
 	const [isOpen, setIsOpen] = useState(false);
