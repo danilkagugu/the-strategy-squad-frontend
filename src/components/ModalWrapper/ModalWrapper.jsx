@@ -1,21 +1,6 @@
 import Modal from "react-modal";
 import css from "./ModalWrapper.module.css";
-import { IoIosClose } from "react-icons/io";
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    padding: "0",
-  },
-  overlay: {
-    backgroundColor: "rgba(47, 47, 47, 0.6)",
-  },
-};
+import { IoClose } from "react-icons/io5";
 
 Modal.setAppElement("#root");
 
@@ -24,7 +9,25 @@ const ModalWrapper = ({
   modalIsOpen,
   onCloseModal,
   contentLabel,
+  top = "50%",
+  transform = "translate(-50%, -50%)",
 }) => {
+  const customStyles = {
+    content: {
+      top,
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform,
+      padding: "0",
+      borderRadius: "15px",
+    },
+    overlay: {
+      backgroundColor: "rgba(47, 47, 47, 0.6)",
+    },
+  };
+
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -34,7 +37,7 @@ const ModalWrapper = ({
     >
       <div className={css.modalContent}>
         <button className={css.closeBtn} type="button" onClick={onCloseModal}>
-          <IoIosClose className={css.closeIcon} />
+          <IoClose className={css.closeIcon} />
         </button>
         {children}
       </div>

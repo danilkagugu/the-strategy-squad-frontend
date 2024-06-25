@@ -6,35 +6,70 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Line,
+  Dot,
 } from "recharts";
 
-const Recharts = ({ dayOfMouth, percentWater }) => {
-  const data = dayOfMouth.map((day) => {
-    return [
-      {
-        name: day,
-        percent: percentWater,
-      },
-    ];
-  });
-  console.log(data);
+import css from "./Recharts.module.css";
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className={css.boxRecharts}>
+        <p>{`${payload[0].value} ml`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+const CustomDot = (props) => {
+  const { cx, cy } = props;
+
+  return (
+    <Dot
+      {...props}
+      cx={cx}
+      cy={cy}
+      r={5}
+      stroke="white"
+      strokeWidth={2}
+      fill="#ffffff"
+      onMouseOver={() => console.log("hover")}
+    />
+  );
+};
+
+const Recharts = ({ data }) => {
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <AreaChart
-        data={data}
-        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-      >
+      <AreaChart data={data}>
+        <defs>
+          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#80e27e" stopOpacity={0.8} />
+            <stop offset="95%" stopColor="#80e27e" stopOpacity={0} />
+          </linearGradient>
+        </defs>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Tooltip />
+        <XAxis dataKey="date" />
+        <YAxis domain={[0, 2.5]} ticks={[0, 0.5, 1, 1.5, 2, 2.5]} />
+        <Tooltip content={<CustomTooltip />} />
         <Area
           type="monotone"
-          dataKey="percent"
-          stroke="#8884d8"
-          fill="#8884d8"
+          dataKey="value"
+          stroke="#80e27e"
+          fillOpacity={1}
+          fill="url(#colorUv)"
         />
+        <Line type="monotone" dataKey="value" stroke="#80e27e" />
+        {data.map((entry, index) => (
+          <CustomDot
+            key={`dot-${index}`}
+            cx={entry.date}
+            cy={entry.value * 160}
+          />
+        ))}
       </AreaChart>
     </ResponsiveContainer>
   );

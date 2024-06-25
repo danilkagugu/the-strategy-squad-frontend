@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 import CalendarPagination from "../CalendarPagination/CalendarPagination";
 import Calendar from "../Calendar/Calendar";
 import css from "./MonthInfo.module.css";
-// import Recharts from "../Recharts/Recharts";
+import Recharts from "../Recharts/Recharts";
 
 const MonthInfo = () => {
+  const [openRecharts, setOpenRecharts] = useState(false);
+  const toogleOpenRecharts = () => {
+    setOpenRecharts((prevState) => !prevState);
+  };
+  // console.log(openRecharts);
   const randomNumber = () => {
     return Math.floor(Math.random() * 101);
   };
@@ -19,7 +24,7 @@ const MonthInfo = () => {
   for (let i = 1; i <= currentDate.getDate(); i++) {
     arrayPercent.push(randomNumber());
   }
-  // console.log(arrayPercent);
+  console.log(dayInMounth);
   const prevMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
@@ -45,6 +50,12 @@ const MonthInfo = () => {
     }
     setDayInMounth(days);
   }, [currentDate]);
+
+  const dataRecharts = dayInMounth.map((day, i) => ({
+    date: day,
+    value: arrayPercent[i] / 100,
+  }));
+
   return (
     <>
       <div className={css.block}>
@@ -52,10 +63,14 @@ const MonthInfo = () => {
           dateNow={currentDate}
           prevMounth={prevMounth}
           nextMounth={nextMounth}
+          openRecharts={toogleOpenRecharts}
         />
-        <Calendar day={dayInMounth} randomNumber={arrayPercent} />
+        {openRecharts ? (
+          <Recharts data={dataRecharts} />
+        ) : (
+          <Calendar day={dayInMounth} randomNumber={arrayPercent} />
+        )}
       </div>
-      {/* <Recharts dayOfMouth={dayInMounth} percentWater={arrayPercent} /> */}
     </>
   );
 };
