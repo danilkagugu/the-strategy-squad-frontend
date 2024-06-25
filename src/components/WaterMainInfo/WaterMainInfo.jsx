@@ -47,6 +47,7 @@ export default function WaterMainInfo() {
       time: `${currentDay}-${data.time}`,
       amount: counter,
     });
+    closeModal();
   };
 
   return (
