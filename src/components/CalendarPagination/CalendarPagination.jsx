@@ -1,7 +1,7 @@
 import css from "./CalendarPagination.module.css";
 import sprite from "../../assets/icons.svg";
 
-const mounth = {
+const month = {
   0: "January",
   1: "February",
   2: "March",
@@ -37,7 +37,7 @@ const CalendarPagination = ({
           </svg>
         </button>
         <p className={css.calendarDate}>
-          {mounth[dateNow.getMonth()] + ", " + dateNow.getFullYear()}
+          {month[dateNow.getMonth()] + ", " + dateNow.getFullYear()}
         </p>
         <button
           className={css.btnDisabled}
