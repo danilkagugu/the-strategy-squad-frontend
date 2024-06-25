@@ -26,7 +26,10 @@
 }
 
 .avatarUpload {
-	display: inline-block;
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	align-items: center;
 	cursor: pointer;
 	background-color: transparent;
 	color: var(--dark-grey-hard);
@@ -37,7 +40,14 @@
 }
 
 .uploadIcon {
-	margin-right: 8px;
+	fill: none;
+	width: 20px;
+	height: 20px;
+}
+
+.uploadIcon use {
+	width: 20px;
+	height: 20px;
 }
 
 .avatarInput {
@@ -188,7 +198,23 @@
 	background-color: --green-btn-hover;
 }
 
+@media screen and (min-width: 320px) {
+	.form {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 375px) {
+	.form {
+		width: 343px;
+	}
+}
+
 @media screen and (min-width: 768px) {
+	.form {
+		width: 568px;
+	}
+
 	.formulaGroup {
 		flex-direction: row;
 		gap: 28px;
@@ -200,39 +226,12 @@
 }
 
 @media screen and (min-width: 1440px) {
+	.form {
+		width: 920px;
+	}
+
 	.userInfo {
 		flex-direction: row;
 		gap: 40px;
 	}
 }
-
-/* .container {
-	max-width: 100%;
-	margin: 0 auto;
-
-	background-color: var(--white);
-}
-
-@media screen and (min-width: 320px) {
-	.container {
-		padding: 16px;
-		width: 100%;
-	}
-}
-@media screen and (min-width: 375px) {
-	.container {
-		max-width: 375px;
-	}
-}
-@media screen and (min-width: 768px) {
-	.container {
-		width: 768px;
-		padding: 32px;
-	}
-}
-@media screen and (min-width: 1440px) {
-	.container {
-		width: 1440px;
-		padding: 32px;
-	}
-} */
