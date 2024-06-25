@@ -1,9 +1,9 @@
 import CalendarItem from "../CalendarItem/CalendarItem";
 
-const Calendar = ({ day }) => {
+const Calendar = ({ day, currentMonth }) => {
   return (
     <>
-      <CalendarItem allDay={day} />
+      <CalendarItem allDay={day} currentMonth={currentMonth} />
     </>
   );
 };

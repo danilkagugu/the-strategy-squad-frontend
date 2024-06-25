@@ -6,21 +6,6 @@ import Calendar from "../Calendar/Calendar";
 import css from "./MonthInfo.module.css";
 import Recharts from "../Recharts/Recharts";
 
-// const month = {
-//   0: "January",
-//   1: "February",
-//   2: "March",
-//   3: "April",
-//   4: "May",
-//   5: "June",
-//   6: "July",
-//   7: "August",
-//   8: "September",
-//   9: "October",
-//   10: "November",
-//   11: "December",
-// };
-
 const MonthInfo = () => {
   const [openRecharts, setOpenRecharts] = useState(false);
   const toogleOpenRecharts = () => {
@@ -64,7 +49,7 @@ const MonthInfo = () => {
     }
     setDayInMounth(days);
   }, [currentDate]);
-
+  console.log(currentDate.getMonth() + 1);
   const dataRecharts = dayInMounth.map((day) => ({
     date: day,
     // value: getAmountForDay(dayInMounth),
@@ -82,7 +67,10 @@ const MonthInfo = () => {
         {openRecharts ? (
           <Recharts data={dataRecharts} />
         ) : (
-          <Calendar day={dayInMounth} />
+          <Calendar
+            day={dayInMounth}
+            currentMonth={currentDate.getMonth() + 1}
+          />
         )}
       </div>
     </>
