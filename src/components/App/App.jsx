@@ -7,17 +7,19 @@ import { useDispatch } from "react-redux";
 import { apiRefreshUser } from "../../redux/auth/operations";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
-const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoundPage"));
+const NotFoundPage = lazy(() =>
+  import("../../pages/NotFoundPage/NotFoundPage")
+);
 const SignInPage = lazy(() => import("../../pages/SignInPage/SignInPage"));
 const SignUpPage = lazy(() => import("../../pages/SignUpPage/SignUpPage"));
 const TrackerPage = lazy(() => import("../../pages/TrackerPage/TrackerPage"));
 
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(apiRefreshUser())
-  }, [])
+    dispatch(apiRefreshUser());
+  }, [dispatch]);
 
   return (
     <Container>
@@ -25,11 +27,38 @@ function App() {
       <Suspense fallback={null}>
         <Routes>
           {/* <Route path="/" element={<Navigate to="/"/>}/> */}
-
-          <Route path="/" element={<RestrictedRoute><HomePage /></RestrictedRoute>} />
-          <Route path="/signup" element={<RestrictedRoute><SignUpPage /></RestrictedRoute>} />
-          <Route path="/signin" element={<RestrictedRoute><SignInPage /></RestrictedRoute>} />
-          <Route path="/tracker" element={<PrivateRoute><TrackerPage /></PrivateRoute>} />
+          <Route
+            path="/"
+            element={
+              <RestrictedRoute>
+                <HomePage />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <RestrictedRoute>
+                <SignUpPage />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              <RestrictedRoute>
+                <SignInPage />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="/tracker"
+            element={
+              <PrivateRoute>
+                <TrackerPage />
+              </PrivateRoute>
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

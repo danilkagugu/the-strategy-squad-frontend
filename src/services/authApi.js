@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const instance = axios.create({
+export const instance = axios.create({
     baseURL: "http://localhost:3030",
 });
 
@@ -17,11 +17,11 @@ export const requestSignUp = async (formData) => {
     const { data } = await instance.post("/api/users/register", formData);
 
     return data;
+
 };
 export const requestSignIn = async (formData) => {
-
     const { data } = await instance.post("/api/users/login", formData);
-    setToken(data.token)
+    setToken(data.token);
     return data;
 };
 
@@ -33,7 +33,6 @@ export const requestGetCurrentUser = async () => {
 
 export const requestLogOut = async () => {
     const { data } = await instance.post("/api/users/logout");
-
 
     return data;
 };
