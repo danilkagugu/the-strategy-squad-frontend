@@ -1,8 +1,24 @@
 import css from "./AdvantagesSection.module.css";
+import sprite from "../../assets/icons.svg";
 
-const AdvantagesSection = () => {
+import customers1Mob from "../../assets/customers/mobile/customers1-mob.png";
+import customers1Mob2x from "../../assets/customers/mobile/customers1-mob@2x.png";
+import customers2Mob from "../../assets/customers/mobile/customers2-mob.png";
+import customers2Mob2x from "../../assets/customers/mobile/customers2-mob@2x.png";
+import customers3Mob from "../../assets/customers/mobile/customers3-mob.png";
+import customers3Mob2x from "../../assets/customers/mobile/customers3-mob@2x.png";
+
+import customers1TabDesc from "../../assets/customers/desktop-tablet/customers1-tab-desc.png";
+import customers1TabDesc2x from "../../assets/customers/desktop-tablet/customers1-tab-desc@2x.png";
+import customers2TabDesc from "../../assets/customers/desktop-tablet/customers2-tab-desc.png";
+import customers2TabDesc2x from "../../assets/customers/desktop-tablet/customers2-tab-desc@2x.png";
+import customers3TabDesc from "../../assets/customers/desktop-tablet/customers3-tab-desc.png";
+import customers3TabDesc2x from "../../assets/customers/desktop-tablet/customers3-tab-desc@2x.png";
+
+const AdvantagesSection = (props) => {
+  const { isHideMobile } = props;
   return (
-    <div className={css.sectionWrapper}>
+    <div className={`${css.sectionWrapper} ${isHideMobile ? css.mobileHide : ''}`}>
       <div className={css.customersWrapper}>
         <div>
           <ul className={css.imgWrapper}>
@@ -10,51 +26,39 @@ const AdvantagesSection = () => {
               <picture>
                 <source
                   media="(min-width: 768px)"
-                  srcSet="src\assets\customers\desktop-tablet\customers1-tab-desc.png, src\assets\customers\desktop-tablet\customers1-tab-desc@2x.png 2x"
+                  srcSet={`${customers1TabDesc}, ${customers1TabDesc2x} 2x`}
                 />
                 <source
                   media="(max-width: 767px)"
-                  srcSet="src\assets\customers\mobile\customers1-mob.png, src\assets\customers\mobile\customers1-mob@2x.png 2x"
+                  srcSet={`${customers1Mob}, ${customers1Mob2x} 2x`}
                 />
-                <img
-                  src="src\assets\customers\mobile\customers1-mob.png"
-                  alt="girl"
-                  className={css.personImg}
-                />
+                <img src={customers1Mob} alt="girl" className={css.personImg} />
               </picture>
             </li>
             <li className={css.customerTwo}>
               <picture>
                 <source
                   media="(min-width: 768px)"
-                  srcSet="src\assets\customers\desktop-tablet\customers2-tab-desc.png, src\assets\customers\desktop-tablet\customers2-tab-desc@2x.png 2x"
+                  srcSet={`${customers2TabDesc}, ${customers2TabDesc2x} 2x`}
                 />
                 <source
                   media="(max-width: 767px)"
-                  srcSet="src\assets\customers\mobile\customers2-mob.png, src\assets\customers\mobile\customers2-mob@2x.png 2x"
+                  srcSet={`${customers2Mob}, ${customers2Mob2x} 2x`}
                 />
-                <img
-                  src="src\assets\customers\mobile\customers2-mob.png"
-                  alt="boy"
-                  className={css.personImg}
-                />
+                <img src={customers2Mob} alt="boy" className={css.personImg} />
               </picture>
             </li>
             <li className={css.customerThree}>
               <picture>
                 <source
                   media="(min-width: 768px)"
-                  srcSet="src\assets\customers\desktop-tablet\customers3-tab-desc.png, src\assets\customers\desktop-tablet\customers3-tab-desc@2x.png 2x"
+                  srcSet={`${customers3TabDesc}, ${customers3TabDesc2x} 2x`}
                 />
                 <source
                   media="(max-width: 767px)"
-                  srcSet="src\assets\customers\mobile\customers3-mob.png, src\assets\customers\mobile\customers3-mob@2x.png 2x"
+                  srcSet={`${customers3Mob}, ${customers3Mob2x} 2x`}
                 />
-                <img
-                  src="src\assets\customers\mobile\customers3-mob.png"
-                  alt="girl"
-                  className={css.personImg}
-                />
+                <img src={customers3Mob} alt="girl" className={css.personImg} />
               </picture>
             </li>
           </ul>
@@ -67,7 +71,12 @@ const AdvantagesSection = () => {
       </div>
       <ul className={css.benefits}>
         <li>
-          <p className={`${css.habit} ${css.item}`}>Habit drive</p>
+          <p className={`${css.habit} ${css.item}`}>
+            <svg className={css.iconEllipse} width={8} height={8}>
+              <use href={`${sprite}#icon-ellipse`}></use>
+            </svg>
+            Habit drive
+          </p>
         </li>
         <li>
           <p className={`${css.view} ${css.item}`}>View statistics</p>

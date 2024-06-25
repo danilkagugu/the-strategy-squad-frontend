@@ -1,14 +1,15 @@
-
-
 .sectionWrapper {
   border-radius: 30px;
   width: 343px;
   height: 353px;
   background-image: url("../../assets/background/mobile/home-bg-mob.png");
-  padding-right: 16px;
-  padding-bottom: 32px;
-  padding-top: 209px;
-  padding-left: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 209px 16px 32px 16px;
+}
+
+.mobileHide {
+  display: block;
 }
 
 @media only screen and (min-resolution: 192dpi) {
@@ -72,6 +73,11 @@
   margin-left: auto;
 }
 
+.iconEllipse {
+  fill: var(--green-btn);
+  margin-right: 5px;
+}
+
 .item {
   display: inline-block;
   border-radius: 30px;
@@ -102,9 +108,9 @@
 }
 
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
-    .sectionWrapper {
-        background-image: url(../../assets/background/tablet/home-bg-tablet@2x.png);
-    }
+  .sectionWrapper {
+    background-image: url(../../assets/background/tablet/home-bg-tablet@2x.png);
+  }
 }
 
 @media (min-width: 768px) {
@@ -113,10 +119,7 @@
     width: 704px;
     height: 446px;
     background-image: url("../../assets/background/tablet/home-bg-tablet.png");
-    padding-right: 32px;
-    padding-bottom: 32px;
-    padding-top: 283px;
-    padding-left: 32px;
+    padding: 283px 32px 32px 32px;
   }
 
   .customersWrapper {
@@ -169,12 +172,16 @@
   }
 }
 
-
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .sectionWrapper {
+    background-image: url("../../assets/background/tablet/home-bg-tablet@2x.png");
+  }
+}
 
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
-    .sectionWrapper {
-        background-image: url(../../assets/background/dectop/home-bg-desctop@2x.png);
-    }
+  .sectionWrapper {
+    background-image: url(../../assets/background/dectop/home-bg-desctop@2x.png);
+  }
 }
 
 @media (min-width: 1440px) {
@@ -188,5 +195,16 @@
 
   .benefits {
     margin-top: 56px;
+  }
+}
+
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .sectionWrapper {
+    background-image: url("../../assets/background/dectop/home-bg-desctop@2x.png");
+  }
+}
+@media (max-width: 1440px) {
+  .mobileHide {
+    display: none;
   }
 }

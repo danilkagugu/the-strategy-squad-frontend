@@ -1,15 +1,15 @@
-.singUpFormWrapper {
+.signInFormWrapper {
     border-radius: 30px;
     height: 780px;
     background-color: var(--light-gray);
 
 }
 
-.signUpContainer {
+.signInContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 126px 16px 170px
+    padding: 172px 16px 216px;
 }
 
 .inputConatiner {
@@ -18,7 +18,7 @@
     row-gap: 16px;
 }
 
-.logoSingUp {
+.logoSingIn {
     padding: 24px 16px 0px 16px;
 
 }
@@ -28,12 +28,6 @@
     flex-direction: column;
     width: 100%;
 
-
-}
-
-
-.singUpIcon {
-    display: none;
 
 }
 
@@ -61,6 +55,10 @@
 
 }
 
+.singUpIcon {
+    display: none;
+
+}
 
 .inputIconWrapper {
     position: relative;
@@ -70,6 +68,18 @@
 
     box-sizing: border-box;
     border: 1px solid rgba(47, 47, 47, 0.2);
+    background-color: var(--light-gray);
+    border-radius: 15px;
+    padding: 16px;
+    width: 100%;
+    height: 50px;
+    transition: border-color 0.3s ease;
+    color: var(--dark-grey-medium);
+}
+
+.errorMsgInput {
+    box-sizing: border-box;
+    border: 1px solid red;
     background-color: var(--light-gray);
     border-radius: 15px;
     padding: 16px;
@@ -144,18 +154,18 @@
 
 
 @media screen and (min-width: 375px) {
-    .singUpFormWrapper {
+    .signInFormWrapper {
         border-radius: 30px;
         height: 780px;
         background-color: var(--light-gray);
 
     }
 
-    .signUpContainer {
+    .signInContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 126px 16px 170px
+        padding: 172px 16px 216px;
     }
 
     .inputConatiner {
@@ -164,7 +174,7 @@
         row-gap: 16px;
     }
 
-    .logoSingUp {
+    .logoSingIn {
         padding: 24px 16px 0px 16px;
 
     }
@@ -201,11 +211,10 @@
 
     }
 
-    /* 
     .singUpIcon {
         display: none;
 
-    } */
+    }
 
     .inputIconWrapper {
         position: relative;
@@ -213,9 +222,9 @@
 
     .formInputRegistration {
 
-
         padding: 16px;
         width: 100%;
+        height: 50px;
 
     }
 
@@ -282,18 +291,16 @@
 
 @media screen and (min-width: 768px) {
 
-    .singUpFormWrapper {
+    .signInFormWrapper {
 
         height: 960px;
     }
 
-    .signUpContainer {
+    .signInContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        /* height: 506px; */
-        padding: 171px 134px 227px
+        padding: 225px 134px 281px
     }
 
 
@@ -307,7 +314,7 @@
 
 
 
-    .logoSingUp {
+    .logoSingIn {
         padding: 32px 488px 0px 33px;
 
     }
@@ -441,17 +448,17 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .singUpFormWrapper {
+    .signInFormWrapper {
 
         height: 736px;
 
     }
 
-    .signUpContainer {
+    .signInContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 74px 118px 100px
+        padding: 113px 118px 169px
     }
 
 
@@ -463,7 +470,7 @@
 
 
 
-    .logoSingUp {
+    .logoSingIn {
         padding: 32px 488px 0px 33px;
 
     }
@@ -590,4 +597,5 @@
         text-decoration: underline;
 
     }
+
 }
