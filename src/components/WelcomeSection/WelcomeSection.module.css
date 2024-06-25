@@ -2,9 +2,7 @@
   width: 343px;
   background-color: var(--light-gray);
   border-radius: 30px;
-  padding-top: 24px;
-  padding-left: 16px;
-  padding-bottom: 67px;
+  padding: 24px 16px 67px 16px;
   color: var(--dark-grey-medium);
 }
 
@@ -73,12 +71,15 @@
   color: var(--green-btn-hover);
 }
 
+.point {
+  color: var(--green-btn);
+  border-radius: 50%;
+} 
+
 @media (min-width: 768px) {
   .welcomeWrapper {
     width: 704px;
-    padding-top: 32px;
-    padding-left: 32px;
-    padding-bottom: 50px;
+    padding: 32px 32px 50px 32px;
   }
 
   .mainInfo {

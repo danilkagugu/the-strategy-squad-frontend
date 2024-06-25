@@ -1,0 +1,9 @@
+.box_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+.main {
+  margin-top: 40px;
+}

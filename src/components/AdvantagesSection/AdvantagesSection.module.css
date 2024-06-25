@@ -1,0 +1,210 @@
+.sectionWrapper {
+  border-radius: 30px;
+  width: 343px;
+  height: 353px;
+  background-image: url("../../assets/background/mobile/home-bg-mob.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 209px 16px 32px 16px;
+}
+
+.mobileHide {
+  display: block;
+}
+
+@media only screen and (min-resolution: 192dpi) {
+  .sectionWrapper {
+    background-image: url("../../assets/background/mobile/home-bg-mob@2x.png");
+  }
+}
+
+.customersWrapper {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: 160px;
+  height: 48px;
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white);
+  margin-bottom: 8px;
+}
+
+.imgWrapper {
+  display: flex;
+  position: relative;
+  width: 60px;
+}
+
+.personImg {
+  width: 26px;
+  height: 28px;
+}
+
+.customerThree {
+  margin-left: auto;
+}
+
+.customerTwo {
+  position: absolute;
+  left: 17px;
+}
+
+.customerOne {
+  z-index: 999;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.17;
+}
+
+.textAccent {
+  color: var(--green-btn);
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 168px;
+  height: 56px;
+  margin-left: auto;
+}
+
+.iconEllipse {
+  fill: var(--green-btn);
+  margin-right: 5px;
+}
+
+.item {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 9px 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  height: 26px;
+}
+
+.habit {
+  background-color: var(--dark-grey-medium);
+  color: var(--white);
+  width: 81px;
+}
+
+.view {
+  width: 83px;
+  background-color: var(--green-btn);
+}
+
+.personal {
+  background-color: var(--white);
+  width: 108px;
+}
+
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .sectionWrapper {
+    background-image: url(../../assets/background/tablet/home-bg-tablet@2x.png);
+  }
+}
+
+@media (min-width: 768px) {
+  .sectionWrapper {
+    display: flex;
+    width: 704px;
+    height: 446px;
+    background-image: url("../../assets/background/tablet/home-bg-tablet.png");
+    padding: 283px 32px 32px 32px;
+  }
+
+  .customersWrapper {
+    width: 237px;
+    height: 67px;
+    margin-bottom: 0;
+    gap: 4px;
+  }
+
+  .imgWrapper {
+    width: 115px;
+  }
+
+  .text {
+    font-size: 15px;
+    line-height: 1.49;
+  }
+
+  .personImg {
+    width: 47px;
+    height: 47px;
+  }
+
+  .customerTwo {
+    left: 35px;
+  }
+
+  .item {
+    font-size: 12px;
+    padding: 11px 16px;
+    height: 34px;
+  }
+
+  .benefits {
+    width: 242px;
+    gap: 10px;
+    margin-top: 54px;
+  }
+
+  .habit {
+    width: 111px;
+  }
+
+  .view {
+    width: 121px;
+  }
+
+  .personal {
+    width: 158px;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .sectionWrapper {
+    background-image: url("../../assets/background/tablet/home-bg-tablet@2x.png");
+  }
+}
+
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .sectionWrapper {
+    background-image: url(../../assets/background/dectop/home-bg-desctop@2x.png);
+  }
+}
+
+@media (min-width: 1440px) {
+  .sectionWrapper {
+    width: 672px;
+    height: 736px;
+    background-image: url("../../assets/background/dectop/home-bg-desctop.png");
+    padding-bottom: 64px;
+    padding-top: 537px;
+  }
+
+  .benefits {
+    margin-top: 56px;
+  }
+}
+
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .sectionWrapper {
+    background-image: url("../../assets/background/dectop/home-bg-desctop@2x.png");
+  }
+}
+@media (max-width: 1440px) {
+  .mobileHide {
+    display: none;
+  }
+}

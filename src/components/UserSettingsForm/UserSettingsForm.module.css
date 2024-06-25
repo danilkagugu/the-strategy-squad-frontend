@@ -1,0 +1,237 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding-top: 20px;
+}
+
+.settingsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	align-items: flex-start;
+}
+
+.avatarContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.avatar {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+}
+
+.avatarUpload {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	align-items: center;
+	cursor: pointer;
+	background-color: transparent;
+	color: var(--dark-grey-hard);
+	font-size: 14px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+	border: none;
+}
+
+.uploadIcon {
+	fill: none;
+	width: 20px;
+	height: 20px;
+}
+
+.uploadIcon use {
+	width: 20px;
+	height: 20px;
+}
+
+.avatarInput {
+	display: none;
+}
+
+.optionTitle {
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: -1%;
+	color: var(--dark-grey-hard);
+	line-height: 1.25;
+}
+
+.genderOptions {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
+	padding-top: 14px;
+}
+
+.radioBox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+	color: var(--dark-grey-hard);
+	font-size: 14px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+}
+
+.radio {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid var(--green-btn);
+	position: relative;
+	cursor: pointer;
+}
+
+.radio:checked::before {
+	content: '';
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--green-btn);
+	position: absolute;
+	top: 4px;
+	left: 4px;
+}
+
+.userInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.formGroup {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.fieldsGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.inputGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.requiredWaterGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.textInput {
+	width: 100%;
+	padding: 14px 16px;
+	border: 1px solid rgba(47, 47, 47, 0.15);
+	border-radius: 15px;
+	box-sizing: border-box;
+	color: var(--dark-grey-hard);
+	font-size: 14px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+}
+
+.formulaGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.formulaContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.formula {
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: -1%;
+	color: var(--green-btn);
+}
+
+.normaInfo {
+	border: 1px solid rgba(47, 47, 47, 0.15);
+	border-radius: 15px;
+	padding: 16px;
+}
+
+.normaInfoText {
+	color: rgba(47, 47, 47, 0.6);
+	font-size: 14px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+}
+
+.button {
+	width: 116px;
+	height: 46px;
+	border: none;
+	border-radius: 30px;
+	background-color: var(--green-btn);
+	color: var(--dark-grey-medium);
+	font-size: 14px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+	font-weight: bold;
+}
+
+.button:hover {
+	background-color: --green-btn-hover;
+}
+
+@media screen and (min-width: 320px) {
+	.form {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 375px) {
+	.form {
+		width: 343px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.form {
+		width: 568px;
+	}
+
+	.formulaGroup {
+		flex-direction: row;
+		gap: 28px;
+	}
+
+	.requiredWaterGroup {
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.form {
+		width: 920px;
+	}
+
+	.userInfo {
+		flex-direction: row;
+		gap: 40px;
+	}
+}

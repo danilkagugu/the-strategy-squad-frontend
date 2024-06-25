@@ -1,0 +1,46 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--green-btn);
+  background-image: url("../../assets/background/mobile/tracker-bg-mob.png");
+  background-size: 262px 335px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 16px;
+  padding-top: 28px;
+  border-radius: 30px;
+  height: 415px;
+}
+@media only screen and (min-resolution: 192dpi) {
+  .box {
+    background-image: url("../../assets/background/mobile/tracker-bg-mob@2x.png");
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    height: 578px;
+    background-size: 53%;
+    padding: 32px;
+    background-image: url("../../assets/background/dectop/tracker-bg-desctop.png");
+  }
+}
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .box {
+    background-image: url("../../assets/background/tablet/tracker-bg-tablet@2x.png");
+  }
+}
+@media screen and (min-width: 1440px) {
+  .box {
+    width: 50%;
+    background-size: 58%;
+    background-image: url("../../assets/background/dectop/tracker-bg-desctop.png");
+  }
+}
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .box {
+    background-image: url("../../assets/background/dectop/tracker-bg-desctop@2x.png");
+  }
+}
