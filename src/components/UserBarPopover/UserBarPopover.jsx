@@ -1,9 +1,13 @@
+
 import { useState } from "react";
 import sprite from "../../assets/icons.svg";
 import css from "./UserBarPopover.module.css";
 // import ModalWrapper from '../ModalWrapper/ModalWrapper';
 import UserSettingsModal from "../UserSettingsModal/UserSettingsModal";
-const UserBarPopover = ({ modalRef }) => {
+import LogOutModal from "../LogOutModal/LogOutModal"
+
+const UserBarPopover = ({ modalRef, modalIsOpen, closeModal, openModal }) => {
+
   const [isOpen, setIsOpen] = useState(false);
 
   const onOpenModal = () => setIsOpen(true);
@@ -25,12 +29,13 @@ const UserBarPopover = ({ modalRef }) => {
           </svg>
           <p className={css.textBarPopover}>Setting</p>
         </button>
-        <button className={css.btnBar}>
+        <button className={css.btnBar} onClick={openModal}>
           <svg className={css.icon}>
             <use href={`${sprite}#icon-log-out`}></use>
           </svg>
           <p className={css.textBarPopover}>Log out</p>
         </button>
+        {modalIsOpen && <LogOutModal modalIsOpen={modalIsOpen} closeModal={closeModal} />}
       </div>
     </>
   );

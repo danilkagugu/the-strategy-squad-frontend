@@ -9,8 +9,10 @@ const UserSettingsModal = ({ isOpen, onCloseModal, modalRef }) => {
         modalIsOpen={isOpen}
         onCloseModal={onCloseModal}
         contentLabel="User Settings"
+        top="10%"
+        transform="translate(-50%, 0)"
       >
-        <div className={css.settingsModal} ref={modalRef}>
+        <div ref={modalRef}>
           <h3 className={css.title}>Setting</h3>
           <UserSettingsForm />
         </div>

@@ -1,0 +1,84 @@
+.wrapper {
+    text-align: center;
+}
+
+title {
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.closeButton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    background: transparent;
+    border-color: transparent;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    padding: 0px;
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 356px;
+}
+
+.deleteButton {
+    width: 170px;
+    padding: 18px 67px 18px 67px;
+    border-radius: 30px;
+    background: rgba(155, 225, 160, 1);
+    border-color: transparent;
+
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+}
+
+.cancelButton {
+    width: 176px;
+    /* height: 60px; */
+    padding: 18px 59px 18px 59px;
+    gap: 10px;
+    border-radius: 30px;
+    opacity: 0px;
+    background: rgba(240, 239, 244, 1);
+    border-color: transparent;
+
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    background: rgba(50, 63, 71, 0.3);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+}

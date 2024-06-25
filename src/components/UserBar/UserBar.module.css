@@ -26,3 +26,9 @@
   font-weight: 700;
   line-height: 24px;
 }
+
+.fatherDiv {
+  position: fixed;
+  z-index: 1000;
+  top: 150px;
+}

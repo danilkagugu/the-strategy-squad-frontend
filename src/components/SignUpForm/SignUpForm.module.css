@@ -75,7 +75,15 @@
     padding: 16px;
     width: 100%;
     height: 50px;
-    transition: border-color 0.3s ease;
+    color: var(--dark-grey-medium);
+}
+
+.formInputError {
+    color: red;
+    border-color: red;
+}
+
+.formInputValid {
     color: var(--dark-grey-medium);
 }
 
@@ -116,8 +124,14 @@
     color: var(--dark-grey-medium);
 }
 
+.submitBtn:hover,
+.submitBtn:focus {
+    background-color: var(--green-btn-hover);
+}
+
 .errorMsg {
     color: red;
+    font-size: 14px;
 }
 
 .registrationText {
@@ -143,7 +157,7 @@
 }
 
 
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
     .singUpFormWrapper {
         border-radius: 30px;
         height: 780px;
@@ -201,13 +215,13 @@
 
     }
 
-    /* 
+    
     .singUpIcon {
         display: none;
 
-    } */
+    } 
 
-    .inputIconWrapper {
+.inputIconWrapper {
         position: relative;
     }
 
@@ -278,7 +292,7 @@
         text-decoration: underline;
 
     }
-}
+}   */
 
 @media screen and (min-width: 768px) {
 
