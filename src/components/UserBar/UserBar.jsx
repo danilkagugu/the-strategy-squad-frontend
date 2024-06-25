@@ -15,7 +15,10 @@ const UserBar = () => {
   };
 
   const handleClickOutside = (event) => {
-    if ((buttonRef.current && buttonRef.current.contains(event.target)) || isOpenLogOut) {
+    if (
+      (buttonRef.current && buttonRef.current.contains(event.target)) ||
+      isOpenLogOut
+    ) {
       return;
     }
     if (modalRef.current && modalRef.current.contains(event.target)) {
@@ -52,10 +55,16 @@ const UserBar = () => {
         )}
       </button>
       {isOpen ? (
-        <ClickOutSide onClickOutside={handleClickOutside}>
-
-          <UserBarPopover modalRef={modalRef} modalIsOpen={isOpenLogOut} closeModal={closeModal} openModal={openModal} />
-        </ClickOutSide>
+        <div className={css.fatherDiv}>
+          <ClickOutSide onClickOutside={handleClickOutside}>
+            <UserBarPopover
+              modalRef={modalRef}
+              modalIsOpen={isOpenLogOut}
+              closeModal={closeModal}
+              openModal={openModal}
+            />
+          </ClickOutSide>
+        </div>
       ) : null}
     </div>
   );
