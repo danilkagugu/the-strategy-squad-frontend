@@ -26,7 +26,6 @@ const CalendarPagination = ({
     dateNow.getFullYear() > new Date().getFullYear() ||
     (dateNow.getFullYear() === new Date().getFullYear() &&
       dateNow.getMonth() >= new Date().getMonth());
-  console.log(dateNow.getMonth());
   return (
     <div className={css.headerCalendar}>
       <p className={css.mouth}>Mounth</p>
