@@ -5,11 +5,13 @@ import css from "./WaterDetailedInfo.module.css";
 import { useState } from "react";
 
 const WaterDetailedInfo = () => {
-  const currentDate = new Date();
-  const [selectDay, setSelectDay] = useState(currentDate.getDate());
+  const date = new Date();
+  const currentDay = date.getDate().toString().padStart(2, "0");
+
+  const [selectDay, setSelectDay] = useState(currentDay);
   console.log(selectDay);
   const clickOnDay = (day) => {
-    setSelectDay(day);
+    setSelectDay(day.toString().padStart(2, "0"));
   };
   return (
     <div className={css.waterDetailedInfo}>
@@ -22,3 +24,6 @@ const WaterDetailedInfo = () => {
 };
 
 export default WaterDetailedInfo;
+{
+  /* <DailyInfo selectDay={selectDay.toString().padStart(2, "0")} />; */
+}
