@@ -17,11 +17,10 @@ const MonthInfo = ({ clickOnDay, currentDate, setCurrentDate }) => {
   // const [currentDate, setCurrentDate] = useState(new Date());
   const [dayInMounth, setDayInMounth] = useState([]);
   const data = useSelector(selectWaterPerMonth);
-
   const toogleOpenRecharts = () => {
     setOpenRecharts((prevState) => !prevState);
   };
-
+  // console.log(new Date(currentDate.getFullYear(), currentDate.getMonth()));
   const prevMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
@@ -57,10 +56,13 @@ const MonthInfo = ({ clickOnDay, currentDate, setCurrentDate }) => {
     const totalAmount = records.reduce((sum, record) => sum + record.amount, 0);
     return Math.round((totalAmount / 2000) * 100);
   };
-  console.log(currentDate.getMonth() + 1);
+  // console.log((currentDate.getMonth() + 1).toString().padStart(2, "0"));
   const dataRecharts = dayInMounth.map((day) => ({
     date: day,
-    value: getAmountForDayAndMonth(day, currentDate.getMonth() + 1),
+    value: getAmountForDayAndMonth(
+      day,
+      (currentDate.getMonth() + 1).toString().padStart(2, "0")
+    ),
   }));
 
   return (

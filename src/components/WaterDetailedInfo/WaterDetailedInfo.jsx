@@ -1,43 +1,31 @@
 import MonthInfo from "../MonthInfo/MonthInfo";
-import DailyInfo from "../DailyInfo/DailyInfo";
+// import DailyInfo from "../DailyInfo/DailyInfo";
+import TestDailyInfo from "../DailyInfo/TestDailyInfo";
 import UserPanel from "../UserPanel/UserPanel";
 import css from "./WaterDetailedInfo.module.css";
 import { useState } from "react";
 
 const WaterDetailedInfo = () => {
-  const [selectDay, setSelectDay] = useState(new Date().getDate());
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const date = new Date();
+  const currentDay = date.getDate().toString().padStart(2, "0");
 
+  const [selectDay, setSelectDay] = useState(currentDay);
+  console.log(selectDay);
   const clickOnDay = (day) => {
-    setSelectDay(day);
+    setSelectDay(day.toString().padStart(2, "0"));
   };
-
-  const getMonthName = (date) => {
-    return date.toLocaleString("en-US", { month: "long" });
-  };
-
-  // Отримання назви поточного місяця
-  const currentMonth = getMonthName(currentDate);
-
-  let formedData;
-  if (selectDay === new Date().getDate()) {
-    formedData = "Today";
-  } else {
-    formedData = `${selectDay}, ${currentMonth}`;
-  }
-
   return (
     <div className={css.waterDetailedInfo}>
       <UserPanel />
 
-      <DailyInfo data={formedData} />
-      <MonthInfo
-        currentDate={currentDate}
-        setCurrentDate={setCurrentDate}
-        clickOnDay={clickOnDay}
-      />
+      {/* <DailyInfo selectDay={selectDay} /> */}
+      <TestDailyInfo selectDay={selectDay} />
+      <MonthInfo clickOnDay={clickOnDay} />
     </div>
   );
 };
 
 export default WaterDetailedInfo;
+{
+  /* <DailyInfo selectDay={selectDay.toString().padStart(2, "0")} />; */
+}
