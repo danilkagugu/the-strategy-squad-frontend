@@ -1,10 +1,9 @@
 import { useState } from "react";
 import css from "./WaterItem.module.css";
-import sprite from "../../assets/sprite.svg";
-import { BaseModal } from "../BaseModal/BaseModal";
-import { WaterModal } from "../WaterModal/WaterModal";
-import { DeleteModal } from "../DeleteModal/DeleteModal";
-import { GlobalModal } from "../globalModal/globalModal";
+import sprite from "../../assets/icons.svg";
+// import { WaterModal } from "../WaterModal/WaterModal";
+//import { DeleteModal } from "../DeleteModal/DeleteModal";
+//import { GlobalModal } from "../globalModal/globalModal";
 
 export function WaterItem({ item }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,19 +49,19 @@ export function WaterItem({ item }) {
         </button>
       </div>
 
-      <div>
+      {/* <div>
         <BaseModal isOpen={isOpen} onClose={closeModal}>
-          <WaterModal mode={"edit"} onClose={closeModal} water={item} />
+          <WaterModal mode={"edit"} onClose={closeModal} water={item} /> 
         </BaseModal>
-      </div>
+      </div> */}
 
-      <GlobalModal
+      {/* <GlobalModal
         isOpen={isOpenDelete}
         title={"Delete"}
         onRequestClose={closeModalDelete}
-      >
-        <DeleteModal onRequestClose={closeModalDelete} water={item} />
-      </GlobalModal>
+      > */}
+        {/* <DeleteModal onRequestClose={closeModalDelete} water={item} /> */}
+      {/* </GlobalModal> */}
     </div>
   );
 }

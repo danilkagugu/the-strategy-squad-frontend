@@ -5,7 +5,7 @@ import { useRef, useEffect } from "react";
 
 export function WaterList() {
   const { waterRecord } = useWater().waterPerDay;
-
+ 
   function useHorizontalScroll() {
     const elRef = useRef();
     useEffect(() => {
@@ -28,7 +28,7 @@ export function WaterList() {
 
   return (
     <div ref={useHorizontalScroll()} className={css.waterList}>
-      {waterRecord.length > 0 ? (
+      {waterRecord ?.length > 0 ? (
         waterRecord.map((value) => {
           return <WaterItem key={value._id} item={value} />;
         })

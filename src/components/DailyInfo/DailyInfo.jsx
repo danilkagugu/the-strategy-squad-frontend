@@ -1,11 +1,11 @@
 import AddWaterBtn from "../AddWaterBtn/AddWaterBtn";
 import ChooseDate from "../ChooseDate/ChooseDate";
-import WaterList from "../WaterList/WaterList";
 import css from "../AddWaterBtn/AddWaterBtnDaily.module.css";
 import style from "./DailyInfo.module.css";
 import { useState } from "react";
-import WaterModal from "../WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
+import { WaterList } from "../WaterList/WaterList";
+// import WaterModal from "../WaterModal/WaterModal";
 export default function DailyInfo() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -19,7 +19,7 @@ export default function DailyInfo() {
   }
   return (
     <div className={style.main}>
-      {isOpen && <WaterModal onCloseModal={closeModal} isOpen={isOpen} />}
+      {/* {isOpen && <WaterModal onCloseModal={closeModal} isOpen={isOpen} />} */}
       <div className={style.box_flex}>
         <ChooseDate />
         <AddWaterBtn
