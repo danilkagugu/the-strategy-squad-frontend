@@ -20,21 +20,16 @@
 
 .logoSingUp {
     padding: 24px 16px 0px 16px;
-
 }
 
 .formRegistration {
     display: flex;
     flex-direction: column;
     width: 100%;
-
-
 }
-
 
 .singUpIcon {
     display: none;
-
 }
 
 .formTitle {
@@ -43,14 +38,12 @@
     font-size: 32px;
     line-height: 32px;
     padding-bottom: 32px;
-
 }
 
 .labelRegistration {
     display: flex;
     flex-direction: column;
     gap: 8px;
-
 }
 
 .formRegistrationText {
@@ -58,16 +51,13 @@
     font-weight: 700;
     line-height: 18px;
     color: var(--dark-grey-hard);
-
 }
-
 
 .inputIconWrapper {
     position: relative;
 }
 
 .formInputRegistration {
-
     box-sizing: border-box;
     border: 1px solid rgba(47, 47, 47, 0.2);
     background-color: var(--light-gray);
@@ -83,8 +73,16 @@
     border-color: red;
 }
 
+.formInputError:focus {
+    color: red;
+    border-color: red !important;
+    outline: none;
+
+}
+
 .formInputValid {
     color: var(--dark-grey-medium);
+    border-color: rgba(47, 47, 47, 0.2);
 }
 
 .formInputRegistration::placeholder {
@@ -111,8 +109,7 @@
 }
 
 .submitBtn {
-    border: 1px solid var(--green-btn-hover);
-    background-color: var(--green-btn-hover);
+    background-color: var(--green-btn);
     border-radius: 30px;
     padding: 16px;
     height: 50px;
@@ -122,6 +119,7 @@
     line-height: 18px;
     text-align: center;
     color: var(--dark-grey-medium);
+    transition: background 0.3s ease;
 }
 
 .submitBtn:hover,
@@ -153,210 +151,35 @@
     color: var(--dark-grey-hard);
     text-decoration: none;
     text-decoration: underline;
-
 }
 
-
-/* @media screen and (min-width: 375px) {
-    .singUpFormWrapper {
-        border-radius: 30px;
-        height: 780px;
-        background-color: var(--light-gray);
-
-    }
-
-    .signUpContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 126px 16px 170px
-    }
-
-    .inputConatiner {
-        display: flex;
-        flex-direction: column;
-        row-gap: 16px;
-    }
-
-    .logoSingUp {
-        padding: 24px 16px 0px 16px;
-
-    }
-
-    .formRegistration {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-
-    }
-
-    .formTitle {
-        color: var(--dark-grey-medium);
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 32px;
-        padding-bottom: 32px;
-
-    }
-
-    .labelRegistration {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-
-    }
-
-    .formRegistrationText {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 18px;
-        color: var(--dark-grey-hard);
-
-    }
-
-    
-    .singUpIcon {
-        display: none;
-
-    } 
-
-.inputIconWrapper {
-        position: relative;
-    }
-
-    .formInputRegistration {
-
-
-        padding: 16px;
-        width: 100%;
-
-    }
-
-    .formInputRegistration::placeholder {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 18px;
-        color: rgba(47, 47, 47, 0.6);
-    }
-
-    .formInputRegistration:focus {
-        border-color: rgba(47, 47, 47, 0.6);
-        outline: none;
-    }
-
-    .formInputRegistration:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0px 1000px var(--light-gray) inset;
-        -webkit-text-fill-color: var(--dark-grey-medium) !important;
-        transition: background-color 5000s ease-in-out 0s;
-    }
-
-    .formInputRegistration:-internal-autofill-selected {
-        background-color: var(--light-gray) !important;
-        color: var(--dark-grey-medium) !important;
-    }
-
-    .submitBtn {
-        border: 1px solid var(--green-btn-hover);
-        background-color: var(--green-btn-hover);
-        border-radius: 30px;
-        padding: 16px;
-        margin-top: 32px;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 18px;
-        text-align: center;
-        color: var(--dark-grey-medium);
-    }
-
-    .errorMsg {
-        color: red;
-    }
-
-    .registrationText {
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 18px;
-        margin: 16px 0px 0px
-    }
-
-    .registrationTextInfo {
-        font-weight: 400;
-        color: rgba(47, 47, 47, 0.5)
-    }
-
-    .signInLink {
-        font-weight: 700;
-        color: var(--dark-grey-hard);
-        text-decoration: none;
-        text-decoration: underline;
-
-    }
-}   */
 
 @media screen and (min-width: 768px) {
 
     .singUpFormWrapper {
-
         height: 960px;
     }
 
     .signUpContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        /* height: 506px; */
         padding: 171px 134px 227px
     }
 
-
-
-
     .inputConatiner {
-        display: flex;
-        flex-direction: column;
         row-gap: 20px;
     }
 
-
-
     .logoSingUp {
         padding: 32px 488px 0px 33px;
-
-    }
-
-
-    .formRegistration {
-        display: flex;
-        flex-direction: column;
-
-
-
     }
 
     .formTitle {
-        color: var(--dark-grey-medium);
-        font-weight: 700;
         font-size: 36px;
         line-height: 38px;
-        padding-bottom: 32px;
-
-    }
-
-    .labelRegistration {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-
     }
 
     .formRegistrationText {
         font-size: 16px;
-        font-weight: 700;
         line-height: 24px;
-        color: var(--dark-grey-hard);
-
     }
 
     .singUpIcon {
@@ -368,151 +191,57 @@
         stroke-width: 0;
         stroke: currentColor;
         fill: currentColor;
-
-    }
-
-    .inputIconWrapper {
-        position: relative;
     }
 
     .formInputRegistration {
-
-
-        border-radius: 15px;
-        padding: 16px;
-        width: 100%;
         height: 56px;
-
     }
-
-
 
     .formInputRegistration::placeholder {
         font-size: 16px;
-        font-weight: 400;
         line-height: 24px;
-        color: rgba(47, 47, 47, 0.6);
-    }
-
-
-    .formInputRegistration:focus {
-        border-color: rgba(47, 47, 47, 0.6);
-        outline: none;
-    }
-
-
-    .formInputRegistration:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0px 1000px var(--light-gray) inset;
-        -webkit-text-fill-color: var(--dark-grey-medium) !important;
-        transition: background-color 5000s ease-in-out 0s;
-    }
-
-
-    .formInputRegistration:-internal-autofill-selected {
-        background-color: var(--light-gray) !important;
-        color: var(--dark-grey-medium) !important;
     }
 
     .submitBtn {
-        border: 1px solid var(--green-btn-hover);
-        background-color: var(--green-btn-hover);
-        border-radius: 30px;
         padding: 18px;
         height: 60px;
-        margin-top: 32px;
-        font-weight: 700;
         font-size: 16px;
         line-height: 1.29;
         letter-spacing: -0.01em;
-        text-align: center;
-        color: var(--dark-grey-medium);
-    }
-
-    .errorMsg {
-        color: red;
     }
 
     .registrationText {
-
         font-size: 16px;
         line-height: 24px;
-        margin: 16px 0px 0px;
-    }
-
-    .registrationTextInfo {
-        font-weight: 400;
-        color: rgba(47, 47, 47, 0.5)
-    }
-
-    .signInLink {
-        font-weight: 700;
-        color: var(--dark-grey-hard);
-        text-decoration: none;
-        text-decoration: underline;
-
     }
 
 }
 
 @media screen and (min-width: 1440px) {
     .singUpFormWrapper {
-
         height: 736px;
-
     }
 
     .signUpContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding: 74px 118px 100px
     }
 
-
     .inputConatiner {
-        display: flex;
-        flex-direction: column;
         row-gap: 20px;
     }
 
-
-
     .logoSingUp {
         padding: 32px 488px 0px 33px;
-
-    }
-
-
-    .formRegistration {
-        display: flex;
-        flex-direction: column;
-
-
-
     }
 
     .formTitle {
-        color: var(--dark-grey-medium);
-        font-weight: 700;
         font-size: 36px;
         line-height: 38px;
-        padding-bottom: 32px;
-
-    }
-
-    .labelRegistration {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-
     }
 
     .formRegistrationText {
         font-size: 16px;
-        font-weight: 700;
         line-height: 24px;
-        color: var(--dark-grey-hard);
-
     }
 
     .singUpIcon {
@@ -524,84 +253,30 @@
         stroke-width: 0;
         stroke: currentColor;
         fill: currentColor;
-
-    }
-
-    .inputIconWrapper {
-        position: relative;
     }
 
     .formInputRegistration {
-
-        padding: 16px;
         width: 436px;
         height: 56px;
-
     }
-
 
     .formInputRegistration::placeholder {
         font-size: 16px;
-        font-weight: 400;
         line-height: 24px;
-        color: rgba(47, 47, 47, 0.6);
-    }
-
-
-    .formInputRegistration:focus {
-        border-color: rgba(47, 47, 47, 0.6);
-        outline: none;
-    }
-
-
-    .formInputRegistration:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0px 1000px var(--light-gray) inset;
-        -webkit-text-fill-color: var(--dark-grey-medium) !important;
-        transition: background-color 5000s ease-in-out 0s;
-    }
-
-
-    .formInputRegistration:-internal-autofill-selected {
-        background-color: var(--light-gray) !important;
-        color: var(--dark-grey-medium) !important;
     }
 
     .submitBtn {
-        border: 1px solid var(--green-btn-hover);
-        background-color: var(--green-btn-hover);
-        border-radius: 30px;
         padding: 18px;
         height: 60px;
-        margin-top: 32px;
-        font-weight: 700;
         font-size: 16px;
         line-height: 1.29;
         letter-spacing: -0.01em;
-        text-align: center;
-        color: var(--dark-grey-medium);
-    }
-
-    .errorMsg {
-        color: red;
     }
 
     .registrationText {
-
         font-size: 16px;
         line-height: 24px;
-        margin: 16px 0px 0px;
     }
 
-    .registrationTextInfo {
-        font-weight: 400;
-        color: rgba(47, 47, 47, 0.5)
-    }
 
-    .signInLink {
-        font-weight: 700;
-        color: var(--dark-grey-hard);
-        text-decoration: none;
-        text-decoration: underline;
-
-    }
 }
