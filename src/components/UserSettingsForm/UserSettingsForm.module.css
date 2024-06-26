@@ -1,4 +1,5 @@
 .form {
+	max-width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
@@ -6,6 +7,7 @@
 }
 
 .settingsContainer {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
@@ -97,8 +99,8 @@
 .radio:checked::before {
 	content: '';
 	display: block;
-	width: 8px;
-	height: 8px;
+	width: 9px;
+	height: 9px;
 	border-radius: 50%;
 	background: var(--green-btn);
 	position: absolute;
@@ -147,6 +149,12 @@
 	font-size: 14px;
 	line-height: 1.28;
 	letter-spacing: -1%;
+}
+
+.textInput:hover,
+.textInput:focus {
+	border: 1px solid rgba(47, 47, 47, 0.4);
+	transition: border 0.3s ease;
 }
 
 .formulaGroup {
@@ -198,15 +206,9 @@
 	background-color: --green-btn-hover;
 }
 
-@media screen and (min-width: 320px) {
-	.form {
-		width: 100%;
-	}
-}
-
 @media screen and (min-width: 375px) {
 	.form {
-		width: 343px;
+		width: 303px;
 	}
 }
 
@@ -227,7 +229,7 @@
 
 @media screen and (min-width: 1440px) {
 	.form {
-		width: 920px;
+		width: 840px;
 	}
 
 	.userInfo {
