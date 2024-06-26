@@ -5,7 +5,10 @@ import WaterModal from "../../components/WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch } from "react-redux";
 import { currentDay } from "../../services/currentDay";
-import { editWaterRecord } from "../../redux/water/operations";
+import {
+  deleteWaterRecord,
+  editWaterRecord,
+} from "../../redux/water/operations";
 
 const title = "Edit the entered amount of water";
 const text = "Correct entered data:";
@@ -36,6 +39,9 @@ const WaterItem = ({ item }) => {
     );
     closeModal();
   };
+  const onDeleteCard = () => {
+    dispatch(deleteWaterRecord(_id));
+  };
 
   return (
     <>
@@ -53,7 +59,7 @@ const WaterItem = ({ item }) => {
               <use href={`${sprite}#icon-edit`}></use>
             </svg>
           </button>
-          <button className={css.iconBtn}>
+          <button className={css.iconBtn} onClick={onDeleteCard}>
             <svg className={css.icon}>
               <use href={`${sprite}#icon-trash`}></use>
             </svg>
