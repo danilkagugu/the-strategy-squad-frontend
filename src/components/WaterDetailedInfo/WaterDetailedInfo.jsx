@@ -1,5 +1,4 @@
 import MonthInfo from "../MonthInfo/MonthInfo";
-// import DailyInfo from "../DailyInfo/DailyInfo";
 import DailyInfo from "../DailyInfo/DailyInfo";
 import UserPanel from "../UserPanel/UserPanel";
 import css from "./WaterDetailedInfo.module.css";
@@ -10,15 +9,13 @@ const WaterDetailedInfo = () => {
   const currentDay = date.getDate().toString().padStart(2, "0");
 
   const [selectDay, setSelectDay] = useState(currentDay);
-  console.log(selectDay);
+  // console.log(selectDay);
   const clickOnDay = (day) => {
     setSelectDay(day.toString().padStart(2, "0"));
   };
   return (
     <div className={css.waterDetailedInfo}>
       <UserPanel />
-
-      {/* <DailyInfo selectDay={selectDay} /> */}
       <DailyInfo selectDay={selectDay} />
       <MonthInfo clickOnDay={clickOnDay} />
     </div>
@@ -26,6 +23,3 @@ const WaterDetailedInfo = () => {
 };
 
 export default WaterDetailedInfo;
-{
-  /* <DailyInfo selectDay={selectDay.toString().padStart(2, "0")} />; */
-}

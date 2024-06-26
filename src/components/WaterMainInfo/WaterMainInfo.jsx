@@ -7,14 +7,20 @@ import css from "../AddWaterBtn/AddWaterBtn.module.css";
 import { useState } from "react";
 import WaterModal from "../WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addWaterRecord } from "../../redux/water/operations";
 import { currentDay } from "../../services/currentDay";
 
 export default function WaterMainInfo() {
-  const [dailyNorma, setDailyNorma] = useState("2.0"); //денна норма води
-  const [drunkWater, setDrunkWater] = useState("470"); //кількість випитої води в день
   const [isOpen, setIsOpen] = useState(false);
+
+  const user = useSelector((state) => state.auth.userData);
+  const dailyNorma = user.waterNorm
+    ? (user.waterNorm / 1000).toFixed(1)
+    : "2.0";
+
+  const waters = useSelector((state) => state.water.items.perDay);
+  const drunkWater = waters.waterAmount;
 
   const dispatch = useDispatch();
   const addNewWater = (newWater) => {
@@ -29,10 +35,10 @@ export default function WaterMainInfo() {
     setIsOpen(false);
     scrollController.enabledScroll();
   }
-  const dailyNormaNum = parseFloat(dailyNorma.replace(",", ".")) * 1000;
+
   const drunkWaterNum = parseFloat(drunkWater);
 
-  let progress = (drunkWaterNum / dailyNormaNum) * 100;
+  let progress = (drunkWaterNum / user.waterNorm) * 100;
   if (progress < 0) progress = 0;
   if (progress > 100) progress = 100;
 
