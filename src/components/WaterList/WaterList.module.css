@@ -1,0 +1,6 @@
+.boxWater {
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  padding: 20px;
+}
