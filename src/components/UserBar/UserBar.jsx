@@ -5,7 +5,7 @@ import css from "./UserBar.module.css";
 import { useRef, useState } from "react";
 import ClickOutSide from "../../helpers/ClickOutSide";
 
-const UserBar = () => {
+const UserBar = ({ name }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLogOut, setIsOpenLogOut] = useState(false);
   const buttonRef = useRef(null);
@@ -42,7 +42,7 @@ const UserBar = () => {
         className={css.btnUserBar}
         onClick={handleToggleBarPopover}
       >
-        <p className={css.userName}>Nadia</p>
+        <p className={css.userName}>{name}</p>
         <img src={avatar} />
         {isOpen ? (
           <svg className={css.iconDown}>
