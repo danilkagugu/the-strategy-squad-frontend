@@ -14,11 +14,24 @@ import customers2TabDesc from "../../assets/customers/desktop-tablet/customers2-
 import customers2TabDesc2x from "../../assets/customers/desktop-tablet/customers2-tab-desc@2x.png";
 import customers3TabDesc from "../../assets/customers/desktop-tablet/customers3-tab-desc.png";
 import customers3TabDesc2x from "../../assets/customers/desktop-tablet/customers3-tab-desc@2x.png";
+import { useEffect, useState } from "react";
+import { getCustomers } from "../../services/getCustomers";
 
 const AdvantagesSection = (props) => {
+  const [customers, setCustomers] = useState(0);
+
+  useEffect(() => {
+    const fetchCustomers = async () => {
+      const customers = await getCustomers();
+      setCustomers(customers);
+    };
+    fetchCustomers();
+  }, []);
   const { isHideMobile } = props;
   return (
-    <div className={`${css.sectionWrapper} ${isHideMobile ? css.mobileHide : ''}`}>
+    <div
+      className={`${css.sectionWrapper} ${isHideMobile ? css.mobileHide : ""}`}
+    >
       <div className={css.customersWrapper}>
         <div>
           <ul className={css.imgWrapper}>
@@ -65,7 +78,11 @@ const AdvantagesSection = (props) => {
         </div>
         <div>
           <p className={css.text}>
-            Our <span className={css.textAccent}>happy</span> customers
+            Our <span className={css.textAccent}>happy </span> <br />
+            {customers > 1 && (
+              <span className={css.textAccent}> {customers} </span>
+            )}
+            customers
           </p>
         </div>
       </div>
