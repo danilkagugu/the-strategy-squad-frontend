@@ -1,16 +1,15 @@
-//! Відображається на сторінці /test
-
 import { useEffect, useState } from "react";
 import CalendarPagination from "../CalendarPagination/CalendarPagination";
 import Calendar from "../Calendar/Calendar";
 import css from "./MonthInfo.module.css";
 import Recharts from "../Recharts/Recharts";
 import { selectWaterPerMonth } from "../../redux/water/selectors";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   getDayFromDateStr,
   getMonthFromDateStr,
 } from "../../helpers/getAmountForDayAndMonth";
+import { getWaterPerMonth } from "../../redux/water/operations";
 
 const MonthInfo = ({ clickOnDay }) => {
   const [openRecharts, setOpenRecharts] = useState(false);
@@ -20,7 +19,7 @@ const MonthInfo = ({ clickOnDay }) => {
   const toogleOpenRecharts = () => {
     setOpenRecharts((prevState) => !prevState);
   };
-  // console.log(new Date(currentDate.getFullYear(), currentDate.getMonth()));
+  const dispatch = useDispatch();
   const prevMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
@@ -46,6 +45,9 @@ const MonthInfo = ({ clickOnDay }) => {
     }
     setDayInMounth(days);
   }, [currentDate]);
+  useEffect(() => {
+    dispatch(getWaterPerMonth(currentDate.getMonth() + 1));
+  }, [dispatch, currentDate]);
 
   const getAmountForDayAndMonth = (day, month) => {
     const records = data.filter(
@@ -54,17 +56,14 @@ const MonthInfo = ({ clickOnDay }) => {
         getMonthFromDateStr(item.time) === month
     );
     const totalAmount = records.reduce((sum, record) => sum + record.amount, 0);
-    return Math.round((totalAmount / 2000) * 100);
+    return totalAmount;
   };
-  // console.log((currentDate.getMonth() + 1).toString().padStart(2, "0"));
+
   const dataRecharts = dayInMounth.map((day) => ({
     date: day,
-    value: getAmountForDayAndMonth(
-      day,
-      (currentDate.getMonth() + 1).toString().padStart(2, "0")
-    ),
+    value: getAmountForDayAndMonth(day, currentDate.getMonth() + 1),
   }));
-
+  console.log(dataRecharts);
   return (
     <>
       <div className={css.block}>
