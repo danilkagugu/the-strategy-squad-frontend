@@ -58,9 +58,9 @@ export const deleteWaterRecord = createAsyncThunk(
 
 export const editWaterRecord = createAsyncThunk(
   "water/editRecord",
-  async ({ id, body }, thunkAPI) => {
+  async (editData, thunkAPI) => {
     try {
-      const response = await updateWaterRecord(id, body);
+      const response = await updateWaterRecord(editData);
 
       return response.data;
     } catch (e) {

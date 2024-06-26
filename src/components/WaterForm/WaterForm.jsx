@@ -44,6 +44,7 @@ const WaterForm = ({
   const { amount, time } = initialState;
 
   const [counter, setCounter] = useState(amount);
+  const [inputTime, setInputTime] = useState(time);
 
   const minusValue = () => {
     if (counter <= 50) {
@@ -67,8 +68,12 @@ const WaterForm = ({
     setCounter(inputValue);
   };
 
+  const handleChangeTime = (ev) => {
+    setInputTime(ev.target.value);
+  };
+
   // const onSubmit = (data) => console.log({ ...data, amount: counter });
-  const onSubmit = (data) => onSubmitData(data, counter);
+  const onSubmit = (data) => onSubmitData(data, counter, inputTime);
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
@@ -108,7 +113,8 @@ const WaterForm = ({
           className={css.input}
           name="time"
           type="text"
-          defaultValue={time}
+          defaultValue={inputTime}
+          onInput={handleChangeTime}
           {...register("time", { required: true })}
         />
         {errors.time && (
