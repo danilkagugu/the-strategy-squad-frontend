@@ -4,7 +4,10 @@ import sprite from "../../assets/icons.svg";
 import WaterModal from "../../components/WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch } from "react-redux";
-import { editWaterRecord } from "../../redux/water/operations";
+import {
+  deleteWaterRecord,
+  editWaterRecord,
+} from "../../redux/water/operations";
 
 const title = "Edit the entered amount of water";
 const text = "Correct entered data:";
@@ -36,6 +39,10 @@ const WaterItem = ({ item, selectDay }) => {
     closeModal();
   };
 
+  const deleteCard = () => {
+    dispatch(deleteWaterRecord(_id));
+  };
+
   return (
     <>
       <div className={css.waterBox}>
@@ -52,7 +59,7 @@ const WaterItem = ({ item, selectDay }) => {
               <use href={`${sprite}#icon-edit`}></use>
             </svg>
           </button>
-          <button className={css.iconBtn}>
+          <button className={css.iconBtn} onClick={deleteCard}>
             <svg className={css.icon}>
               <use href={`${sprite}#icon-trash`}></use>
             </svg>
