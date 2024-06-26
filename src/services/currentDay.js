@@ -15,6 +15,14 @@ export function currentTime() {
   return currentTime;
 }
 
+export function numberOfDay(str) {
+  const array = str.split("");
+  if (array[0] === "0") {
+    return array[1];
+  }
+  return str;
+}
+
 export function convertMonthsNumberToStr(num) {
   const getString = {
     "01": "January",
@@ -43,7 +51,6 @@ export function convertMonthsNumberToStr(num) {
   } else if (typeof num === "string") {
     for (const key of keys) {
       if (key === num.padStart(2, "0")) {
-        console.log(getString[key]);
         return getString[key];
       }
     }

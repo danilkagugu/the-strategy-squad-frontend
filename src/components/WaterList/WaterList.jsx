@@ -16,7 +16,6 @@ const WaterList = ({ selectDay }) => {
     }
   }, [dispatch, selectDay]);
 
-  // console.log(response.data);
   return (
     <div className={css.container}>
       {response.data &&
@@ -25,7 +24,7 @@ const WaterList = ({ selectDay }) => {
         <ul className={css.itemList}>
           {response.data.map((item) => (
             <li key={item._id}>
-              <WaterItem item={item} />
+              <WaterItem item={item} selectDay={selectDay} />
             </li>
           ))}
         </ul>
