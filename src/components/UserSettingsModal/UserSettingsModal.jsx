@@ -2,7 +2,7 @@ import ModalWrapper from "../ModalWrapper/ModalWrapper";
 import UserSettingsForm from "../UserSettingsForm/UserSettingsForm";
 import css from "./UserSettingsModal.module.css";
 
-const UserSettingsModal = ({ isOpen, onCloseModal }) => {
+const UserSettingsModal = ({ isOpen, onCloseModal, modalRef }) => {
   return (
     <>
       <ModalWrapper
@@ -12,7 +12,7 @@ const UserSettingsModal = ({ isOpen, onCloseModal }) => {
         top="10%"
         transform="translate(-50%, 0)"
       >
-        <div>
+        <div ref={modalRef}>
           <h3 className={css.title}>Setting</h3>
           <UserSettingsForm />
         </div>

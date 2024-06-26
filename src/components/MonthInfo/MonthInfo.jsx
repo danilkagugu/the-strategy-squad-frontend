@@ -61,7 +61,6 @@ const MonthInfo = ({ onDayClick }) => {
     date: day,
     value: arrayPercent[i] / 100,
   }));
-
   return (
     <>
       <div className={css.block}>

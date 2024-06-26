@@ -1,0 +1,145 @@
+.logOutModalWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    width: 304px;
+    height: 187px;
+}
+
+.logOutModalTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark-grey-medium);
+}
+
+.logOutModalText {
+    font-size: 14px;
+}
+
+.logOutModalBtnWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+
+}
+
+.logOutBtn {
+    border-radius: 30px;
+    padding: 14px 126px;
+    margin-top: 12px;
+    height: 46px;
+    background: var(--green-btn);
+    color: var(--dark-grey-medium);
+    font-weight: 700;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.logOutBtn:hover,
+.logOutBtn:focus {
+    background-color: var(--green-btn-hover);
+}
+
+.closeBtn {
+    border-radius: 30px;
+    padding: 14px 126px;
+    height: 46px;
+    background: var(--light-gray);
+    color: var(--dark-grey-medium-gray);
+    font-weight: 700;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.closeBtn:hover .btnCancelText {
+    color: var(--dark-grey-medium);
+}
+
+.logOutBtn .btnLogOutText {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .logOutModalWrapper {
+        gap: 24px;
+        width: 436px;
+        height: 164px;
+    }
+
+    .logOutModalTitle {
+        font-size: 28px;
+    }
+
+    .logOutModalText {
+        font-size: 18px;
+    }
+
+    .logOutModalBtnWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .logOutBtn {
+        padding: 18px 57px;
+        margin-top: 0px;
+        width: 173px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .closeBtn {
+        padding: 18px 0px;
+        width: 176px;
+        height: 60px;
+        font-size: 16px;
+
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+
+    .logOutModalWrapper {
+        gap: 24px;
+        width: 436px;
+        height: 164px;
+    }
+
+    .logOutModalTitle {
+        font-size: 28px;
+    }
+
+    .logOutModalText {
+        font-size: 18px;
+    }
+
+    .logOutModalBtnWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .logOutBtn {
+        padding: 18px 57px;
+        width: 173px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .closeBtn {
+        padding: 18px 0px;
+        width: 176px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+}

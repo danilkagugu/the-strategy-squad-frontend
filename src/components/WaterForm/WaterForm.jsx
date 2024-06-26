@@ -29,7 +29,10 @@ const schema = yup
   })
   .required();
 
-const WaterForm = () => {
+const WaterForm = ({
+  onSubmitData,
+  initialState = { amount: 50, time: currentTime },
+}) => {
   const {
     register,
     handleSubmit,
@@ -38,7 +41,10 @@ const WaterForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const [counter, setCounter] = useState(50);
+  const { amount, time } = initialState;
+
+  const [counter, setCounter] = useState(amount);
+  const [inputTime, setInputTime] = useState(time);
 
   const minusValue = () => {
     if (counter <= 50) {
@@ -62,7 +68,12 @@ const WaterForm = () => {
     setCounter(inputValue);
   };
 
-  const onSubmit = (data) => console.log({ ...data, amount: counter });
+  const handleChangeTime = (ev) => {
+    setInputTime(ev.target.value);
+  };
+
+  // const onSubmit = (data) => console.log({ ...data, amount: counter });
+  const onSubmit = (data) => onSubmitData(data, counter, inputTime);
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
@@ -102,7 +113,8 @@ const WaterForm = () => {
           className={css.input}
           name="time"
           type="text"
-          defaultValue={currentTime}
+          defaultValue={inputTime}
+          onInput={handleChangeTime}
           {...register("time", { required: true })}
         />
         {errors.time && (

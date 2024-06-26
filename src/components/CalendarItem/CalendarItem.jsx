@@ -4,6 +4,12 @@ const CalendarItem = ({ allDay, onClickHandler }) => {
   const randomNumber = () => {
     return Math.floor(Math.random() * 101);
   };
+  // const qwer = new Date();
+  // console.log(new Date(qwer.getDate()));
+  // const selectDay = (day) => {
+  //   setChooseDay(day);
+  // };
+  // console.log(chooseDay);
   return (
     <ul className={css.listDay}>
       {allDay.map((day, index) => (

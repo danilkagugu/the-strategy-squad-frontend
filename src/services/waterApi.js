@@ -26,7 +26,7 @@ export const removeWaterRecord = async (id) => {
   return data;
 };
 
-export const updateWaterRecord = async (id, body) => {
-  const data = await instance.put(`/api/water/${id}`, body);
+export const updateWaterRecord = async ({ id, amount, time }) => {
+  const data = await instance.put(`/api/water/${id}`, { amount, time });
   return data;
 };

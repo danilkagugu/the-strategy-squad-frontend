@@ -3,6 +3,7 @@ import DailyInfo from "../DailyInfo/DailyInfo";
 import UserPanel from "../UserPanel/UserPanel";
 import css from "./WaterDetailedInfo.module.css";
 import { useState } from "react";
+import { useState } from "react";
 
 const WaterDetailedInfo = () => {
   const [currentDateFromMonthInfo, setCurrentDateFromMonthInfo] = useState(
