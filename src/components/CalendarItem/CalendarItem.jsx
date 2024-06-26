@@ -10,7 +10,13 @@ import {
 
 const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
   // const [chooseDay, setChooseDay] = useState(null);
-
+  const formatDay = (day) => {
+    const date = new Date(new Date().getFullYear(), currentMonth - 1, day);
+    const year = date.getFullYear();
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
+    const dayFormatted = ("0" + date.getDate()).slice(-2);
+    return `${year}-${month}-${dayFormatted}`;
+  };
   const dispatch = useDispatch();
   const data = useSelector(selectWaterPerMonth);
   useEffect(() => {
@@ -18,11 +24,10 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
   }, [dispatch, currentMonth]);
 
   const getAmountForDayAndMonth = (day, month) => {
-    const records = data.filter(
-      (item) =>
-        getDayFromDateStr(item.time) === day &&
-        getMonthFromDateStr(item.time) === month
-    );
+    const records = data.filter((item) => {
+      getDayFromDateStr(item.time) === day &&
+        getMonthFromDateStr(item.time) === month;
+    });
     const totalAmount = records.reduce((sum, record) => sum + record.amount, 0);
     return Math.round((totalAmount / 2000) * 100);
   };
@@ -31,13 +36,16 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
   // const selectDay = (day) => {
   //   setChooseDay(day);
   // };
-  // console.log(chooseDay);
+
   return (
     <ul className={css.listDay}>
       {allDay.map((day, index) => (
         <li className={css.dayItem} key={index}>
           <button
-            onClick={() => clickOnDay(day)}
+            onClick={() => {
+              clickOnDay(formatDay(day));
+              console.log(clickOnDay(formatDay(day)));
+            }}
             className={`${css.dayBox} ${
               getAmountForDayAndMonth(day, currentMonth, data) >= 100
                 ? css.dayBoxFull
