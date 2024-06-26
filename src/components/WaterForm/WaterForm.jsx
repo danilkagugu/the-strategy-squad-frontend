@@ -3,14 +3,15 @@ import { useState } from "react";
 import clsx from "clsx";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { currentTime } from "../../services/currentDay";
 
 import sprite from "../../assets/icons.svg";
 import css from "./WaterForm.module.css";
 
-let data = new Date();
-let hours = String(data.getHours()).padStart(2, "0");
-let minutes = String(data.getMinutes()).padStart(2, "0");
-let currentTime = `${hours}:${minutes}`;
+// let data = new Date();
+// let hours = String(data.getHours()).padStart(2, "0");
+// let minutes = String(data.getMinutes()).padStart(2, "0");
+// let currentTime = `${hours}:${minutes}`;
 
 const schema = yup
   .object({
@@ -31,7 +32,7 @@ const schema = yup
 
 const WaterForm = ({
   onSubmitData,
-  initialState = { amount: 50, time: currentTime },
+  initialState = { amount: 50, time: currentTime() },
 }) => {
   const {
     register,
