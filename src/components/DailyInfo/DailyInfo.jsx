@@ -46,7 +46,7 @@ export default function DailyInfo({ selectDay }) {
         />
       )}
       <div className={style.box_flex}>
-        <ChooseDate />
+        <ChooseDate data={selectDay} />
         <AddWaterBtn
           buttonStyle={css.btn}
           svgStyle={css.svg_plus}
