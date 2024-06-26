@@ -39,6 +39,7 @@
   flex-direction: column;
   gap: 8px;
 }
+
 .iconBtn {
   background-color: transparent;
   width: 14px;
@@ -49,6 +50,12 @@
   width: 14px;
   height: 14px;
   stroke: var(--dark-grey-medium);
+  fill: transparent;
+}
+
+.icon :hover,
+.icon :focus {
+  stroke: var(--green-btn);
   fill: transparent;
 }
 

@@ -3,6 +3,7 @@
   font-weight: 700;
   color: var(--dark-grey-medium);
   margin-bottom: 24px;
+  width: 248px;
 }
 
 .title {
@@ -10,4 +11,10 @@
   font-weight: 700;
   color: var(--dark-grey-medium);
   margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .mainTitle {
+    width: 100%;
+  }
 }
