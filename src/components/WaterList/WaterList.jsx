@@ -8,7 +8,7 @@ import { getWaterPerDay } from "../../redux/water/operations";
 
 const WaterList = ({ selectDay }) => {
   const dispatch = useDispatch();
-  const data = useSelector(selectWaterPerDay);
+  const response = useSelector(selectWaterPerDay);
 
   useEffect(() => {
     if (selectDay) {
@@ -16,12 +16,20 @@ const WaterList = ({ selectDay }) => {
     }
   }, [dispatch, selectDay]);
 
-  console.log(data);
+  // console.log(response.data);
   return (
     <>
-      <div className={css.boxWater}>
-        <WaterItem item={data} />
-      </div>
+      <ul className={css.itemList}>
+        {response.data &&
+        Array.isArray(response.data) &&
+        response.data.length > 0
+          ? response.data.map((item) => (
+              <li key={item._id}>
+                <WaterItem item={item} />
+              </li>
+            ))
+          : null}
+      </ul>
     </>
   );
 };

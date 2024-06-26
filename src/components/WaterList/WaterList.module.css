@@ -1,6 +1,9 @@
-.boxWater {
+.itemList {
+  display: flex;
+  gap: 16px;
   overflow-x: auto;
   white-space: nowrap;
   max-width: 100%;
   padding: 20px;
+  margin-bottom: 40px;
 }
