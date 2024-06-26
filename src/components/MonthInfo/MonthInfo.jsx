@@ -12,9 +12,9 @@ import {
   getMonthFromDateStr,
 } from "../../helpers/getAmountForDayAndMonth";
 
-const MonthInfo = ({ clickOnDay }) => {
+const MonthInfo = ({ clickOnDay, currentDate, setCurrentDate }) => {
   const [openRecharts, setOpenRecharts] = useState(false);
-  const [currentDate, setCurrentDate] = useState(new Date());
+  // const [currentDate, setCurrentDate] = useState(new Date());
   const [dayInMounth, setDayInMounth] = useState([]);
   const data = useSelector(selectWaterPerMonth);
 
@@ -62,6 +62,7 @@ const MonthInfo = ({ clickOnDay }) => {
     date: day,
     value: getAmountForDayAndMonth(day, currentDate.getMonth() + 1),
   }));
+
   return (
     <>
       <div className={css.block}>
