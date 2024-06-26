@@ -6,6 +6,7 @@ import sprite from '../../assets/icons.svg';
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+
 const UserLoginSchema = Yup.object().shape({
     email: Yup.string().email("Must be a valid email!").required("Email is required"),
     password: Yup.string().min(6, "Too Short!").max(50, "Too Long!").required("Password is required"),

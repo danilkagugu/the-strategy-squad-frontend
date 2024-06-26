@@ -6,6 +6,10 @@ import Logo from "../Logo/Logo";
 import sprite from '../../assets/icons.svg';
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { requestSignUp } from "../../services/authApi";
+import { toast } from 'react-toastify';
+
+
 
 
 const UserRegisterSchema = Yup.object().shape({
@@ -22,19 +26,30 @@ const INITIAL_FORM_DATA = {
     repeatPassword: ""
 }
 
-const SingUpFrom = ({ onRegister }) => {
+const SingUpFrom = () => {
     const [isVisible, setIsVisible] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = (data, formActions) => {
-        onRegister((data))
-        formActions.resetForm()
-        navigate('/signin')
+    const handleSubmit = async (data, formActions) => {
+        try {
+            const response = await requestSignUp(data)
+            formActions.resetForm()
+
+            toast.success("You have successfully registered")
+
+            if (response) {
+                navigate('/signin')
+            }
+        } catch (e) {
+            toast.error(e.response.data.message || "Something went wrong")
+        }
+
     }
 
     return (<div className={css.singUpFormWrapper}>
 
         <div className={css.logoSingUp}> <Logo /></div>
+
         <Formik validationSchema={UserRegisterSchema}
             initialValues={INITIAL_FORM_DATA}
             onSubmit={handleSubmit}>
@@ -46,6 +61,7 @@ const SingUpFrom = ({ onRegister }) => {
                     <Form className={css.formRegistration}>
                         <h1 className={css.formTitle}>Sign Up</h1>
                         <div className={css.inputConatiner}>
+
                             <label className={css.labelRegistration}>
                                 <span className={css.formRegistrationText}>Email</span>
 
@@ -57,7 +73,9 @@ const SingUpFrom = ({ onRegister }) => {
                                     placeholder="Enter your email"
 
                                 />
+
                                 {errors.email && touched.email ? <div className={css.errorMsg}>{errors.email}</div> : null}
+
                             </label>
                             <label className={css.labelRegistration}>
                                 <span className={css.formRegistrationText}>Password</span>
@@ -75,6 +93,7 @@ const SingUpFrom = ({ onRegister }) => {
 
                                 </div>
                                 {errors.password && touched.password ? <div className={css.errorMsg}>{errors.password}</div> : null}
+
                             </label>
                             <label className={css.labelRegistration}>
                                 <span className={css.formRegistrationText}>Repeat Password</span>

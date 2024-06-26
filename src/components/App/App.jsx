@@ -5,6 +5,8 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import { useDispatch } from "react-redux";
 import { apiRefreshUser } from "../../redux/auth/operations";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const NotFoundPage = lazy(() =>
@@ -61,6 +63,8 @@ function App() {
           />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+
+        <ToastContainer position="top-center" />
       </Suspense>
     </Container>
   );

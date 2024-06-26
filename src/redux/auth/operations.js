@@ -7,17 +7,20 @@ import {
   setToken,
   requestUpdate,
 } from "../../services/authApi.js";
+import { toast } from 'react-toastify';
 
 export const apiRegisterUser = createAsyncThunk(
+
   "auth/register",
   async (formData, thunkAPI) => {
     try {
       const data = await requestSignUp(formData);
       return data;
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.message);
+      return thunkAPI.rejectWithValue(err.response.data);
     }
   }
+
 );
 
 export const apiLoginUser = createAsyncThunk(
@@ -25,8 +28,10 @@ export const apiLoginUser = createAsyncThunk(
   async (formData, thunkAPI) => {
     try {
       const data = await requestSignIn(formData);
+      toast.success("You have successfully signed in");
       return data;
     } catch (err) {
+      toast.error(err.response?.data?.message || "Something went wrong");
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -48,6 +53,7 @@ export const apiRefreshUser = createAsyncThunk(
 );
 
 export const apiLogoutUser = createAsyncThunk(
+
   "auth/logout",
   async (_, thunkAPI) => {
     try {
