@@ -18,19 +18,21 @@ const WaterList = ({ selectDay }) => {
 
   // console.log(response.data);
   return (
-    <>
-      <ul className={css.itemList}>
-        {response.data &&
-        Array.isArray(response.data) &&
-        response.data.length > 0
-          ? response.data.map((item) => (
-              <li key={item._id}>
-                <WaterItem item={item} />
-              </li>
-            ))
-          : null}
-      </ul>
-    </>
+    <div className={css.container}>
+      {response.data &&
+      Array.isArray(response.data) &&
+      response.data.length > 0 ? (
+        <ul className={css.itemList}>
+          {response.data.map((item) => (
+            <li key={item._id}>
+              <WaterItem item={item} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={css.text}>There are no water yet.</p>
+      )}
+    </div>
   );
 };
 

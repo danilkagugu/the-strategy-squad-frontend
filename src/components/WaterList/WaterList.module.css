@@ -1,15 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0 40px 0;
+}
+
 .itemList {
   display: flex;
+  align-items: center;
   gap: 8px;
   overflow-x: auto;
   white-space: nowrap;
   max-width: 100%;
-  padding: 24px 0;
-  margin-bottom: 40px;
+  padding-bottom: 24px;
+  height: 114px;
+  width: 100%;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: var(--green-btn);
+  height: 114px;
 }
 
 @media screen and (min-width: 768px) {
   .itemList {
     gap: 16px;
+    height: 126px;
+  }
+
+  .text {
+    font-size: 20px;
+    height: 126px;
   }
 }
