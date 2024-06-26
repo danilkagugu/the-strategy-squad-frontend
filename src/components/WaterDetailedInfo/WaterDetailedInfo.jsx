@@ -1,5 +1,6 @@
 import MonthInfo from "../MonthInfo/MonthInfo";
-import DailyInfo from "../DailyInfo/DailyInfo";
+// import DailyInfo from "../DailyInfo/DailyInfo";
+import TestDailyInfo from "../DailyInfo/TestDailyInfo";
 import UserPanel from "../UserPanel/UserPanel";
 import css from "./WaterDetailedInfo.module.css";
 import { useState } from "react";
@@ -17,7 +18,8 @@ const WaterDetailedInfo = () => {
     <div className={css.waterDetailedInfo}>
       <UserPanel />
 
-      <DailyInfo selectDay={selectDay} />
+      {/* <DailyInfo selectDay={selectDay} /> */}
+      <TestDailyInfo selectDay={selectDay} />
       <MonthInfo clickOnDay={clickOnDay} />
     </div>
   );
