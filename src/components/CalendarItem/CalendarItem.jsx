@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import css from "./CalendarItem.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getWaterPerMonth } from "../../redux/water/operations";
 import { selectWaterPerMonth } from "../../redux/water/selectors";
 import {
@@ -9,6 +9,8 @@ import {
 } from "../../helpers/getAmountForDayAndMonth";
 
 const CalendarItem = ({ allDay, currentMonth }) => {
+  const [chooseDay, setChooseDay] = useState(null);
+
   const dispatch = useDispatch();
   const data = useSelector(selectWaterPerMonth);
   useEffect(() => {
@@ -25,11 +27,16 @@ const CalendarItem = ({ allDay, currentMonth }) => {
     return Math.round((totalAmount / 2000) * 100);
   };
 
+  const selectDay = (day) => {
+    setChooseDay(day);
+  };
+  console.log(chooseDay);
   return (
     <ul className={css.listDay}>
       {allDay.map((day, index) => (
         <li className={css.dayItem} key={index}>
           <button
+            onClick={() => selectDay(day)}
             className={`${css.dayBox} ${
               getAmountForDayAndMonth(day, currentMonth, data) > 100
                 ? css.dayBoxFull
