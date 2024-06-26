@@ -26,6 +26,3 @@ const WaterDetailedInfo = () => {
 };
 
 export default WaterDetailedInfo;
-{
-  /* <DailyInfo selectDay={selectDay.toString().padStart(2, "0")} />; */
-}
