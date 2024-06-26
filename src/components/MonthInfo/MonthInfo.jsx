@@ -6,7 +6,7 @@ import Calendar from "../Calendar/Calendar";
 import css from "./MonthInfo.module.css";
 import Recharts from "../Recharts/Recharts";
 
-const MonthInfo = () => {
+const MonthInfo = ({ onDayClick }) => {
   const [openRecharts, setOpenRecharts] = useState(false);
   const toogleOpenRecharts = () => {
     setOpenRecharts((prevState) => !prevState);
@@ -19,12 +19,14 @@ const MonthInfo = () => {
   const arrayPercent = [];
 
   const [currentDate, setCurrentDate] = useState(new Date());
+
   const [dayInMounth, setDayInMounth] = useState([]);
+
   // const [percent, setPercent] = useState([randomNumber()]);
   for (let i = 1; i <= currentDate.getDate(); i++) {
     arrayPercent.push(randomNumber());
   }
-  console.log(dayInMounth);
+  // console.log(dayInMounth);
   const prevMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
@@ -51,6 +53,10 @@ const MonthInfo = () => {
     setDayInMounth(days);
   }, [currentDate]);
 
+  const handleDayClickInternal = (day) => {
+    onDayClick(day, currentDate);
+  };
+
   const dataRecharts = dayInMounth.map((day, i) => ({
     date: day,
     value: arrayPercent[i] / 100,
@@ -68,7 +74,11 @@ const MonthInfo = () => {
         {openRecharts ? (
           <Recharts data={dataRecharts} />
         ) : (
-          <Calendar day={dayInMounth} randomNumber={arrayPercent} />
+          <Calendar
+            day={dayInMounth}
+            randomNumber={arrayPercent}
+            onDayClick={handleDayClickInternal}
+          />
         )}
       </div>
     </>

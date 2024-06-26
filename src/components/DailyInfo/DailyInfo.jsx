@@ -6,7 +6,7 @@ import style from "./DailyInfo.module.css";
 import { useState } from "react";
 import WaterModal from "../WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
-export default function DailyInfo() {
+export default function DailyInfo({ data }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -21,7 +21,7 @@ export default function DailyInfo() {
     <div className={style.main}>
       {isOpen && <WaterModal onCloseModal={closeModal} isOpen={isOpen} />}
       <div className={style.box_flex}>
-        <ChooseDate />
+        <ChooseDate data={data} />
         <AddWaterBtn
           buttonStyle={css.btn}
           svgStyle={css.svg_plus}
