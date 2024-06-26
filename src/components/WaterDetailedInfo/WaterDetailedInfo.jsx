@@ -9,7 +9,7 @@ const WaterDetailedInfo = () => {
   const currentDay = date.getDate().toString().padStart(2, "0");
 
   const [selectDay, setSelectDay] = useState(currentDay);
-  console.log(selectDay);
+  // console.log(selectDay);
   const clickOnDay = (day) => {
     setSelectDay(day.toString().padStart(2, "0"));
   };

@@ -9,7 +9,11 @@ import {
 } from "../../helpers/getAmountForDayAndMonth";
 
 const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
-  // const [chooseDay, setChooseDay] = useState(null);
+  const dispatch = useDispatch();
+  const data = useSelector(selectWaterPerMonth);
+  useEffect(() => {
+    dispatch(getWaterPerMonth(currentMonth));
+  }, [dispatch, currentMonth]);
   const formatDay = (day) => {
     const date = new Date(new Date().getFullYear(), currentMonth - 1, day);
     const year = date.getFullYear();
@@ -17,25 +21,20 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
     const dayFormatted = ("0" + date.getDate()).slice(-2);
     return `${year}-${month}-${dayFormatted}`;
   };
-  const dispatch = useDispatch();
-  const data = useSelector(selectWaterPerMonth);
-  useEffect(() => {
-    dispatch(getWaterPerMonth(currentMonth));
-  }, [dispatch, currentMonth]);
 
   const getAmountForDayAndMonth = (day, month) => {
-    const records = data.filter((item) => {
-      getDayFromDateStr(item.time) === day &&
-        getMonthFromDateStr(item.time) === month;
-    });
-    const totalAmount = records.reduce((sum, record) => sum + record.amount, 0);
+    const fullWaterOfDay = data.filter(
+      (item) =>
+        getDayFromDateStr(item.time) === day &&
+        getMonthFromDateStr(item.time) === month
+    );
+
+    const totalAmount = fullWaterOfDay.reduce(
+      (sum, record) => sum + record.amount,
+      0
+    );
     return Math.round((totalAmount / 2000) * 100);
   };
-  // const qwer = new Date();
-  // console.log(new Date(qwer.getDate()));
-  // const selectDay = (day) => {
-  //   setChooseDay(day);
-  // };
 
   return (
     <ul className={css.listDay}>
@@ -44,10 +43,9 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
           <button
             onClick={() => {
               clickOnDay(formatDay(day));
-              console.log(clickOnDay(formatDay(day)));
             }}
             className={`${css.dayBox} ${
-              getAmountForDayAndMonth(day, currentMonth, data) >= 100
+              getAmountForDayAndMonth(day, currentMonth) >= 100
                 ? css.dayBoxFull
                 : ""
             }`}
@@ -57,7 +55,7 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
 
           <span className={css.percent}>
             {getAmountForDayAndMonth(day, currentMonth) !== null
-              ? getAmountForDayAndMonth(day, currentMonth) > 100
+              ? getAmountForDayAndMonth(day, currentMonth) >= 100
                 ? "100%"
                 : `${getAmountForDayAndMonth(day, currentMonth)}%`
               : "0%"}
