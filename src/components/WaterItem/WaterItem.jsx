@@ -4,13 +4,12 @@ import sprite from "../../assets/icons.svg";
 import WaterModal from "../../components/WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch } from "react-redux";
-import { currentDay } from "../../services/currentDay";
 import { editWaterRecord } from "../../redux/water/operations";
 
 const title = "Edit the entered amount of water";
 const text = "Correct entered data:";
 
-const WaterItem = ({ item }) => {
+const WaterItem = ({ item, selectDay }) => {
   const { _id, time, amount } = item;
 
   const initialTime = time.slice(-5);
@@ -30,7 +29,7 @@ const WaterItem = ({ item }) => {
   }
 
   const onSubmitData = (data, counter, time) => {
-    const fullData = `${currentDay()}-${time}`;
+    const fullData = `${selectDay}-${time}`;
     dispatch(
       editWaterRecord({ ...data, amount: counter, time: fullData, id: _id })
     );
