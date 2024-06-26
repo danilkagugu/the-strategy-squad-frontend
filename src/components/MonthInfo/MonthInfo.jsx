@@ -12,7 +12,7 @@ import {
   getMonthFromDateStr,
 } from "../../helpers/getAmountForDayAndMonth";
 
-const MonthInfo = () => {
+const MonthInfo = ({ clickOnDay }) => {
   const [openRecharts, setOpenRecharts] = useState(false);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [dayInMounth, setDayInMounth] = useState([]);
@@ -57,7 +57,7 @@ const MonthInfo = () => {
     const totalAmount = records.reduce((sum, record) => sum + record.amount, 0);
     return Math.round((totalAmount / 2000) * 100);
   };
-
+  console.log(currentDate.getMonth() + 1);
   const dataRecharts = dayInMounth.map((day) => ({
     date: day,
     value: getAmountForDayAndMonth(day, currentDate.getMonth() + 1),
@@ -77,6 +77,7 @@ const MonthInfo = () => {
           <Calendar
             day={dayInMounth}
             currentMonth={currentDate.getMonth() + 1}
+            clickOnDay={clickOnDay}
           />
         )}
       </div>

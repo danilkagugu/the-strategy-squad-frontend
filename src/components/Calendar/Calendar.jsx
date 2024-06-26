@@ -1,9 +1,13 @@
 import CalendarItem from "../CalendarItem/CalendarItem";
 
-const Calendar = ({ day, currentMonth }) => {
+const Calendar = ({ day, currentMonth, clickOnDay }) => {
   return (
     <>
-      <CalendarItem allDay={day} currentMonth={currentMonth} />
+      <CalendarItem
+        allDay={day}
+        currentMonth={currentMonth}
+        clickOnDay={clickOnDay}
+      />
     </>
   );
 };

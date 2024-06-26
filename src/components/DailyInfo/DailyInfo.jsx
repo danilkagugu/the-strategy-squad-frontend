@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { addWaterRecord } from "../../redux/water/operations";
 import { currentDay } from "../../services/currentDay";
 
-export default function DailyInfo() {
+export default function DailyInfo({ selectDay }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ export default function DailyInfo() {
           openModal={openModal}
         />
       </div>
-      <WaterList />
+      <WaterList selectDay={selectDay} />
     </div>
   );
 }
