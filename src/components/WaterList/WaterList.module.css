@@ -1,0 +1,15 @@
+.itemList {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  padding: 24px 0;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .itemList {
+    gap: 16px;
+  }
+}

@@ -1,10 +1,15 @@
 import CalendarItem from "../CalendarItem/CalendarItem";
 
-const Calendar = ({ day, onDayClick }) => {
-  const handleDayClick = (day) => {
-    onDayClick(day);
-  };
-  return <CalendarItem allDay={day} onClickHandler={handleDayClick} />;
+const Calendar = ({ day, currentMonth, clickOnDay }) => {
+  return (
+    <>
+      <CalendarItem
+        allDay={day}
+        currentMonth={currentMonth}
+        clickOnDay={clickOnDay}
+      />
+    </>
+  );
 };
 
 export default Calendar;

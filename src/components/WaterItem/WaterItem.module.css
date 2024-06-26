@@ -1,0 +1,91 @@
+.waterBox {
+  padding: 19px 14px 19px 19px;
+  background-color: var(--white);
+  width: 149px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.iconGlass {
+  width: 28px;
+  height: 30px;
+  fill: var(--green-btn);
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.infoMl {
+  color: var(--dark-grey-medium);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.infoTime {
+  color: #2f2f2f99;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.iconBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.iconBtn {
+  background-color: transparent;
+  width: 14px;
+  height: 14px;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  stroke: var(--dark-grey-medium);
+  fill: transparent;
+}
+
+.icon :hover,
+.icon :focus {
+  stroke: var(--green-btn);
+  fill: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .waterBox {
+    padding: 20px 20px 20px 26px;
+    gap: 20px;
+    width: 190px;
+  }
+
+  .iconGlass {
+    width: 32px;
+    height: 36px;
+  }
+
+  .infoMl {
+    font-size: 15px;
+  }
+
+  .iconBox {
+    gap: 14px;
+  }
+
+  .iconBtn {
+    width: 16px;
+    height: 16px;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+}
