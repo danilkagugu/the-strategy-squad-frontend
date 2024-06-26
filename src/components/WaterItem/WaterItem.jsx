@@ -44,8 +44,8 @@ const WaterItem = ({ item }) => {
           <use href={`${sprite}#icon-glass`}></use>
         </svg>
         <div className={css.infoBox}>
-          <p className={css.infoMl}> {amount}</p>
-          <p className={css.infoTime}>{time.split("-")[3]}</p>
+          <p className={css.infoMl}> {amount} ml</p>
+          <p className={css.infoTime}>{time.split("-")[3]} AM</p>
         </div>
         <div className={css.iconBox}>
           <button className={css.iconBtn} onClick={openModal}>
