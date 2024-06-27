@@ -1,7 +1,7 @@
 .userBar {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  
+
 }
 
 .iconDown {
@@ -18,6 +18,8 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  min-width: 137px;
+  height: 50px;
 }
 
 .userName {
@@ -27,8 +29,36 @@
   line-height: 24px;
 }
 
+.imgUserBarWrapper{
+  display: flex;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; 
+}
+
 .fatherDiv {
   position: fixed;
   z-index: 1000;
   top: 150px;
 }
+
+
+@media only screen and (min-width: 768px) {
+  .btnUserBar {
+    min-width: 157px;
+    height: 56px;
+  }
+
+  .imgUserBarWrapper { 
+    width: 44px;
+    height: 44px;
+    }
+}
+
+
