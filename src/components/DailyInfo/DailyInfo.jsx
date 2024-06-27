@@ -30,7 +30,7 @@ export default function DailyInfo({ selectDay }) {
   const onSubmitData = (data, counter) => {
     addNewWater({
       ...data,
-      time: `${selectDay()}-${data.time}`,
+      time: `${selectDay}-${data.time}`,
       amount: counter,
     });
     closeModal();

@@ -7,10 +7,13 @@ import { useState } from "react";
 
 const WaterDetailedInfo = () => {
   const date = new Date();
-  const currentDay = date.getDate().toString().padStart(2, "0");
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  const currentDay = `${year}-${month}-${day}`;
 
   const [selectDay, setSelectDay] = useState(currentDay);
-  // console.log(selectDay);
+
   const clickOnDay = (day) => {
     setSelectDay(day.toString().padStart(2, "0"));
   };
