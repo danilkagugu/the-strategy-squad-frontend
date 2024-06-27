@@ -6,6 +6,7 @@ import Recharts from "../Recharts/Recharts";
 import { selectWaterPerMonth } from "../../redux/water/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  getCurrentWeek,
   getDayFromDateStr,
   getMonthFromDateStr,
 } from "../../helpers/getAmountForDayAndMonth";
@@ -58,12 +59,12 @@ const MonthInfo = ({ clickOnDay }) => {
     const totalAmount = records.reduce((sum, record) => sum + record.amount, 0);
     return totalAmount;
   };
-
-  const dataRecharts = dayInMounth.map((day) => ({
-    date: day,
-    value: getAmountForDayAndMonth(day, currentDate.getMonth() + 1),
+  const currentWeekDates = getCurrentWeek(currentDate);
+  const dataRecharts = currentWeekDates.map((day) => ({
+    date: day.getDate(),
+    value: getAmountForDayAndMonth(day.getDate(), day.getMonth() + 1),
   }));
-
+  console.log(dataRecharts);
   return (
     <>
       <div className={css.block}>
