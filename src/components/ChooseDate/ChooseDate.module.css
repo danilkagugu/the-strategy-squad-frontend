@@ -1,10 +1,12 @@
 .text {
   color: var(--dark-grey-medium);
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 1.2;
 }
 @media screen and (min-width: 768px) {
   .text {
-    font-size: 22px;
+    font-size: 28px;
+    line-height: 1.1;
   }
 }
