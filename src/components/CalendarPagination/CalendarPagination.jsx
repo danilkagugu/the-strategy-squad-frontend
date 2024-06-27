@@ -28,7 +28,7 @@ const CalendarPagination = ({
       dateNow.getMonth() >= new Date().getMonth());
   return (
     <div className={css.headerCalendar}>
-      <p className={css.month}>Mounth</p>
+      <p className={css.month}>Month</p>
       <div className={css.calendarInfo}>
         <button className={css.btnPrevMonth} onClick={prevMounth}>
           <svg className={css.icon}>

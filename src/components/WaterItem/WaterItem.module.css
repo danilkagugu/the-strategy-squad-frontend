@@ -69,9 +69,14 @@
 
 @media screen and (min-width: 768px) {
   .waterBox {
-    padding: 20px 20px 20px 26px;
+    padding: 20px;
     gap: 20px;
     width: 190px;
+  }
+
+  .iconGlassWrapper {
+    width: 44px;
+    height: 45px;
   }
 
   .iconGlass {

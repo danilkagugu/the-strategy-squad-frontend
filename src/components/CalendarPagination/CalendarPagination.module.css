@@ -22,7 +22,7 @@
   color: var(--dark-grey-medium);
   font-size: 20px;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 1.1;
 }
 
 @media screen and (max-width: 350px) {
@@ -58,4 +58,28 @@
 .iconPieChart > svg {
   width: 100%;
   height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .month {
+    font-size: 28px;
+  }
+  .calendarDate {
+    font-size: 16px;
+  }
+  .iconPieChart {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .iconPieChart {
+    width: 28px;
+    height: 28px;
+  }
+
+  .calendarInfo {
+    gap: 20px;
+  }
 }
