@@ -46,9 +46,11 @@ const WaterItem = ({ item, selectDay }) => {
   return (
     <>
       <div className={css.waterBox}>
-        <svg className={css.iconGlass}>
-          <use href={`${sprite}#icon-glass`}></use>
-        </svg>
+        <div className={css.iconGlassWrapper}>
+          <svg className={css.iconGlass}>
+            <use href={`${sprite}#icon-glass`}></use>
+          </svg>
+        </div>
         <div className={css.infoBox}>
           <p className={css.infoMl}> {amount} ml</p>
           <p className={css.infoTime}>{time.split("-")[3]} AM</p>
