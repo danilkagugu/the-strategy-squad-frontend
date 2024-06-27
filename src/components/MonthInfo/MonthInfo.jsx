@@ -63,7 +63,7 @@ const MonthInfo = ({ clickOnDay }) => {
     date: day,
     value: getAmountForDayAndMonth(day, currentDate.getMonth() + 1),
   }));
-  // console.log(dataRecharts);
+
   return (
     <>
       <div className={css.block}>

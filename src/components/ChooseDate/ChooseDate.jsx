@@ -1,17 +1,21 @@
 import style from "./ChooseDate.module.css";
 export default function ChooseDate({ data }) {
-  const date = new Date(data);
-  let monthName = date.toLocaleString("en-us", { month: "long" });
-  let dayInMonth = date.getDate();
+  const [day, month] = data.split(", ");
+  const currentYear = new Date().getFullYear();
+  const date = new Date(`${month} ${day}, ${currentYear}`);
 
-  if (isNaN(dayInMonth) || isNaN(date.getTime())) {
-    dayInMonth = "Today";
-    monthName = "";
+  const currentDate = new Date();
+
+  const isToday =
+    date.getDate() === currentDate.getDate() &&
+    date.getMonth() === currentDate.getMonth() &&
+    date.getFullYear() === currentYear;
+
+  let formData;
+  if (isToday) {
+    formData = "Today";
   } else {
-    dayInMonth = `${dayInMonth}`;
-    monthName = `, ${monthName}`;
+    formData = `${day}, ${month}`;
   }
-  const formData = `${dayInMonth}${monthName}`;
-
   return <p className={style.text}>{formData}</p>;
 }
