@@ -70,8 +70,8 @@ const UserSettingsForm = ({ onClose }) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getUserInfo()), [dispatch];
-	});
+		dispatch(getUserInfo());
+	}, [dispatch]);
 
 	const [avatarUrl, setAvatarUrl] = useState(null);
 
@@ -80,6 +80,7 @@ const UserSettingsForm = ({ onClose }) => {
 		handleSubmit,
 		watch,
 		formState: { errors },
+		setValue,
 	} = useForm({
 		resolver: yupResolver(schema),
 		defaultValues: {
@@ -92,31 +93,53 @@ const UserSettingsForm = ({ onClose }) => {
 		},
 	});
 
-	const onSubmit = async data => {
-		if (Object.keys(errors).length > 0) {
-			return;
+	useEffect(() => {
+		setValue('gender', user.gender);
+		setValue('name', user.name);
+		setValue('email', user.email);
+		setValue('weight', user.weight);
+		setValue('timeActive', user.timeActive);
+		setValue('waterNorm', user.waterNorm / 1000);
+	}, [user, setValue]);
+
+	const handleAvatarUpload = event => {
+		const file = event.target.files[0];
+		if (file) {
+			const url = URL.createObjectURL(file);
+			setAvatarUrl(url);
+			setValue('avatar', file);
 		}
+	};
+
+	const onSubmit = async data => {
+		console.log('Submitting form data:', data);
 
 		data.waterNorm = data.waterNorm * 1000;
+
 		const formData = new FormData();
 
-		Object.entries(data).forEach(([key, value]) => {
+		for (const key in data) {
 			if (key === 'avatar') {
-				if (value[0] !== undefined) {
-					formData.append(key, value[0]);
+				if (data[key]) {
+					formData.append(key, data[key]);
+					console.log('Avatar added to formData:', data[key]);
 				}
-				return;
+				continue;
 			}
-
-			if (value === '' || value === undefined || value === null) {
-				return;
+			if (data[key] === '' || data[key] === undefined || data[key] === null) {
+				continue;
 			}
+			formData.append(key, data[key]);
+		}
 
-			formData.append(key, value);
-		});
+		console.log('FormData to be sent:', formData);
 
 		const response = await dispatch(apiUpdateUser(formData));
-		response.meta.requestStatus === 'fulfilled' && onClose();
+		console.log('Response from server:', response);
+
+		if (response.meta.requestStatus === 'fulfilled') {
+			onClose();
+		}
 	};
 
 	const { avatar, gender, name, email, weight, timeActive, waterNorm } =
@@ -124,15 +147,6 @@ const UserSettingsForm = ({ onClose }) => {
 
 	const isAnyFieldFilled =
 		avatar || gender || name || email || weight || timeActive || waterNorm;
-
-	const handleAvatarUpload = event => {
-		const file = event.target.files[0];
-
-		if (file) {
-			const url = URL.createObjectURL(file);
-			setAvatarUrl(url);
-		}
-	};
 
 	const recommendedWaterNorm = getWaterNorm(gender, weight, timeActive);
 
@@ -152,6 +166,7 @@ const UserSettingsForm = ({ onClose }) => {
 					<input
 						type='file'
 						accept='image/*'
+						{...register('avatar')}
 						onChange={handleAvatarUpload}
 						className={css.avatarInput}
 					/>
@@ -167,8 +182,8 @@ const UserSettingsForm = ({ onClose }) => {
 								className={css.radio}
 								type='radio'
 								name='gender'
-								value='woman'
-								{...register('gender', { required: true })}
+								value='Woman'
+								{...register('gender')}
 							/>
 							Woman
 						</label>
@@ -177,8 +192,8 @@ const UserSettingsForm = ({ onClose }) => {
 								className={css.radio}
 								type='radio'
 								name='gender'
-								value='man'
-								{...register('gender', { required: true })}
+								value='Man'
+								{...register('gender')}
 							/>
 							Man
 						</label>
@@ -271,7 +286,7 @@ const UserSettingsForm = ({ onClose }) => {
 						<div className={css.fieldsGroup}>
 							<div className={css.requiredWaterGroup}>
 								<label>The required amount of water in liters per day:</label>
-								<p className={css.formula}> `${recommendedWaterNorm}` L</p>
+								<p className={css.formula}>{`${recommendedWaterNorm} L`}</p>
 							</div>
 
 							<div className={css.inputGroup}>
