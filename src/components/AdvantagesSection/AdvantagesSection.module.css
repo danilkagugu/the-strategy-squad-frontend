@@ -20,10 +20,10 @@
 
 .customersWrapper {
   display: flex;
-  justify-content: space-between;
+  gap: 4px;
   border-radius: 30px;
   padding: 10px 20px;
-  width: 160px;
+  width: max-content;
   height: 48px;
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.1);
   background: var(--white);
@@ -123,7 +123,6 @@
   }
 
   .customersWrapper {
-    width: 237px;
     height: 67px;
     margin-bottom: 0;
     gap: 4px;

@@ -17,7 +17,7 @@ const selectDay = "2024-06-20";
 export default function DailyInfo() {
   // console.log(selectDay);
 
-  const month = "11";
+  //   const month = "11";
   console.log(convertMonthsNumberToStr(5));
   const [isOpen, setIsOpen] = useState(false);
 
