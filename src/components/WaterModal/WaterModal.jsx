@@ -2,6 +2,7 @@ import WaterForm from "../WaterForm/WaterForm";
 import ModalWrapper from "../ModalWrapper/ModalWrapper";
 
 import css from "./WaterModal.module.css";
+import { useTranslation } from "react-i18next";
 
 // const onSubmitDataExam = (data, counter) =>
 //   console.log({ ...data, amount: counter });
@@ -9,16 +10,17 @@ import css from "./WaterModal.module.css";
 const WaterModal = ({
   isOpen,
   onCloseModal,
-  title = "Add water",
-  text = "Choose a value:",
+  title,
+  text,
   onSubmitData,
   initialState,
 }) => {
+  const { t } = useTranslation();
   return (
     <>
       <ModalWrapper modalIsOpen={isOpen} onCloseModal={onCloseModal}>
-        <h2 className={css.mainTitle}>{title}</h2>
-        <h3 className={css.title}>{text}</h3>
+        <h2 className={css.mainTitle}>{title || t("add_water")}</h2>
+        <h3 className={css.title}>{text || t("choose_value")}</h3>
         <WaterForm onSubmitData={onSubmitData} initialState={initialState} />
       </ModalWrapper>
     </>

@@ -9,6 +9,7 @@ import {
   deleteWaterRecord,
   editWaterRecord,
 } from "../../redux/water/operations";
+import { useTranslation } from "react-i18next";
 
 const title = "Edit the entered amount of water";
 const text = "Correct entered data:";
@@ -42,7 +43,7 @@ const WaterItem = ({ item }) => {
   const onDeleteCard = () => {
     dispatch(deleteWaterRecord(_id));
   };
-
+  const { t } = useTranslation();
   return (
     <>
       <div className={css.waterBox}>
@@ -50,8 +51,12 @@ const WaterItem = ({ item }) => {
           <use href={`${sprite}#icon-glass`}></use>
         </svg>
         <div className={css.infoBox}>
-          <p className={css.infoMl}> {amount} ml</p>
-          <p className={css.infoTime}>{time.split("-")[3]} AM</p>
+          <p className={css.infoMl}>
+            {amount} {t("ml")}
+          </p>
+          <p className={css.infoTime}>
+            {time.split("-")[3]} {t("am")}
+          </p>
         </div>
         <div className={css.iconBox}>
           <button className={css.iconBtn} onClick={openModal}>

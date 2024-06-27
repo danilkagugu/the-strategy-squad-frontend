@@ -4,6 +4,7 @@ import sprite from "../../assets/icons.svg";
 import css from "./UserBar.module.css";
 import { useRef, useState } from "react";
 import ClickOutSide from "../../helpers/ClickOutSide";
+import LanguageSelector from "../i18n/LanguageSelector";
 
 const UserBar = ({ name }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +45,7 @@ const UserBar = ({ name }) => {
       >
         <p className={css.userName}>{name}</p>
         <img src={avatar} />
+        <LanguageSelector />
         {isOpen ? (
           <svg className={css.iconDown}>
             <use href={`${sprite}#icon-cheveron-up`}></use>

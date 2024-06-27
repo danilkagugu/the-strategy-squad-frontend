@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectWaterPerDay } from "../../redux/water/selectors";
 import { useEffect } from "react";
 import { getWaterPerDay } from "../../redux/water/operations";
+import { useTranslation } from "react-i18next";
 
 const WaterList = ({ selectDay }) => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const WaterList = ({ selectDay }) => {
       dispatch(getWaterPerDay(selectDay));
     }
   }, [dispatch, selectDay]);
-
+  const { t } = useTranslation();
   // console.log(response.data);
   return (
     <div className={css.container}>
@@ -30,7 +31,7 @@ const WaterList = ({ selectDay }) => {
           ))}
         </ul>
       ) : (
-        <p className={css.text}>There are no water yet.</p>
+        <p className={css.text}>{t("water_yet")}.</p>
       )}
     </div>
   );

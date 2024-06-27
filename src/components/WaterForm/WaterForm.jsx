@@ -7,39 +7,42 @@ import { currentTime } from "../../services/currentDay";
 
 import sprite from "../../assets/icons.svg";
 import css from "./WaterForm.module.css";
+import { useTranslation } from "react-i18next";
 
 // let data = new Date();
 // let hours = String(data.getHours()).padStart(2, "0");
 // let minutes = String(data.getMinutes()).padStart(2, "0");
 // let currentTime = `${hours}:${minutes}`;
 
-const schema = yup
-  .object({
-    time: yup
-      .string()
-      .required("This field is required. Add time in hh:mm format.")
-      .matches(
-        /^\d(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
-        "Add time in hh:mm format."
-      ),
-    amount: yup
-      .number()
-      .positive()
-      .integer()
-      .required("This field is required"),
-  })
-  .required();
+const schema = (t) =>
+  yup
+    .object({
+      time: yup
+        .string()
+        .required(t("validation.time_format_2"))
+        .matches(
+          /^\d(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
+          t("validation.time_format")
+        ),
+      amount: yup
+        .number()
+        .positive()
+        .integer()
+        .required(t("validation.required_field")),
+    })
+    .required();
 
 const WaterForm = ({
   onSubmitData,
   initialState = { amount: 50, time: currentTime() },
 }) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema(t)),
   });
 
   const { amount, time } = initialState;
@@ -78,7 +81,7 @@ const WaterForm = ({
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <p className={css.text}>Amount of water:</p>
+      <p className={css.text}>{t("amount_water")}:</p>
       <div className={css.counterContainer}>
         <button className={css.btn} onClick={minusValue} type="button">
           <svg
@@ -93,7 +96,9 @@ const WaterForm = ({
           </svg>
         </button>
         <div className={css.valueContainer}>
-          <span>{counter} ml</span>
+          <span>
+            {counter} {t("ml")}
+          </span>
         </div>
         <button className={css.btn} onClick={plusValue} type="button">
           <svg
@@ -109,7 +114,7 @@ const WaterForm = ({
         </button>
       </div>
       <label className={css.label}>
-        <span className={css.text}>Recording time</span>:
+        <span className={css.text}>{t("record_time")}</span>:
         <input
           className={css.input}
           name="time"
@@ -123,7 +128,7 @@ const WaterForm = ({
         )}
       </label>
       <label>
-        <span className={css.title}>Enter the value of the water used:</span>
+        <span className={css.title}>{t("amount_water_used")}:</span>
         <input
           className={css.input}
           name="amount"
@@ -137,7 +142,7 @@ const WaterForm = ({
         )}
       </label>
       <button className={css.saveBtn} type="submit">
-        Save
+        {t("save")}
       </button>
     </form>
   );

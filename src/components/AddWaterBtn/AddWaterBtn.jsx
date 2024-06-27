@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import sprite from "../../assets/icons.svg";
 
 export default function AddWaterBtn({
@@ -9,6 +10,7 @@ export default function AddWaterBtn({
   svg_plus_hover,
   openModal,
 }) {
+  const { t } = useTranslation();
   return (
     <>
       <button className={`${buttonStyle}`} onClick={openModal}>
@@ -20,7 +22,7 @@ export default function AddWaterBtn({
             <use href={`${sprite}#${hoverIconName}`}></use>
           </svg>
         )}
-        <p className={`${textStyle}`}>Add water</p>
+        <p className={`${textStyle}`}>{t("add_water")}</p>
       </button>
     </>
   );
