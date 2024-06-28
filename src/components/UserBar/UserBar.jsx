@@ -3,6 +3,7 @@ import sprite from "../../assets/icons.svg";
 import css from "./UserBar.module.css";
 import { useRef, useState } from "react";
 import ClickOutSide from "../../helpers/ClickOutSide";
+import LogOutModal from "../LogOutModal/LogOutModal"
 
 const UserBar = ({ name, avatarURL }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,9 @@ const UserBar = ({ name, avatarURL }) => {
   };
 
   const openModal = () => {
+    setIsOpen(false);
     setIsOpenLogOut(true);
+
   };
 
   const closeModal = () => {
@@ -62,13 +65,17 @@ const UserBar = ({ name, avatarURL }) => {
           <ClickOutSide onClickOutside={handleClickOutside}>
             <UserBarPopover
               modalRef={modalRef}
-              modalIsOpen={isOpenLogOut}
               closeModal={closeModal}
               openModal={openModal}
+
             />
+
           </ClickOutSide>
         </div>
       ) : null}
+      {isOpenLogOut && (
+        <LogOutModal modalIsOpen={isOpenLogOut} closeModal={closeModal} />
+      )}
     </div>
   );
 };
