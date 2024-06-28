@@ -1,4 +1,5 @@
 .userPanel {
+  position: relative;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -26,9 +27,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-      .userPanel {
-
-        flex-direction: row;
-        
-      }
-    }
+  .userPanel {
+    flex-direction: row;
+  }
+}

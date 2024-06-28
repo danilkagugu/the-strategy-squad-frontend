@@ -1,84 +1,113 @@
 .wrapper {
-    text-align: center;
-}
-
-title {
-    font-family: Poppins;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 32px;
-    letter-spacing: -0.01em;
-    text-align: center;
-    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.1);
-}
-
-.text {
-    font-family: Poppins;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 304px;
+  height: 187px;
 }
 
 .closeButton {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 10px;
-    background: transparent;
-    border-color: transparent;
-    right: 10px;
-    width: 28px;
-    height: 28px;
-    padding: 0px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  background: transparent;
+  border-color: transparent;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  padding: 0px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-grey-medium);
+}
+
+.text {
+  font-size: 14px;
 }
 
 .btnWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 356px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
 }
 
 .deleteButton {
-    width: 170px;
-    padding: 18px 67px 18px 67px;
-    border-radius: 30px;
-    background: rgba(155, 225, 160, 1);
-    border-color: transparent;
+  border-radius: 30px;
+  padding: 14px 126px;
+  margin-top: 12px;
+  height: 46px;
+  background: var(--green-btn);
+  color: var(--dark-grey-medium);
+  font-weight: 700;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
 
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    text-align: center;
+.deleteButton:hover,
+.deleteButton:focus {
+  background-color: var(--green-btn-hover);
 }
 
 .cancelButton {
-    width: 176px;
-    /* height: 60px; */
-    padding: 18px 59px 18px 59px;
-    gap: 10px;
-    border-radius: 30px;
-    opacity: 0px;
-    background: rgba(240, 239, 244, 1);
-    border-color: transparent;
-
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    text-align: center;
-    background: rgba(50, 63, 71, 0.3);
+  border-radius: 30px;
+  padding: 14px 126px;
+  margin-top: 12px;
+  height: 46px;
+  background: var(--light-gray);
+  color: var(--dark-grey-medium);
+  font-weight: 700;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-.icon {
+.cancelText {
+  color: #323f474d;
+  transition: color 0.3s ease;
+}
+
+.cancelButton:hover .cancelText {
+  color: var(--dark-grey-medium);
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    gap: 24px;
+    width: 436px;
+    height: 164px;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .btnWrapper {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
+    gap: 10px;
+    width: 100%;
+  }
+  .deleteButton {
+    padding: 18px 57px;
+    margin-top: 0px;
+    width: 173px;
+    height: 60px;
+    font-size: 16px;
+  }
+  .cancelButton {
+    padding: 18px 0px;
+    width: 176px;
+    height: 60px;
+    font-size: 16px;
+  }
 }

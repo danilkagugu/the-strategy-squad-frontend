@@ -21,6 +21,7 @@ const CalendarPagination = ({
   prevMounth,
   dateNow,
   openRecharts,
+  setOpenRecharts,
 }) => {
   const featureMouth =
     dateNow.getFullYear() > new Date().getFullYear() ||
@@ -28,7 +29,7 @@ const CalendarPagination = ({
       dateNow.getMonth() >= new Date().getMonth());
   return (
     <div className={css.headerCalendar}>
-      <p className={css.month}>Month</p>
+      <p className={css.month}>{openRecharts ? "Statistics" : "Month"}</p>
       <div className={css.calendarInfo}>
         <button className={css.btnPrevMonth} onClick={prevMounth}>
           <svg className={css.icon}>
@@ -47,7 +48,7 @@ const CalendarPagination = ({
             <use href={`${sprite}#icon-cheveron-right`}></use>
           </svg>
         </button>
-        <button className={css.iconPieChart} onClick={openRecharts}>
+        <button className={css.iconPieChart} onClick={setOpenRecharts}>
           <svg className={css.icon}>
             <use href={`${sprite}#icon-pie-chart`}></use>
           </svg>
