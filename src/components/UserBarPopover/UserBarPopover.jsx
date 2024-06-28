@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import sprite from "../../assets/icons.svg";
 import css from "./UserBarPopover.module.css";
 import UserSettingsModal from "../UserSettingsModal/UserSettingsModal";
-
-import scrollController from "../../services/noScroll";
 
 const UserBarPopover = ({ modalRef, openModal }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onOpenModal = () => {
-
     setIsOpen(true);
-    scrollController.disabledScroll();
+    document.body.classList.add("noScroll");
   };
   const onCloseModal = () => {
     setIsOpen(false);
-    scrollController.enabledScroll();
+    document.body.classList.remove("noScroll");
   };
+  useEffect(() => {
+    return onCloseModal;
+  }, []);
 
   return (
     <>
@@ -35,13 +35,12 @@ const UserBarPopover = ({ modalRef, openModal }) => {
             </svg>
             <p className={css.textBarPopover}>Setting</p>
           </button>
-          <button className={css.btnBar} onClick={openModal} >
+          <button className={css.btnBar} onClick={openModal}>
             <svg className={css.icon}>
               <use href={`${sprite}#icon-log-out`}></use>
             </svg>
             <p className={css.textBarPopover}>Log out</p>
           </button>
-
         </div>
       ) : null}
     </>
