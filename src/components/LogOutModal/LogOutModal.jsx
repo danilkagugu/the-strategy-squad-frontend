@@ -16,7 +16,7 @@ const LogOutModal = ({ modalIsOpen, closeModal }) => {
 
 
     return (<>
-        <ModalWrapper modalIsOpen={modalIsOpen} onCloseModal={closeModal}>
+        <ModalWrapper modalIsOpen={modalIsOpen} onCloseModal={closeModal} >
             <div className={css.logOutModalWrapper}>
                 <h2 className={css.logOutModalTitle} >Log out</h2>
                 <p className={css.logOutModalText}>Do you really want to log out?</p>
