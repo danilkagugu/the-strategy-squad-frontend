@@ -1,11 +1,32 @@
 .modalContent {
-	max-height: 100vh;
-	overflow-y: auto;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.modalContent::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: #f0eff4;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  color: #f0eff4;
+  border-radius: 30px;
+  background: transparent;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+  background: #cfcfcf;
 }
 
 .title {
-	font-size: 20px;
-	line-height: 1.2;
-	color: var(--dark-grey-hard);
-	font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--dark-grey-hard);
+  font-weight: bold;
 }
