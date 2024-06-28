@@ -7,6 +7,7 @@ const DeleteWaterModal = ({ modalIsOpen, onCloseModal, id }) => {
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(deleteWaterRecord(id));
+    onCloseModal();
   };
 
   return (
