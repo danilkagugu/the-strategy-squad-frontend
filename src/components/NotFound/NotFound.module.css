@@ -1,0 +1,77 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  height: 100vh;
+  background: var(--green-btn);
+  padding: 40px 20px;
+  background-image: url(../../assets/background/dectop/tracker-bg-desctop.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.whoops {
+  color: var(--dark-grey-medium);
+  font-family: Poppins, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.pageNotFound {
+  color: var(--dark-grey-medium);
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 38px;
+}
+
+.btnHome {
+  border-radius: 30px;
+  padding: 14px 126px;
+  height: 46px;
+  background-color: var(--white);
+  color: var(--dark-grey-medium);
+  font-weight: 700;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btnHome:hover {
+  color: #d6adad;
+  background-color: var(--light-gray);
+}
+
+@media screen and (min-width: 768px) {
+  .whoops {
+    font-size: 35px;
+  }
+
+  .pageNotFound {
+    font-size: 30px;
+  }
+
+  .btnHome {
+    display: flex;
+    align-items: center;
+    padding: 20px 126px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .box {
+    gap: 40px;
+  }
+  .whoops {
+    font-size: 60px;
+  }
+  .pageNotFound {
+    font-size: 50px;
+  }
+  .btnHome {
+    padding: 30px 100px;
+  }
+}
