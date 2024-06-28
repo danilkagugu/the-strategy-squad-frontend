@@ -35,7 +35,6 @@
 }
 
 .daily_info__text {
-  font-family: "Poppins", serif;
   font-size: 9px;
   color: var(--dark-grey-hard);
   opacity: 0.6;
