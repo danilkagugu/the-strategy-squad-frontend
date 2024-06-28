@@ -108,6 +108,13 @@
 	left: 4px;
 }
 
+.error {
+	color: tomato;
+	font-size: 12px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+}
+
 .userInfo {
 	display: flex;
 	flex-direction: column;
