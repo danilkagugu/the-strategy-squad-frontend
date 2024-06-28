@@ -1,7 +1,7 @@
 .listDay {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
-  grid-column-gap: 17px;
+  grid-column-gap: 18px;
   grid-row-gap: 20px;
 }
 
@@ -53,8 +53,13 @@
 
 @media screen and (min-width: 768px) {
   .listDay {
-    grid-template-columns: repeat(auto-fit, minmax(38px, 1fr));
     grid-column-gap: 48px;
     grid-row-gap: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .listDay {
+    grid-template-columns: repeat(auto-fit, minmax(38px, 1fr));
   }
 }

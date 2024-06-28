@@ -42,9 +42,9 @@ img {
 }
 
 .fatherDiv {
-  position: fixed;
+  position: absolute;
   z-index: 1000;
-  top: 150px;
+  top: 115px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -56,5 +56,10 @@ img {
   .imgUserBarWrapper {
     width: 44px;
     height: 44px;
+  }
+  .fatherDiv {
+    z-index: 1000;
+    top: 67px;
+    right: 0px;
   }
 }

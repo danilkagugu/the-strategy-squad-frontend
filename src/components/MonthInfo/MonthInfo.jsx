@@ -72,7 +72,8 @@ const MonthInfo = ({ clickOnDay }) => {
           dateNow={currentDate}
           prevMounth={prevMounth}
           nextMounth={nextMounth}
-          openRecharts={toogleOpenRecharts}
+          setOpenRecharts={toogleOpenRecharts}
+          openRecharts={openRecharts}
         />
         {openRecharts ? (
           <Recharts data={dataRecharts} />

@@ -35,6 +35,7 @@
 @media screen and (min-width: 1440px) {
   .box {
     width: 50%;
+    height: 736px;
     background-size: 58%;
     background-image: url("../../assets/background/dectop/tracker-bg-desctop.png");
   }

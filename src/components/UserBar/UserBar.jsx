@@ -1,5 +1,4 @@
 import UserBarPopover from "../UserBarPopover/UserBarPopover";
-import avatar from "../../assets/customers/desktop-tablet/customers1-tab-desc.png";
 import sprite from "../../assets/icons.svg";
 import css from "./UserBar.module.css";
 import { useRef, useState } from "react";
@@ -8,6 +7,7 @@ import ClickOutSide from "../../helpers/ClickOutSide";
 const UserBar = ({ name, avatarURL }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLogOut, setIsOpenLogOut] = useState(false);
+
   const buttonRef = useRef(null);
   const modalRef = useRef(null);
   const handleToggleBarPopover = () => {
@@ -44,9 +44,8 @@ const UserBar = ({ name, avatarURL }) => {
       >
         <p className={css.userName}>{name}</p>
         <div className={css.imgUserBarWrapper}>
-          < img src={avatarURL}  alt="avatar"/>
+          <img src={avatarURL} alt="avatar" />
         </div>
-        
 
         {isOpen ? (
           <svg className={css.iconDown}>

@@ -4,10 +4,8 @@ import sprite from "../../assets/icons.svg";
 import WaterModal from "../../components/WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch } from "react-redux";
-import {
-  deleteWaterRecord,
-  editWaterRecord,
-} from "../../redux/water/operations";
+import { editWaterRecord } from "../../redux/water/operations";
+import DeleteWaterModal from "../DeleteWaterModal/DeleteWaterModal";
 
 const title = "Edit the entered amount of water";
 const text = "Correct entered data:";
@@ -18,6 +16,7 @@ const WaterItem = ({ item, selectDay }) => {
   const initialTime = time.slice(-5);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenDelete, setIsOpenDelete] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,16 +30,22 @@ const WaterItem = ({ item, selectDay }) => {
     scrollController.enabledScroll();
   }
 
+  function openModalDelete() {
+    setIsOpenDelete(true);
+    scrollController.disabledScroll();
+  }
+
+  function closeModalDelete() {
+    setIsOpenDelete(false);
+    scrollController.enabledScroll();
+  }
+
   const onSubmitData = (data, counter, time) => {
     const fullData = `${selectDay}-${time}`;
     dispatch(
       editWaterRecord({ ...data, amount: counter, time: fullData, id: _id })
     );
     closeModal();
-  };
-
-  const deleteCard = () => {
-    dispatch(deleteWaterRecord(_id));
   };
 
   return (
@@ -61,7 +66,7 @@ const WaterItem = ({ item, selectDay }) => {
               <use href={`${sprite}#icon-edit`}></use>
             </svg>
           </button>
-          <button className={css.iconBtn} onClick={deleteCard}>
+          <button className={css.iconBtn} onClick={openModalDelete}>
             <svg className={css.icon}>
               <use href={`${sprite}#icon-trash`}></use>
             </svg>
@@ -75,6 +80,11 @@ const WaterItem = ({ item, selectDay }) => {
         text={text}
         onSubmitData={onSubmitData}
         initialState={{ time: initialTime, amount }}
+      />
+      <DeleteWaterModal
+        modalIsOpen={isOpenDelete}
+        onCloseModal={closeModalDelete}
+        id={_id}
       />
     </>
   );
