@@ -1,7 +1,5 @@
 .userBar {
   display: flex;
-  
-
 }
 
 .iconDown {
@@ -29,17 +27,18 @@
   line-height: 24px;
 }
 
-.imgUserBarWrapper{
+.imgUserBarWrapper {
   display: flex;
   width: 38px;
   height: 38px;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 img {
   height: 100%;
   width: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .fatherDiv {
@@ -48,17 +47,14 @@ img {
   top: 150px;
 }
 
-
 @media only screen and (min-width: 768px) {
   .btnUserBar {
     min-width: 157px;
     height: 56px;
   }
 
-  .imgUserBarWrapper { 
+  .imgUserBarWrapper {
     width: 44px;
     height: 44px;
-    }
+  }
 }
-
-
