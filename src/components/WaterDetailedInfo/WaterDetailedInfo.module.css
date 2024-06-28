@@ -1,8 +1,16 @@
 .waterDetailedInfo {
   background-color: var(--light-gray);
-  padding: 22px;
   border-radius: 30px;
+  padding: 20px;
+  overflow: hidden;
 }
+
+@media screen and (min-width: 768px) {
+  .waterDetailedInfo {
+    padding: 32px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .waterDetailedInfo {
     width: 50%;

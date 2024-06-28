@@ -39,27 +39,29 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
   return (
     <ul className={css.listDay}>
       {allDay.map((day, index) => (
-        <li className={css.dayItem} key={index}>
-          <button
-            onClick={() => {
-              clickOnDay(formatDay(day));
-            }}
-            className={`${css.dayBox} ${
-              getAmountForDayAndMonth(day, currentMonth) >= 100
-                ? css.dayBoxFull
-                : ""
-            }`}
-          >
-            {day.toString()}
-          </button>
+        <li className={css.listDayItem} key={index}>
+          <div className={css.dayItem}>
+            <button
+              onClick={() => {
+                clickOnDay(formatDay(day));
+              }}
+              className={`${css.dayBox} ${
+                getAmountForDayAndMonth(day, currentMonth) >= 100
+                  ? css.dayBoxFull
+                  : ""
+              }`}
+            >
+              {day.toString()}
+            </button>
 
-          <span className={css.percent}>
-            {getAmountForDayAndMonth(day, currentMonth) !== null
-              ? getAmountForDayAndMonth(day, currentMonth) >= 100
-                ? "100%"
-                : `${getAmountForDayAndMonth(day, currentMonth)}%`
-              : "0%"}
-          </span>
+            <span className={css.percent}>
+              {getAmountForDayAndMonth(day, currentMonth) !== null
+                ? getAmountForDayAndMonth(day, currentMonth) >= 100
+                  ? "100%"
+                  : `${getAmountForDayAndMonth(day, currentMonth)}%`
+                : "0%"}
+            </span>
+          </div>
         </li>
       ))}
     </ul>

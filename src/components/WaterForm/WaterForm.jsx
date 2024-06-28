@@ -8,11 +8,6 @@ import { currentTime } from "../../services/currentDay";
 import sprite from "../../assets/icons.svg";
 import css from "./WaterForm.module.css";
 
-// let data = new Date();
-// let hours = String(data.getHours()).padStart(2, "0");
-// let minutes = String(data.getMinutes()).padStart(2, "0");
-// let currentTime = `${hours}:${minutes}`;
-
 const schema = yup
   .object({
     time: yup
@@ -73,7 +68,6 @@ const WaterForm = ({
     setInputTime(ev.target.value);
   };
 
-  // const onSubmit = (data) => console.log({ ...data, amount: counter });
   const onSubmit = (data) => onSubmitData(data, counter, inputTime);
 
   return (
@@ -133,7 +127,9 @@ const WaterForm = ({
           {...register("amount", { required: true, min: 50, max: 5000 })}
         />
         {errors.amount && (
-          <span className={css.errorMessage}>{errors.amount.message}</span>
+          <span className={css.errorMessage}>
+            Amount must be a positive number.
+          </span>
         )}
       </label>
       <button className={css.saveBtn} type="submit">

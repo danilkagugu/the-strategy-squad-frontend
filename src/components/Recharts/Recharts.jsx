@@ -53,7 +53,7 @@ const Recharts = ({ data }) => {
         </defs>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
-        <YAxis domain={[0, 2.5]} ticks={[0, 0.5, 1, 1.5, 2, 2.5]} />
+        <YAxis domain={[0, 2500]} ticks={[0, 500, 1000, 1500, 2000, 2500]} />
         <Tooltip content={<CustomTooltip />} />
         <Area
           type="monotone"
@@ -67,7 +67,7 @@ const Recharts = ({ data }) => {
           <CustomDot
             key={`dot-${index}`}
             cx={entry.date}
-            cy={entry.value * 160}
+            cy={(entry.value / 2500) * 400} // Adjusted for proper scaling
           />
         ))}
       </AreaChart>

@@ -4,10 +4,8 @@ import sprite from "../../assets/icons.svg";
 import WaterModal from "../../components/WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch } from "react-redux";
-import {
-  deleteWaterRecord,
-  editWaterRecord,
-} from "../../redux/water/operations";
+import { editWaterRecord } from "../../redux/water/operations";
+import DeleteWaterModal from "../DeleteWaterModal/DeleteWaterModal";
 
 const title = "Edit the entered amount of water";
 const text = "Correct entered data:";
@@ -18,6 +16,7 @@ const WaterItem = ({ item, selectDay }) => {
   const initialTime = time.slice(-5);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenDelete, setIsOpenDelete] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,6 +30,16 @@ const WaterItem = ({ item, selectDay }) => {
     scrollController.enabledScroll();
   }
 
+  function openModalDelete() {
+    setIsOpenDelete(true);
+    scrollController.disabledScroll();
+  }
+
+  function closeModalDelete() {
+    setIsOpenDelete(false);
+    scrollController.enabledScroll();
+  }
+
   const onSubmitData = (data, counter, time) => {
     const fullData = `${selectDay}-${time}`;
     dispatch(
@@ -39,16 +48,14 @@ const WaterItem = ({ item, selectDay }) => {
     closeModal();
   };
 
-  const deleteCard = () => {
-    dispatch(deleteWaterRecord(_id));
-  };
-
   return (
     <>
       <div className={css.waterBox}>
-        <svg className={css.iconGlass}>
-          <use href={`${sprite}#icon-glass`}></use>
-        </svg>
+        <div className={css.iconGlassWrapper}>
+          <svg className={css.iconGlass}>
+            <use href={`${sprite}#icon-glass`}></use>
+          </svg>
+        </div>
         <div className={css.infoBox}>
           <p className={css.infoMl}> {amount} ml</p>
           <p className={css.infoTime}>{time.split("-")[3]} AM</p>
@@ -59,7 +66,7 @@ const WaterItem = ({ item, selectDay }) => {
               <use href={`${sprite}#icon-edit`}></use>
             </svg>
           </button>
-          <button className={css.iconBtn} onClick={deleteCard}>
+          <button className={css.iconBtn} onClick={openModalDelete}>
             <svg className={css.icon}>
               <use href={`${sprite}#icon-trash`}></use>
             </svg>
@@ -73,6 +80,11 @@ const WaterItem = ({ item, selectDay }) => {
         text={text}
         onSubmitData={onSubmitData}
         initialState={{ time: initialTime, amount }}
+      />
+      <DeleteWaterModal
+        modalIsOpen={isOpenDelete}
+        onCloseModal={closeModalDelete}
+        id={_id}
       />
     </>
   );
