@@ -4,26 +4,55 @@ import WaterDailyNorma from "../WaterDailyNorma/WaterDailyNorma";
 import WaterProgressBar from "../WaterProgressBar/WaterProgressBar";
 import Logo from "../Logo/Logo";
 import css from "../AddWaterBtn/AddWaterBtn.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WaterModal from "../WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch, useSelector } from "react-redux";
 import { addWaterRecord } from "../../redux/water/operations";
 import { currentDay } from "../../services/currentDay";
 import { convertTime } from "../../services/currentDay";
+import { selectUserData } from "../../redux/auth/selectors";
+import { selectWaterPerDay } from "../../redux/water/selectors";
 
 export default function WaterMainInfo() {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
+  const user = useSelector(selectUserData);
+  const waters = useSelector(selectWaterPerDay);
+  const [todayWaterAmount, setTodayWaterAmount] = useState(0);
 
-  const user = useSelector((state) => state.auth.userData);
+  const today = new Date();
+  const todayData = `${today.getFullYear()}-${String(
+    today.getMonth() + 1
+  ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
+  useEffect(() => {
+    if (waters) {
+      const todayWaters = waters.data.filter((item) => {
+        const itemDate = item.time.split("-").slice(0, 3).join("-");
+        return itemDate === todayData;
+      });
+
+      if (todayWaters.length > 0) {
+        const totalTodayWater = todayWaters.reduce(
+          (total, item) => total + item.amount,
+          0
+        );
+        setTodayWaterAmount(totalTodayWater);
+      }
+    }
+  }, [waters, todayData]);
+
   const dailyNorma = user.waterNorm
     ? (user.waterNorm / 1000).toFixed(1)
     : "2.0";
 
-  const waters = useSelector((state) => state.water.items.perDay);
-  const drunkWater = waters.waterAmount;
-
-  const dispatch = useDispatch();
+  let progress = 0;
+  if (todayWaterAmount > 0) {
+    progress = ((todayWaterAmount / user.waterNorm) * 100).toFixed(1);
+    if (progress < 0) progress = 0;
+    if (progress > 100) progress = 100;
+  }
   const addNewWater = (newWater) => {
     dispatch(addWaterRecord(newWater));
   };
@@ -36,12 +65,6 @@ export default function WaterMainInfo() {
     setIsOpen(false);
     scrollController.enabledScroll();
   }
-
-  const drunkWaterNum = parseFloat(drunkWater);
-
-  let progress = (drunkWaterNum / user.waterNorm) * 100;
-  if (progress < 0) progress = 0;
-  if (progress > 100) progress = 100;
 
   const onSubmitData = (data, counter) => {
     const time = convertTime(data.time);
