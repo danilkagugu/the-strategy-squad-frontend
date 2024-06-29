@@ -108,13 +108,6 @@
 	left: 4px;
 }
 
-.error {
-	color: tomato;
-	font-size: 12px;
-	line-height: 1.28;
-	letter-spacing: -1%;
-}
-
 .userInfo {
 	display: flex;
 	flex-direction: column;
@@ -164,6 +157,13 @@
 	transition: border 0.3s ease;
 }
 
+.error {
+	color: tomato;
+	font-size: 12px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+}
+
 .formulaGroup {
 	display: flex;
 	flex-direction: column;
@@ -176,10 +176,18 @@
 	gap: 4px;
 }
 
+.formulaName {
+	color: var(--dark-grey-hard);
+	font-size: 14px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+}
+
 .formula {
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: bold;
 	letter-spacing: -1%;
+	line-height: 1.28;
 	color: var(--green-btn);
 }
 
@@ -194,6 +202,22 @@
 	font-size: 14px;
 	line-height: 1.28;
 	letter-spacing: -1%;
+}
+
+.note,
+.activities {
+	color: var(--dark-grey-hard);
+	font-size: 14px;
+	line-height: 1.28;
+	letter-spacing: -1%;
+}
+
+.noteSpan {
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: -1%;
+	line-height: 1.5;
+	color: var(--green-btn);
 }
 
 .button {
@@ -231,6 +255,39 @@
 
 	.requiredWaterGroup {
 		flex-direction: row;
+	}
+
+	.avatarUpload,
+	.radioBox,
+	.textInput,
+	.formulaName,
+	.formula,
+	.normaInfoText,
+	.note,
+	.activities {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+	.error {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	.optionTitle {
+		font-size: 18px;
+		line-height: 1.33;
+	}
+
+	.noteSpan {
+		font-size: 22px;
+		line-height: 1.5;
+		color: var(--green-btn);
+	}
+
+	.button {
+		width: 141px;
+		height: 56px;
+		font-size: 16px;
+		line-height: 1.5;
 	}
 }
 
