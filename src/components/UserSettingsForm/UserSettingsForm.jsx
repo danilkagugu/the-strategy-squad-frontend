@@ -227,11 +227,11 @@ const UserSettingsForm = ({ onClose }) => {
 							<label className={css.optionTitle}>My daily norma</label>
 							<ul className={css.formulaGroup}>
 								<li className={css.formulaContainer}>
-									<p>For woman:</p>
+									<p className={css.formulaName}>For woman:</p>
 									<p className={css.formula}>V=(M*0,03) + (T*0,4)</p>
 								</li>
 								<li className={css.formulaContainer}>
-									<p>For man:</p>
+									<p className={css.formulaName}>For man:</p>
 									<p className={css.formula}>V=(M*0,04) + (T*0,6)</p>
 								</li>
 							</ul>
@@ -244,9 +244,8 @@ const UserSettingsForm = ({ onClose }) => {
 									must set 0)
 								</p>
 							</div>
-							<p>
-								{' '}
-								<span className={css.formula}>!</span> Active time in hours
+							<p className={css.note}>
+								<span className={css.noteSpan}>!</span> Active time in hours
 							</p>
 						</div>
 					</div>
@@ -254,7 +253,9 @@ const UserSettingsForm = ({ onClose }) => {
 					<div className={css.formGroup}>
 						<div className={css.fieldsGroup}>
 							<div className={css.inputGroup}>
-								<label>Your weight in kilograms:</label>
+								<label className={css.activities}>
+									Your weight in kilograms:
+								</label>
 								<input
 									className={css.textInput}
 									type='text'
@@ -265,7 +266,9 @@ const UserSettingsForm = ({ onClose }) => {
 								)}
 							</div>
 							<div className={css.inputGroup}>
-								<label>The time of active participation in sports:</label>
+								<label className={css.activities}>
+									The time of active participation in sports:
+								</label>
 								<input
 									className={css.textInput}
 									type='text'
@@ -278,7 +281,9 @@ const UserSettingsForm = ({ onClose }) => {
 						</div>
 						<div className={css.fieldsGroup}>
 							<div className={css.requiredWaterGroup}>
-								<label>The required amount of water in liters per day:</label>
+								<label className={css.activities}>
+									The required amount of water in liters per day:
+								</label>
 								<p className={css.formula}>{`${recommendedWaterNorm} L`}</p>
 							</div>
 
