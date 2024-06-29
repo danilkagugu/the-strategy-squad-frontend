@@ -6,6 +6,8 @@ import scrollController from "../../services/noScroll";
 import { useDispatch } from "react-redux";
 import { editWaterRecord } from "../../redux/water/operations";
 import DeleteWaterModal from "../DeleteWaterModal/DeleteWaterModal";
+import { convertTimeToAMPM } from "../../services/currentDay";
+import { convertTime } from "../../services/currentDay";
 
 const title = "Edit the entered amount of water";
 const text = "Correct entered data:";
@@ -13,7 +15,16 @@ const text = "Correct entered data:";
 const WaterItem = ({ item, selectDay }) => {
   const { _id, time, amount } = item;
 
-  const initialTime = time.slice(-5);
+  const initialTime = convertTimeToAMPM(time.slice(-5));
+
+  // const date = new Date(item);
+  // console.log(date);
+
+  // const formattedTime = date.toLocaleTimeString("en-US", {
+  //   hour: "numeric",
+  //   minute: "2-digit",
+  //   hour12: true,
+  // });
 
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenDelete, setIsOpenDelete] = useState(false);
@@ -41,9 +52,14 @@ const WaterItem = ({ item, selectDay }) => {
   }
 
   const onSubmitData = (data, counter, time) => {
-    const fullData = `${selectDay}-${time}`;
+    const fullData = `${selectDay}-${convertTime(time)}`;
     dispatch(
-      editWaterRecord({ ...data, amount: counter, time: fullData, id: _id })
+      editWaterRecord({
+        ...data,
+        amount: counter,
+        time: fullData,
+        id: _id,
+      })
     );
     closeModal();
   };
@@ -58,7 +74,7 @@ const WaterItem = ({ item, selectDay }) => {
         </div>
         <div className={css.infoBox}>
           <p className={css.infoMl}> {amount} ml</p>
-          <p className={css.infoTime}>{time.split("-")[3]} AM</p>
+          <p className={css.infoTime}>{initialTime}</p>
         </div>
         <div className={css.iconBox}>
           <button className={css.iconBtn} onClick={openModal}>

@@ -59,25 +59,51 @@ export function convertMonthsNumberToStr(num) {
   }
 }
 
-// export function convertMonthsStrToNumber(str) {
-//   const getNumber = {
-//     January: "01",
-//     February: "02",
-//     March: "03",
-//     April: "04",
-//     May: "05",
-//     June: "06",
-//     July: "07",
-//     August: "08",
-//     September: "09",
-//     October: "10",
-//     November: "11",
-//     December: "12",
-//   };
+export function convertTimeToAMPM(str) {
+  // var date = new Date();
 
-//   if (typeof str === "string") {
-//     return getNumber[str];
-//   } else {
-//     return;
-//   }
-// }
+  // const formattedTime = date.toLocaleTimeString("en-US", {
+  //   hour: "numeric",
+  //   minute: "2-digit",
+  //   hour12: true,
+  // });
+
+  // console.log(formattedTime);
+
+  const array = str.split(":");
+
+  if (Number(array[0]) <= 12) {
+    const newTime = `${array[0]}:${array[1]} AM`;
+    return newTime;
+  }
+
+  if (Number(array[0]) >= 12) {
+    const newTime = `${String(array[0] - 12).padStart(2, "0")}:${array[1]} PM`;
+    return newTime;
+  }
+}
+
+export function convertTime(str) {
+  const array = str.split(" ");
+  if (array[1] === "AM") {
+    console.log(array[0]);
+    return array[0];
+  }
+
+  if (array[1] === "PM") {
+    const arrTime = array[0].split(":");
+    console.log(arrTime[0]);
+    if (arrTime[0] > 12) {
+      console.log(
+        `${String(Number(arrTime[0]) - 12).padStart(2, "0")}:${arrTime[1]}`
+      );
+      return `${String(Number(arrTime[0]) - 12).padStart(2, "0")}:${
+        arrTime[1]
+      }`;
+    }
+    console.log(
+      `${String(Number(arrTime[0]) + 12).padStart(2, "0")}:${arrTime[1]}`
+    );
+    return `${String(Number(arrTime[0]) + 12).padStart(2, "0")}:${arrTime[1]}`;
+  }
+}

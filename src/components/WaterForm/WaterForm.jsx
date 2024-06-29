@@ -7,6 +7,7 @@ import { currentTime } from "../../services/currentDay";
 
 import sprite from "../../assets/icons.svg";
 import css from "./WaterForm.module.css";
+import { convertTimeToAMPM } from "../../services/currentDay";
 
 const schema = yup
   .object({
@@ -14,8 +15,8 @@ const schema = yup
       .string()
       .required("This field is required. Add time in hh:mm format.")
       .matches(
-        /^\d(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
-        "Add time in hh:mm format."
+        /^\d(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9] [AP][M]$/,
+        "Add time in hh:mm AM/PM format."
       ),
     amount: yup
       .number()
@@ -27,7 +28,7 @@ const schema = yup
 
 const WaterForm = ({
   onSubmitData,
-  initialState = { amount: 50, time: currentTime() },
+  initialState = { amount: 50, time: convertTimeToAMPM(currentTime()) },
 }) => {
   const {
     register,
