@@ -38,7 +38,12 @@ export const requestLogOut = async () => {
 };
 
 export const requestUpdate = async (body) => {
-  const data = await instance.patch("/api/users/update", body);
+    const data = await instance.patch("/api/users/update", body);
 
-  return data;
+    return data;
 };
+
+// export const requestGoogleAuth = async () => {
+//     const { data } = await instance.get("/api/users/google-redirect");
+//     return data;
+// };
