@@ -1,7 +1,7 @@
 .sectionWrapper {
   border-radius: 30px;
-  width: 343px;
-  height: 353px;
+  /* width: 343px;
+  height: 353px; */
   background-image: url("../../assets/background/mobile/home-bg-mob.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -202,7 +202,7 @@
     background-image: url("../../assets/background/dectop/home-bg-desctop@2x.png");
   }
 }
-@media (max-width: 1440px) {
+@media (max-width: 1439.98px) {
   .mobileHide {
     display: none;
   }

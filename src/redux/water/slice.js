@@ -89,6 +89,12 @@ const waterSlice = createSlice({
             record.amount = action.payload.amount;
           }
         });
+        state.items.perMonth.find((record) => {
+          if (record._id === action.payload._id) {
+            record.time = action.payload.time;
+            record.amount = action.payload.amount;
+          }
+        });
       })
       .addCase(editWaterRecord.rejected, handleRejected)
 

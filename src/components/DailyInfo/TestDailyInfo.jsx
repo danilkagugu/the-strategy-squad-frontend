@@ -8,17 +8,11 @@ import WaterModal from "../WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch } from "react-redux";
 import { addWaterRecord } from "../../redux/water/operations";
-// import { currentDay } from "../../services/currentDay";
 import { currentTime } from "../../services/currentDay";
-import { convertMonthsNumberToStr } from "../../services/currentDay";
 
 const selectDay = "2024-06-20";
 
 export default function DailyInfo() {
-  // console.log(selectDay);
-
-  //   const month = "11";
-  console.log(convertMonthsNumberToStr(5));
   const [isOpen, setIsOpen] = useState(false);
 
   const dispatch = useDispatch();

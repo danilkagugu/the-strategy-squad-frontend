@@ -63,9 +63,9 @@ const schema = yup.object().shape({
         return parseFloat(value) >= 0.1;
       }
     )
-    .test("max-value", "Value must be less than or equal to 5", (value) => {
+    .test("max-value", "Value must be less than or equal to 15", (value) => {
       if (value === undefined || value === null || value === "") return true;
-      return parseFloat(value) <= 5;
+      return parseFloat(value) <= 15;
     }),
 });
 
@@ -73,11 +73,11 @@ const UserSettingsForm = ({ onClose }) => {
   const user = useSelector(selectUserData);
   const dispatch = useDispatch();
 
-  console.log(user);
+  // console.log(user);
 
-  useEffect(() => {
-    dispatch(getUserInfo());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getUserInfo());
+  // }, [dispatch]);
 
   const [avatarUrl, setAvatarUrl] = useState(user.avatarURL);
 
@@ -136,11 +136,12 @@ const UserSettingsForm = ({ onClose }) => {
       formData.append(key, data[key]);
     }
 
-    const response = await dispatch(apiUpdateUser(formData));
-    if (response.meta.requestStatus === "fulfilled") {
-      dispatch(getUserInfo());
-      onClose();
-    }
+    // const response = await
+    dispatch(apiUpdateUser(formData));
+    // if (response.meta.requestStatus === "fulfilled") {
+    // dispatch(getUserInfo());
+    onClose();
+    // }
   };
 
   const { gender, weight, timeActive } = watch();

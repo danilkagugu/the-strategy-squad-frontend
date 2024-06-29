@@ -14,5 +14,6 @@
 @media screen and (min-width: 1440px) {
   .waterDetailedInfo {
     width: 50%;
+    max-height: 736px;
   }
 }

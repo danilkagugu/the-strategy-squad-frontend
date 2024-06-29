@@ -12,9 +12,9 @@
   --light-gray: #f0eff4;
   --green-btn: #9be1a0;
   --green-btn-hover: #87d28d;
-  --dark-grey-medium: #323f47;
-  --dark-grey-light: #323f4733;
-  --dark-grey-medium-gray: #323f4766;
+  --dark-grey-medium: rgb(50, 63, 71);
+  --dark-grey-light: rgba(50, 63, 71, 0.2);
+  --dark-grey-medium-gray: rgba(50, 63, 71, 0.4);
   --dark-grey-hard: #2f2f2f;
 }
 
