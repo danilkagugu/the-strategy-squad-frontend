@@ -15,7 +15,7 @@ const schema = yup
       .string()
       .required("This field is required. Add time in hh:mm format.")
       .matches(
-        /^\d(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9] [AP][M]$/,
+        /^(0?[1-9]|1[012])(:[0-5]\d) [AP][M]$/,
         "Add time in hh:mm AM/PM format."
       ),
     amount: yup
