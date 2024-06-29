@@ -60,9 +60,9 @@ const schema = yup.object().shape({
 			if (value === undefined || value === null || value === '') return true;
 			return parseFloat(value) >= 0.1;
 		})
-		.test('max-value', 'Value must be less than or equal to 100', value => {
+		.test('max-value', 'Value must be less than or equal to 10', value => {
 			if (value === undefined || value === null || value === '') return true;
-			return parseFloat(value) <= 100;
+			return parseFloat(value) <= 10;
 		}),
 });
 
