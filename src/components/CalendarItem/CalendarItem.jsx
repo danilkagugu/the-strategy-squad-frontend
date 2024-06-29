@@ -7,13 +7,17 @@ import {
   getDayFromDateStr,
   getMonthFromDateStr,
 } from "../../helpers/getAmountForDayAndMonth";
+import { selectUserData } from "../../redux/auth/selectors";
 
 const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
   const dispatch = useDispatch();
   const data = useSelector(selectWaterPerMonth);
+  const { waterNorm } = useSelector(selectUserData);
+
   useEffect(() => {
     dispatch(getWaterPerMonth(currentMonth));
   }, [dispatch, currentMonth]);
+
   const formatDay = (day) => {
     const date = new Date(new Date().getFullYear(), currentMonth - 1, day);
     const year = date.getFullYear();
@@ -33,7 +37,8 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
       (sum, record) => sum + record.amount,
       0
     );
-    return Math.round((totalAmount / 2000) * 100);
+
+    return Math.round((totalAmount / waterNorm) * 100);
   };
 
   return (

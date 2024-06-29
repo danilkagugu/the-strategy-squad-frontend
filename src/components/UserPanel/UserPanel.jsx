@@ -5,7 +5,7 @@ import { selectUserData } from "../../redux/auth/selectors";
 
 const UserPanel = () => {
   const { name, avatarURL } = useSelector(selectUserData);
-  console.log("avatarURL: ", avatarURL);
+  // console.log("avatarURL: ", avatarURL);
 
   return (
     <div className={css.userPanel}>

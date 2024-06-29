@@ -44,7 +44,7 @@ export function convertMonthsNumberToStr(num) {
   if (typeof num === "number") {
     for (const key of keys) {
       if (key === String(num).padStart(2, "0")) {
-        console.log(getString[key]);
+        // console.log(getString[key]);
         return getString[key];
       }
     }

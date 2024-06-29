@@ -4,13 +4,12 @@ import Calendar from "../Calendar/Calendar";
 import css from "./MonthInfo.module.css";
 import Recharts from "../Recharts/Recharts";
 import { selectWaterPerMonth } from "../../redux/water/selectors";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   getCurrentWeek,
   getDayFromDateStr,
   getMonthFromDateStr,
 } from "../../helpers/getAmountForDayAndMonth";
-import { getWaterPerMonth } from "../../redux/water/operations";
 
 const MonthInfo = ({ clickOnDay }) => {
   const [openRecharts, setOpenRecharts] = useState(false);
@@ -20,7 +19,6 @@ const MonthInfo = ({ clickOnDay }) => {
   const toogleOpenRecharts = () => {
     setOpenRecharts((prevState) => !prevState);
   };
-  const dispatch = useDispatch();
   const prevMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
@@ -46,9 +44,6 @@ const MonthInfo = ({ clickOnDay }) => {
     }
     setDayInMounth(days);
   }, [currentDate]);
-  useEffect(() => {
-    dispatch(getWaterPerMonth(currentDate.getMonth() + 1));
-  }, [dispatch, currentDate]);
 
   const getAmountForDayAndMonth = (day, month) => {
     const records = data.filter(
@@ -64,7 +59,6 @@ const MonthInfo = ({ clickOnDay }) => {
     date: day.getDate(),
     value: getAmountForDayAndMonth(day.getDate(), day.getMonth() + 1),
   }));
-  console.log(dataRecharts);
   return (
     <>
       <div className={css.block}>

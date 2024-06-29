@@ -7,10 +7,9 @@ import {
   setToken,
   requestUpdate,
 } from "../../services/authApi.js";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export const apiRegisterUser = createAsyncThunk(
-
   "auth/register",
   async (formData, thunkAPI) => {
     try {
@@ -20,7 +19,6 @@ export const apiRegisterUser = createAsyncThunk(
       return thunkAPI.rejectWithValue(err.response.data);
     }
   }
-
 );
 
 export const apiLoginUser = createAsyncThunk(
@@ -53,7 +51,6 @@ export const apiRefreshUser = createAsyncThunk(
 );
 
 export const apiLogoutUser = createAsyncThunk(
-
   "auth/logout",
   async (_, thunkAPI) => {
     try {
@@ -71,7 +68,7 @@ export const apiUpdateUser = createAsyncThunk(
   async (body, thunkAPI) => {
     try {
       const response = await requestUpdate(body);
-      return response.data;
+      return response.data.user;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
