@@ -58,7 +58,7 @@ const schema = yup.object().shape({
 		})
 		.test('min-value', 'Value must be greater than or equal to 0.05', value => {
 			if (value === undefined || value === null || value === '') return true;
-			return parseFloat(value) >= 0.1;
+			return parseFloat(value) >= 0.05;
 		})
 		.test('max-value', 'Value must be less than or equal to 10', value => {
 			if (value === undefined || value === null || value === '') return true;
