@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { apiRefreshUser } from "../../redux/auth/operations";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import GoogleRedirect from '../GoogleRedirect/GoogleRedirect';
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const NotFoundPage = lazy(() =>
@@ -53,6 +54,8 @@ function App() {
               </RestrictedRoute>
             }
           />
+          {/* <Route path="/google-redirect"
+            element={<GoogleRedirect />} /> */}
           <Route
             path="/tracker"
             element={
