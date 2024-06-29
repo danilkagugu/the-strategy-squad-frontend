@@ -16,6 +16,18 @@
   width: 100%;
 }
 
+.itemList::-webkit-scrollbar {
+  background-color: var(--white);
+  height: 8px;
+  border-radius: 30px;
+}
+
+.itemList::-webkit-scrollbar-thumb {
+  background-color: var(--dark-grey-medium);
+  width: 235px;
+  border-radius: 9px;
+}
+
 .text {
   display: flex;
   justify-content: center;
@@ -28,7 +40,6 @@
 @media screen and (min-width: 768px) {
   .itemList {
     gap: 16px;
-    height: 126px;
   }
 
   .text {

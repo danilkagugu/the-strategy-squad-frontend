@@ -2,6 +2,8 @@
   padding: 40px 20px;
   position: relative;
   background-color: var(--white);
+  max-height: 90vh;
+  overflow: hidden;
 }
 
 .closeBtn {

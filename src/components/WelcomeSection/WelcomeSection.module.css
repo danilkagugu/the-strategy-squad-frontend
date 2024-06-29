@@ -1,5 +1,5 @@
 .welcomeWrapper {
-  width: 343px;
+  /* width: 343px; */
   background-color: var(--light-gray);
   border-radius: 30px;
   padding: 24px 16px 67px 16px;
@@ -74,7 +74,7 @@
 .point {
   color: var(--green-btn);
   border-radius: 50%;
-} 
+}
 
 @media (min-width: 768px) {
   .welcomeWrapper {

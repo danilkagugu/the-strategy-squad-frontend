@@ -1,11 +1,23 @@
 .modalContent {
-	max-height: 100vh;
-	overflow-y: auto;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.modalContent::-webkit-scrollbar {
+  background-color: var(--white);
+  width: 6px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background-color: var(--light-gray);
+  height: 242px;
+  border-radius: 30px;
 }
 
 .title {
-	font-size: 20px;
-	line-height: 1.2;
-	color: var(--dark-grey-hard);
-	font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--dark-grey-hard);
+  font-weight: bold;
 }
