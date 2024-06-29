@@ -28,6 +28,7 @@ const schema = yup.object().shape({
 	weight: yup
 		.number()
 		.nullable()
+		.typeError('Weight must be a number')
 		.min(20, 'Weight must be greater than or equal to 20')
 		.max(200, 'Weight must be less than or equal to 200')
 		.transform((value, originalValue) => {
@@ -38,6 +39,7 @@ const schema = yup.object().shape({
 	timeActive: yup
 		.number()
 		.nullable()
+		.typeError('Time must be a number')
 		.min(0)
 		.max(12, 'Time must be less than or equal to 12')
 		.transform((value, originalValue) => {
