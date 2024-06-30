@@ -6,39 +6,37 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInfo, logInWithGoogle } from "../../redux/auth/operations";
 import { selectToken } from "../../redux/auth/selectors";
-
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 
 const HomePage = () => {
-
   const [searchParams] = useSearchParams();
 
   const dispatch = useDispatch();
 
-  const currentToken = useSelector(selectToken)
+  const currentToken = useSelector(selectToken);
   // const navigate = useNavigate()
 
-  const token = searchParams.get('token');
+  const token = searchParams.get("token");
   useEffect(() => {
-
     if (token) {
       dispatch(logInWithGoogle(token));
 
       // navigate('/tracker')
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (currentToken && token) {
-      console.log(token, currentToken)
+      console.log(token, currentToken);
       // navigate('/tracker')
-      dispatch(getUserInfo())
+      dispatch(getUserInfo());
 
-      window.location.href = "/tracker"
-
+      window.location.href = "/tracker";
     }
-  }, [currentToken])
+  }, [currentToken]);
   return (
     <>
+      <DocumentTitle>Home</DocumentTitle>
       <WelcomeSection />
       <AdvantagesSection />
     </>
@@ -46,7 +44,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-
-
-
