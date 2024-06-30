@@ -12,7 +12,7 @@ import { selectUserData } from "../../redux/auth/selectors";
 const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
   const dispatch = useDispatch();
   const data = useSelector(selectWaterPerMonth);
-  const { waterNorm } = useSelector(selectUserData);
+  const user = useSelector(selectUserData);
 
   useEffect(() => {
     dispatch(getWaterPerMonth(currentMonth));
@@ -38,7 +38,7 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
       0
     );
 
-    return Math.round((totalAmount / waterNorm) * 100);
+    return Math.round((totalAmount / user?.waterNorm) * 100);
   };
 
   return (
@@ -50,11 +50,10 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
               onClick={() => {
                 clickOnDay(formatDay(day));
               }}
-              className={`${css.dayBox} ${
-                getAmountForDayAndMonth(day, currentMonth) >= 100
+              className={`${css.dayBox} ${getAmountForDayAndMonth(day, currentMonth) >= 100
                   ? css.dayBoxFull
                   : ""
-              }`}
+                }`}
             >
               {day.toString()}
             </button>

@@ -43,7 +43,7 @@ export default function WaterMainInfo() {
     }
   }, [waters, todayData]);
 
-  const dailyNorma = user.waterNorm
+  const dailyNorma = user?.waterNorm
     ? (user.waterNorm / 1000).toFixed(1)
     : "2.0";
 

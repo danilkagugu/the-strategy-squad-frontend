@@ -6,7 +6,8 @@ import Logo from "../Logo/Logo";
 import sprite from '../../assets/icons.svg';
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import axios from "axios"; 
+import GoogleBtn from "../GoogleBtn/GoogleBtn"
+
 
 const UserLoginSchema = Yup.object().shape({
     email: Yup.string().email("Must be a valid email!").required("Email is required"),
@@ -28,15 +29,6 @@ const SignInForm = ({ onLogin }) => {
     const onSubmit = data => {
         onLogin(data);
     }
-
-    // const handleGoogleSignIn = async () => {
-    //     try {
-    //         const { data } = await axios.get("http://localhost:3030/api/users/google-redirect");  // URL должен совпадать
-    //         window.location.href = data.url;
-    //     } catch (error) {
-    //         console.error("Google Sign-In error:", error);
-    //     }
-    // };
 
     return (
         <div className={css.signInFormWrapper}>
@@ -74,16 +66,11 @@ const SignInForm = ({ onLogin }) => {
                         </label>
                     </div>
                     <button className={css.submitBtn} type="submit" title="Click to register user" aria-label="Add user">Sign in</button>
-                    {/* <button
-                        className={css.googleSignInBtn}
-                        onClick={handleGoogleSignIn}
-                        type="button"
-                    >
-                        Sign in with Google
-                    </button> */}
-                    <p className={css.registrationText}><span className={css.registrationTextInfo}>Don&apos;t have an account?</span> <Link to={"/signup"} className={css.signInLink}>
-                        Sign Up
+
+                    <p className={css.registrationText}><span className={css.registrationTextInfo}>Don&apos;t have an account?&nbsp;</span> <Link to={"/signup"} className={css.signInLink}> Sign Up
                     </Link></p>
+
+                    <GoogleBtn type="In" />
                 </form>
             </div>
         </div>

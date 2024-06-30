@@ -1,11 +1,14 @@
 import axios from "axios";
 
+export const BASE_URL = "http://localhost:3030";
+
 export const instance = axios.create({
     baseURL: "http://localhost:3030",
 });
 
 export const setToken = (token) => {
     instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+
 };
 
 export const clearToken = () => {
@@ -43,7 +46,7 @@ export const requestUpdate = async (body) => {
     return data;
 };
 
-// export const requestGoogleAuth = async () => {
-//     const { data } = await instance.get("/api/users/google-redirect");
-//     return data;
-// };
+export const requestGoogleSignUp = async () => {
+    const { data } = await instance.get("/api/auth/google");
+    setToken(data.token);
+};
