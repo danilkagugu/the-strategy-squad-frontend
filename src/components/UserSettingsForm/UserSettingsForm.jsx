@@ -130,12 +130,20 @@ const UserSettingsForm = ({ onClose }) => {
 		}
 
 		try {
-			dispatch(apiUpdateUser(formData));
+			await dispatch(apiUpdateUser(formData)).unwrap();
 
 			onClose();
 			toast.success('Your data successfully updated');
 		} catch (error) {
-			toast.error('Failed to update data. Please try again.');
+			if (
+				error.response &&
+				error.response.data &&
+				error.response.data.message
+			) {
+				toast.error(`Failed to update data: ${error.response.data.message}`);
+			} else {
+				toast.error('Failed to update data. Please try again.');
+			}
 		}
 	};
 
