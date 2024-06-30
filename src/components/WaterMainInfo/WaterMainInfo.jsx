@@ -21,10 +21,7 @@ export default function WaterMainInfo() {
   const waters = useSelector(selectWaterPerDay);
   const [todayWaterAmount, setTodayWaterAmount] = useState(0);
 
-  const today = new Date();
-  const todayData = `${today.getFullYear()}-${String(
-    today.getMonth() + 1
-  ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+  const todayData = currentDay();
 
   useEffect(() => {
     if (waters) {
@@ -70,7 +67,7 @@ export default function WaterMainInfo() {
     const time = convertTime(data.time);
     addNewWater({
       ...data,
-      time: `${currentDay()}-${time}`,
+      time: `${todayData}-${time}`,
       amount: counter,
     });
     closeModal();
