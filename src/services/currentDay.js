@@ -68,16 +68,26 @@ export function convertTimeToAMPM(str) {
   //   hour12: true,
   // });
 
-  // console.log(formattedTime);
-
   const array = str.split(":");
 
-  if (Number(array[0]) <= 12) {
+  if (Number(array[0]) === 0) {
+    const newTime = `${String(Number(array[0]) + 12).padStart(2, "0")}:${
+      array[1]
+    } AM`;
+    return newTime;
+  }
+
+  if (Number(array[0]) < 12) {
     const newTime = `${array[0]}:${array[1]} AM`;
     return newTime;
   }
 
-  if (Number(array[0]) >= 12) {
+  if (Number(array[0]) === 12) {
+    const newTime = `${String(array[0]).padStart(2, "0")}:${array[1]} PM`;
+    return newTime;
+  }
+
+  if (Number(array[0]) > 12) {
     const newTime = `${String(array[0] - 12).padStart(2, "0")}:${array[1]} PM`;
     return newTime;
   }
@@ -86,24 +96,32 @@ export function convertTimeToAMPM(str) {
 export function convertTime(str) {
   const array = str.split(" ");
   if (array[1] === "AM") {
-    console.log(array[0]);
-    return array[0];
+    const arrTime = array[0].split(":");
+
+    if (Number(arrTime[0]) === 12) {
+      const newTime = `${String(Number(arrTime[0]) - 12).padStart(2, "0")}:${
+        arrTime[1]
+      }`;
+      return newTime;
+    }
+
+    if (Number(arrTime[0]) < 12) {
+      return array[0];
+    }
+    return;
   }
 
   if (array[1] === "PM") {
     const arrTime = array[0].split(":");
-    console.log(arrTime[0]);
-    if (arrTime[0] > 12) {
-      console.log(
-        `${String(Number(arrTime[0]) - 12).padStart(2, "0")}:${arrTime[1]}`
-      );
-      return `${String(Number(arrTime[0]) - 12).padStart(2, "0")}:${
+
+    if (Number(arrTime[0]) === 12) {
+      return `${String(arrTime[0]).padStart(2, "0")}:${arrTime[1]}`;
+    }
+
+    if (Number(arrTime[0]) < 12) {
+      return `${String(Number(arrTime[0]) + 12).padStart(2, "0")}:${
         arrTime[1]
       }`;
     }
-    console.log(
-      `${String(Number(arrTime[0]) + 12).padStart(2, "0")}:${arrTime[1]}`
-    );
-    return `${String(Number(arrTime[0]) + 12).padStart(2, "0")}:${arrTime[1]}`;
   }
 }
