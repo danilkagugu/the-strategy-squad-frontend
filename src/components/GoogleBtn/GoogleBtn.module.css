@@ -1,0 +1,128 @@
+.googleContiner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chooseText {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: rgb(189, 189, 189);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    margin: 8px 0px 0px;
+}
+
+.chooseText::before,
+.chooseText::after {
+    position: relative;
+    top: 1px;
+    content: "";
+    width: 100%;
+    height: 1px;
+    margin: 0 12px;
+    background: rgb(189, 189, 189);
+}
+
+.googleLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(66, 133, 244);
+    color: rgb(255, 255, 255);
+    border-radius: 1px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px 0px;
+    transition: background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;
+    background-image: none;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-weight: 500;
+    letter-spacing: 0.21px;
+    font-size: 16px;
+    line-height: 40px;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.logoGoogleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    background: rgb(255, 255, 255);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.logoGoogleWrapper {
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+.textLogoGoogle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 500;
+    letter-spacing: 0.21px;
+    font-size: 14px;
+    line-height: 48px;
+}
+
+.googleIcon {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (min-width: 768px) {
+    .chooseText {
+
+        font-size: 16px;
+
+
+    }
+
+    .textLogoGoogle {
+
+        font-size: 16px;
+
+    }
+
+    .logoGoogleContainer {
+
+        width: 48px;
+        height: 48px;
+
+    }
+
+    .googleIcon {
+        display: block;
+        width: 27px;
+        height: 27px;
+    }
+}

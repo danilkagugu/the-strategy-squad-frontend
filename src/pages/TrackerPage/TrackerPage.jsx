@@ -8,6 +8,8 @@ import { getWaterPerDay } from "../../redux/water/operations";
 const TrackerPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
+    // eslint-disable-next-line no-debugger
+
     dispatch(getUserInfo());
     dispatch(getWaterPerDay());
   }, [dispatch]);

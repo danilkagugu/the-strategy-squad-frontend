@@ -6,6 +6,7 @@ import {
   requestLogOut,
   setToken,
   requestUpdate,
+
 } from "../../services/authApi.js";
 import { toast } from "react-toastify";
 
@@ -28,6 +29,24 @@ export const apiLoginUser = createAsyncThunk(
       const data = await requestSignIn(formData);
       toast.success("You have successfully signed in");
       return data;
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Something went wrong");
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
+
+
+export const logInWithGoogle = createAsyncThunk(
+  'auth/googleLogin',
+  async (formData, thunkAPI) => {
+
+    try {
+      // const data = await requestGoogleSignUp(formData);
+      // toast.success(data.message);
+
+      return { token: formData };
+
     } catch (err) {
       toast.error(err.response?.data?.message || "Something went wrong");
       return thunkAPI.rejectWithValue(err.message);

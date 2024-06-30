@@ -6,6 +6,7 @@ import {
   apiLogoutUser,
   apiUpdateUser,
   getUserInfo,
+  logInWithGoogle,
 } from "./operations";
 
 
@@ -33,6 +34,16 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
+      .addCase(logInWithGoogle.fulfilled, (state, action) => {
+        console.log(action)
+        state.loading = false;
+        // state.userData = action.payload.user;
+        state.token = action.payload.token;
+
+      })
+      // .addCase(logInWithGoogle.rejected, (state, action) => {
+      //   state.error = action.payload;
+      // })
       .addCase(apiLogoutUser.fulfilled, () => {
         return INITIAL_STATE;
       })

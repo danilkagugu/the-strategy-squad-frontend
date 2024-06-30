@@ -54,8 +54,7 @@ function App() {
               </RestrictedRoute>
             }
           />
-          {/* <Route path="/google-redirect"
-            element={<GoogleRedirect />} /> */}
+
           <Route
             path="/tracker"
             element={

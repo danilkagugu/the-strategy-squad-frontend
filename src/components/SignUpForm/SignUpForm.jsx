@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { requestSignUp } from "../../services/authApi";
 import { toast } from 'react-toastify';
+import GoogleBtn from "../GoogleBtn/GoogleBtn";
 
 const UserRegisterSchema = Yup.object().shape({
     email: Yup.string().email("Must be a valid email!").required("Email is required"),
@@ -92,11 +93,14 @@ const SignUpForm = () => {
                         </label>
                     </div>
                     <button className={css.submitBtn} type="submit" title="Click to register user" aria-label="Add user">Sign up</button>
-                    <p className={css.registrationText}><span className={css.registrationTextInfo}>Already have an account?</span> <Link to={"/signin"} className={css.signInLink}>
+                    <p className={css.registrationText}><span className={css.registrationTextInfo}>Already have an account?&nbsp;</span> <Link to={"/signin"} className={css.signInLink}>
                         Sign In
                     </Link></p>
+                    <GoogleBtn type="Up" />
                 </form>
+
             </div>
+
         </div>
     )
 }
