@@ -4,6 +4,7 @@ import WaterMainInfo from "../../components/WaterMainInfo/WaterMainInfo";
 import { useEffect } from "react";
 import { getUserInfo } from "../../redux/auth/operations";
 import { getWaterPerDay } from "../../redux/water/operations";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 
 const TrackerPage = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const TrackerPage = () => {
 
   return (
     <>
+      <DocumentTitle>Tracker</DocumentTitle>
       <WaterMainInfo />
       <WaterDetailedInfo />
     </>
