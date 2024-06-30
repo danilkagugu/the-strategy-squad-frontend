@@ -15,8 +15,8 @@ const schema = yup.object().shape({
 
 	gender: yup
 		.string()
-		.nullable()
-		.oneOf(['Woman', 'Man'], 'Please select your gender'),
+		.oneOf(['Woman', 'Man'], 'Please select your gender')
+		.required('Please select your gender'),
 
 	name: yup
 		.string()
@@ -28,7 +28,8 @@ const schema = yup.object().shape({
 	weight: yup
 		.number()
 		.nullable()
-		.min(20, 'Weight must be greater than or equal to 20')
+		.typeError('Weight must be a number')
+		.min(0, 'Weight must be greater than or equal to 0')
 		.max(200, 'Weight must be less than or equal to 200')
 		.transform((value, originalValue) => {
 			if (originalValue === '') return null;
@@ -38,6 +39,7 @@ const schema = yup.object().shape({
 	timeActive: yup
 		.number()
 		.nullable()
+		.typeError('Time must be a number')
 		.min(0)
 		.max(12, 'Time must be less than or equal to 12')
 		.transform((value, originalValue) => {
@@ -76,7 +78,7 @@ const UserSettingsForm = ({ onClose }) => {
 		register,
 		handleSubmit,
 		watch,
-		formState: { errors, isValid },
+		formState: { errors },
 		setValue,
 	} = useForm({
 		resolver: yupResolver(schema),
@@ -296,7 +298,7 @@ const UserSettingsForm = ({ onClose }) => {
 					</div>
 				</div>
 
-				<button className={css.button} type='submit' disabled={!isValid}>
+				<button className={css.button} type='submit'>
 					Save
 				</button>
 			</div>
