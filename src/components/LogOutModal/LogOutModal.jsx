@@ -5,7 +5,7 @@ import css from "./LogOutModal.module.css";
 import { useTranslation } from "react-i18next";
 
 const LogOutModal = ({ modalIsOpen, closeModal }) => {
-  const { t } = useTranslation;
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const onLogOut = () => {
     dispatch(apiLogoutUser());
