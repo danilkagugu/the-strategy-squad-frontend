@@ -36,8 +36,9 @@
 	background-color: transparent;
 	color: var(--dark-grey-hard);
 	font-size: 14px;
-	line-height: 1.28;
-	letter-spacing: -1%;
+	font-weight: 400;
+	line-height: 1.29;
+	letter-spacing: -0.01em;
 	border: none;
 }
 
@@ -57,9 +58,9 @@
 }
 
 .optionTitle {
+	font-weight: 700;
 	font-size: 16px;
-	font-weight: bold;
-	letter-spacing: -1%;
+	letter-spacing: -0.01em;
 	color: var(--dark-grey-hard);
 	line-height: 1.25;
 }
@@ -78,9 +79,10 @@
 	align-items: center;
 	gap: 10px;
 	color: var(--dark-grey-hard);
+	font-weight: 400;
 	font-size: 14px;
-	line-height: 1.28;
-	letter-spacing: -1%;
+	line-height: 1.29;
+	letter-spacing: -0.01em;
 }
 
 .radio {
@@ -146,9 +148,10 @@
 	border-radius: 15px;
 	box-sizing: border-box;
 	color: var(--dark-grey-hard);
+	font-weight: 400;
 	font-size: 14px;
-	line-height: 1.28;
-	letter-spacing: -1%;
+	line-height: 1.29;
+	letter-spacing: -0.01em;
 }
 
 .textInput:hover,
@@ -160,8 +163,9 @@
 .error {
 	color: tomato;
 	font-size: 12px;
-	line-height: 1.28;
-	letter-spacing: -1%;
+	font-weight: 400;
+	line-height: 1.29;
+	letter-spacing: -0.01em;
 }
 
 .formulaGroup {
@@ -178,16 +182,17 @@
 
 .formulaName {
 	color: var(--dark-grey-hard);
+	font-weight: 400;
 	font-size: 14px;
-	line-height: 1.28;
-	letter-spacing: -1%;
+	line-height: 1.29;
+	letter-spacing: -0.01em;
 }
 
 .formula {
 	font-size: 14px;
-	font-weight: bold;
-	letter-spacing: -1%;
-	line-height: 1.28;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	line-height: 1.29;
 	color: var(--green-btn);
 }
 
@@ -199,23 +204,25 @@
 
 .normaInfoText {
 	color: rgba(47, 47, 47, 0.6);
+	font-weight: 400;
 	font-size: 14px;
-	line-height: 1.28;
-	letter-spacing: -1%;
+	line-height: 1.29;
+	letter-spacing: -0.01em;
 }
 
 .note,
 .activities {
 	color: var(--dark-grey-hard);
+	font-weight: 400;
 	font-size: 14px;
-	line-height: 1.28;
-	letter-spacing: -1%;
+	line-height: 1.29;
+	letter-spacing: -0.01em;
 }
 
 .noteSpan {
 	font-size: 18px;
-	font-weight: bold;
-	letter-spacing: -1%;
+	font-weight: 700;
+	letter-spacing: -0.01em;
 	line-height: 1.5;
 	color: var(--green-btn);
 }
@@ -227,10 +234,10 @@
 	border-radius: 30px;
 	background-color: var(--green-btn);
 	color: var(--dark-grey-medium);
+	font-weight: 700;
 	font-size: 14px;
-	line-height: 1.28;
-	letter-spacing: -1%;
-	font-weight: bold;
+	line-height: 1.29;
+	letter-spacing: -0.01em;
 }
 
 .button:hover {
