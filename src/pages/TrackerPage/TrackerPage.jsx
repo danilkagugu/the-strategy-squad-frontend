@@ -1,12 +1,17 @@
 import { useDispatch } from "react-redux";
 import WaterDetailedInfo from "../../components/WaterDetailedInfo/WaterDetailedInfo";
 import WaterMainInfo from "../../components/WaterMainInfo/WaterMainInfo";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getUserInfo } from "../../redux/auth/operations";
 import { getWaterPerDay } from "../../redux/water/operations";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
+import { currentDay } from "../../services/currentDay";
 
 const TrackerPage = () => {
+  const [selectDay, setSelectDay] = useState(currentDay());
+  const onSelectDay = (day) => {
+    setSelectDay(day);
+  };
   const dispatch = useDispatch();
   useEffect(() => {
     // eslint-disable-next-line no-debugger
@@ -18,8 +23,8 @@ const TrackerPage = () => {
   return (
     <>
       <DocumentTitle>Tracker</DocumentTitle>
-      <WaterMainInfo />
-      <WaterDetailedInfo />
+      <WaterMainInfo setSelectDay={onSelectDay} />
+      <WaterDetailedInfo selectDay={selectDay} setSelectDay={onSelectDay} />
     </>
   );
 };
