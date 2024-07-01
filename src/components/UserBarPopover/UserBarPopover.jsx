@@ -3,7 +3,7 @@ import sprite from "../../assets/icons.svg";
 import css from "./UserBarPopover.module.css";
 import UserSettingsModal from "../UserSettingsModal/UserSettingsModal";
 
-const UserBarPopover = ({ modalRef, openModal }) => {
+const UserBarPopover = ({ modalRef, openModal, closeSetings }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onOpenModal = () => {
@@ -25,6 +25,7 @@ const UserBarPopover = ({ modalRef, openModal }) => {
           onCloseModal={onCloseModal}
           isOpen={isOpen}
           modalRef={modalRef}
+          closeSetings={closeSetings}
         />
       )}
       {!isOpen ? (
