@@ -2,8 +2,10 @@ import { useDispatch } from "react-redux";
 import ModalWrapper from "../ModalWrapper/ModalWrapper";
 import css from "./DeleteWaterModal.module.css";
 import { deleteWaterRecord } from "../../redux/water/operations";
+import { useTranslation } from "react-i18next";
 
 const DeleteWaterModal = ({ modalIsOpen, onCloseModal, id }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(deleteWaterRecord(id));
@@ -13,22 +15,22 @@ const DeleteWaterModal = ({ modalIsOpen, onCloseModal, id }) => {
   return (
     <ModalWrapper modalIsOpen={modalIsOpen} onCloseModal={onCloseModal}>
       <div className={css.wrapper}>
-        <h2 className={css.title}>Delete Entry</h2>
-        <p className={css.text}>Are you sure you want to delete the entry?</p>
+        <h2 className={css.title}>{t("delete_entry")}</h2>
+        <p className={css.text}>{t("sure_delete")}?</p>
         <div className={css.btnWrapper}>
           <button
             className={css.deleteButton}
             type="button"
             onClick={() => handleDelete(id)}
           >
-            Delete
+            {t("delete")}
           </button>
           <button
             className={css.cancelButton}
             type="button"
             onClick={() => onCloseModal()}
           >
-            <p className={css.cancelText}>Cancel</p>
+            <p className={css.cancelText}>{t("cancel")}</p>
           </button>
         </div>
       </div>

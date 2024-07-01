@@ -3,10 +3,12 @@ import css from "./WaterList.module.css";
 
 import { useSelector } from "react-redux";
 import { selectWaterPerDay } from "../../redux/water/selectors";
+import { useTranslation } from "react-i18next";
 // import { useEffect } from "react";
 // import { getWaterPerDay } from "../../redux/water/operations";
 
 const WaterList = ({ selectDay }) => {
+  const { t } = useTranslation();
   // const dispatch = useDispatch();
   const response = useSelector(selectWaterPerDay);
 
@@ -29,7 +31,7 @@ const WaterList = ({ selectDay }) => {
           ))}
         </ul>
       ) : (
-        <p className={css.text}>There are no water yet.</p>
+        <p className={css.text}>{t("water_yet")}.</p>
       )}
     </div>
   );

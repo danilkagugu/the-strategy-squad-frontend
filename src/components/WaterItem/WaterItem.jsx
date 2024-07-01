@@ -8,11 +8,12 @@ import { editWaterRecord } from "../../redux/water/operations";
 import DeleteWaterModal from "../DeleteWaterModal/DeleteWaterModal";
 import { convertTimeToAMPM } from "../../services/currentDay";
 import { convertTime } from "../../services/currentDay";
-
-const title = "Edit the entered amount of water";
-const text = "Correct entered data:";
+import { useTranslation } from "react-i18next";
 
 const WaterItem = ({ item, selectDay }) => {
+  const { t } = useTranslation();
+  const text = `${t("correct_data")}:`;
+  const title = t("edit_amount_water");
   const { _id, time, amount } = item;
 
   const initialTime = convertTimeToAMPM(time.slice(-5));
@@ -73,7 +74,9 @@ const WaterItem = ({ item, selectDay }) => {
           </svg>
         </div>
         <div className={css.infoBox}>
-          <p className={css.infoMl}> {amount} ml</p>
+          <p className={css.infoMl}>
+            {amount} {t("ml")}
+          </p>
           <p className={css.infoTime}>{initialTime}</p>
         </div>
         <div className={css.iconBox}>

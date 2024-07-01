@@ -9,6 +9,7 @@ import { getWaterNorm } from "../../helpers/getWaterNorm";
 import css from "./UserSettingsForm.module.css";
 import sprite from "../../assets/icons.svg";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const schema = yup.object().shape({
   avatar: yup.mixed(),
@@ -73,6 +74,7 @@ const schema = yup.object().shape({
 });
 
 const UserSettingsForm = ({ onClose, closeSetings }) => {
+  const { t } = useTranslation();
   const user = useSelector(selectUserData);
   const dispatch = useDispatch();
 
@@ -164,7 +166,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
           <svg className={css.uploadIcon}>
             <use href={`${sprite}#icon-upload-avatar`}></use>
           </svg>
-          Upload a photo
+          {t("add_photo")}
           <input
             type="file"
             accept="image/*"
@@ -177,7 +179,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
 
       <div className={css.settingsContainer}>
         <div>
-          <label className={css.optionTitle}>Your gender identity</label>
+          <label className={css.optionTitle}>{t("gender_choose")}</label>
           <div className={css.genderOptions}>
             <label className={css.radioBox}>
               <input
@@ -187,7 +189,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
                 value="Woman"
                 {...register("gender")}
               />
-              Woman
+              {t("woman")}
             </label>
             <label className={css.radioBox}>
               <input
@@ -197,7 +199,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
                 value="Man"
                 {...register("gender")}
               />
-              Man
+              {t("man")}
             </label>
             {errors.gender && (
               <span className={css.error}>{errors.gender.message}</span>
@@ -209,7 +211,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
           <div className={css.formGroup}>
             <div className={css.fieldsGroup}>
               <div className={css.inputGroup}>
-                <label className={css.optionTitle}>Your name</label>
+                <label className={css.optionTitle}>{t("your_name")}</label>
                 <input
                   className={css.textInput}
                   type="text"
@@ -221,7 +223,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
               </div>
 
               <div className={css.inputGroup}>
-                <label className={css.optionTitle}>Email</label>
+                <label className={css.optionTitle}>{t("email")}</label>
                 <input
                   className={css.textInput}
                   type="email"
@@ -233,28 +235,26 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
               </div>
             </div>
             <div className={css.fieldsGroup}>
-              <label className={css.optionTitle}>My daily norma</label>
+              <label className={css.optionTitle}>{t("daily_norm")}</label>
               <ul className={css.formulaGroup}>
                 <li className={css.formulaContainer}>
-                  <p className={css.formulaName}>For woman:</p>
+                  <p className={css.formulaName}>{t("for_woman")}:</p>
                   <p className={css.formula}>V=(M*0,03) + (T*0,4)</p>
                 </li>
                 <li className={css.formulaContainer}>
-                  <p className={css.formulaName}>For man:</p>
+                  <p className={css.formulaName}>{t("for_man")}:</p>
                   <p className={css.formula}>V=(M*0,04) + (T*0,6)</p>
                 </li>
               </ul>
               <div className={css.normaInfo}>
                 <p className={css.normaInfoText}>
-                  <span className={css.formula}>*</span> V is the volume of the
-                  water norm in liters per day, M is your body weight, T is the
-                  time of active sports, or another type of activity
-                  commensurate in terms of loads (in the absence of these, you
-                  must set 0)
+                  <span className={css.formula}>*</span>
+                  {t("formula_text")}
                 </p>
               </div>
               <p className={css.note}>
-                <span className={css.noteSpan}>!</span> Active time in hours
+                <span className={css.noteSpan}>!</span>
+                {t("active_time")}
               </p>
             </div>
           </div>
@@ -263,7 +263,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
             <div className={css.fieldsGroup}>
               <div className={css.inputGroup}>
                 <label className={css.activities}>
-                  Your weight in kilograms:
+                  {t("weight_in_kilograms")}:
                 </label>
                 <input
                   className={css.textInput}
@@ -276,7 +276,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
               </div>
               <div className={css.inputGroup}>
                 <label className={css.activities}>
-                  The time of active participation in sports:
+                  {t("time_of_participation")}:
                 </label>
                 <input
                   className={css.textInput}
@@ -290,14 +290,14 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
             </div>
             <div className={css.fieldsGroup}>
               <div className={css.requiredWaterGroup}>
-                <label>The required amount of water in liters per day:</label>
-                <p className={css.formula}>{`${recommendedWaterNorm} L`}</p>
+                <label>{t("required_amount")}:</label>
+                <p className={css.formula}>{`${recommendedWaterNorm} ${t(
+                  "l"
+                )}`}</p>
               </div>
 
               <div className={css.inputGroup}>
-                <label className={css.optionTitle}>
-                  Write down how much water you will drink:
-                </label>
+                <label className={css.optionTitle}>{t("water_much")}:</label>
                 <input
                   className={css.textInput}
                   type="text"
@@ -312,7 +312,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
         </div>
 
         <button className={css.button} type="submit">
-          Save
+          {t("save")}
         </button>
       </div>
     </form>

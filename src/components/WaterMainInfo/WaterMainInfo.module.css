@@ -45,3 +45,10 @@
     background-image: url("../../assets/background/dectop/tracker-bg-desctop@2x.png");
   }
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}

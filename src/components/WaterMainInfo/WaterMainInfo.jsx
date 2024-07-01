@@ -13,6 +13,7 @@ import { currentDay } from "../../services/currentDay";
 import { convertTime } from "../../services/currentDay";
 import { selectUserData } from "../../redux/auth/selectors";
 import { selectWaterPerDay } from "../../redux/water/selectors";
+import LanguageSelector from "../i18n/LanguageSelector";
 
 export default function WaterMainInfo() {
   const dispatch = useDispatch();
@@ -82,7 +83,10 @@ export default function WaterMainInfo() {
           onSubmitData={onSubmitData}
         />
       )}
-      <Logo />
+      <div className={style.header}>
+        <Logo />
+        <LanguageSelector />
+      </div>
       <WaterDailyNorma dailyNorma={dailyNorma} />
       <WaterProgressBar progress={progress} />
       <AddWaterBtn

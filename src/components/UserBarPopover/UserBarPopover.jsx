@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import sprite from "../../assets/icons.svg";
 import css from "./UserBarPopover.module.css";
 import UserSettingsModal from "../UserSettingsModal/UserSettingsModal";
+import { useTranslation } from "react-i18next";
 
 const UserBarPopover = ({ modalRef, openModal, closeSetings }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const onOpenModal = () => {
@@ -34,13 +36,13 @@ const UserBarPopover = ({ modalRef, openModal, closeSetings }) => {
             <svg className={css.icon}>
               <use href={`${sprite}#icon-settings`}></use>
             </svg>
-            <p className={css.textBarPopover}>Setting</p>
+            <p className={css.textBarPopover}>{t("setting")}</p>
           </button>
           <button className={css.btnBar} onClick={openModal}>
             <svg className={css.icon}>
               <use href={`${sprite}#icon-log-out`}></use>
             </svg>
-            <p className={css.textBarPopover}>Log out</p>
+            <p className={css.textBarPopover}>{t("log_out")}</p>
           </button>
         </div>
       ) : null}

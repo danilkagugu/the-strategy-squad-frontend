@@ -1,0 +1,31 @@
+.languageBox {
+  display: flex;
+  gap: 15px;
+}
+
+.languageBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #b3e3ff33; */
+  color: var(var(--dark-grey-light));
+  border-color: var(--dark-grey-medium);
+  border-radius: 50%;
+  padding: 7px 15px;
+  width: 38px;
+  height: 38px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.languageBtn:hover {
+  /* background-color: #d3eaf733; */
+  color: #059c83;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.languageBtn.active {
+  background-color: aliceblue;
+  color: rgb(95, 95, 95);
+}
