@@ -112,17 +112,23 @@ const SignInForm = ({ onLogin }) => {
             {t("sign_in")}
           </button>
 
-          <p className={css.registrationText}>
-            <span className={css.registrationTextInfo}>
-              {t("have_not_acc")}
-            </span>{" "}
-            <Link to={"/signup"} className={css.signInLink}>
-              {" "}
-              {t("sign_up")}
+          <div className={css.signInInfo}>
+            <Link to={"/password-recover"} className={css.forgotPasswordText}>
+              Forgot your password?
             </Link>
-          </p>
 
-          <GoogleBtn type="In" />
+            <p className={css.registrationText}>
+              <span className={css.registrationTextInfo}>
+                Don&apos;t have an account?&nbsp;
+              </span>{" "}
+              <Link to={"/signup"} className={css.signInLink}>
+                {" "}
+                Sign Up
+              </Link>
+            </p>
+
+            <GoogleBtn type="In" />
+          </div>
         </form>
       </div>
     </div>

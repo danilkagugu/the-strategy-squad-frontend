@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 126px 16px 0px
+    padding: 112px 16px 0px
 }
 
 .inputConatiner {
@@ -36,7 +36,8 @@
     color: var(--dark-grey-medium);
     font-weight: 700;
     font-size: 32px;
-    line-height: 32px;
+    line-height: 1;
+    letter-spacing: -0.01em;
     padding-bottom: 32px;
 }
 
@@ -49,7 +50,8 @@
 .formRegistrationText {
     font-size: 14px;
     font-weight: 700;
-    line-height: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     color: var(--dark-grey-hard);
 }
 
@@ -88,7 +90,8 @@
 .formInputRegistration::placeholder {
     font-size: 14px;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     color: rgba(47, 47, 47, 0.6);
 }
 
@@ -116,7 +119,8 @@
     margin-top: 32px;
     font-weight: 700;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     text-align: center;
     color: var(--dark-grey-medium);
     transition: background 0.3s ease;
@@ -127,9 +131,18 @@
     background-color: var(--green-btn-hover);
 }
 
+.signUpInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
 .errorMsg {
     color: red;
     font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
 }
 
 .registrationText {
@@ -137,8 +150,9 @@
     justify-content: center;
     font-weight: 700;
     font-size: 14px;
-    line-height: 18px;
-    margin: 16px 0px 0px
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 10px 0px 0px
 }
 
 .registrationTextInfo {
@@ -161,7 +175,7 @@
     }
 
     .signUpContainer {
-        padding: 171px 134px 0px
+        padding: 155px 134px 0px
     }
 
     .inputConatiner {
@@ -179,7 +193,8 @@
 
     .formRegistrationText {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
     }
 
     .singUpIcon {
@@ -199,20 +214,22 @@
 
     .formInputRegistration::placeholder {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
     }
 
     .submitBtn {
         padding: 18px;
         height: 60px;
         font-size: 16px;
-        line-height: 1.29;
+        line-height: 1.5;
         letter-spacing: -0.01em;
     }
 
     .registrationText {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
     }
 
 }
@@ -223,7 +240,7 @@
     }
 
     .signUpContainer {
-        padding: 74px 118px 0px
+        padding: 49px 118px 0px
     }
 
     .inputConatiner {
@@ -236,12 +253,14 @@
 
     .formTitle {
         font-size: 36px;
-        line-height: 38px;
+        line-height: 1;
+        letter-spacing: -0.01em;
     }
 
     .formRegistrationText {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
     }
 
     .singUpIcon {
@@ -262,20 +281,22 @@
 
     .formInputRegistration::placeholder {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
     }
 
     .submitBtn {
         padding: 18px;
         height: 60px;
         font-size: 16px;
-        line-height: 1.29;
+        line-height: 1.5;
         letter-spacing: -0.01em;
     }
 
     .registrationText {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
     }
 
 

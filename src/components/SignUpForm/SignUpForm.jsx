@@ -64,10 +64,10 @@ const SignUpForm = () => {
           className={css.formRegistration}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h1 className={css.formTitle}>{t("sign_up")}</h1>
+          <h1 className={css.formTitle}>Sign Up</h1>
           <div className={css.inputConatiner}>
             <label className={css.labelRegistration}>
-              <span className={css.formRegistrationText}>{t("email")}</span>
+              <span className={css.formRegistrationText}>Email</span>
               <input
                 className={`${css.formInputRegistration} ${
                   errors.email && touchedFields.email
@@ -86,7 +86,7 @@ const SignUpForm = () => {
               ) : null}
             </label>
             <label className={css.labelRegistration}>
-              <span className={css.formRegistrationText}>{t("password")}</span>
+              <span className={css.formRegistrationText}>Password</span>
               <div className={css.inputIconWrapper}>
                 <input
                   className={`${css.formInputRegistration} ${
@@ -117,9 +117,7 @@ const SignUpForm = () => {
               ) : null}
             </label>
             <label className={css.labelRegistration}>
-              <span className={css.formRegistrationText}>
-                {t("repeat_password")}
-              </span>
+              <span className={css.formRegistrationText}>Repeat Password</span>
               <div className={css.inputIconWrapper}>
                 <input
                   className={`${css.formInputRegistration} ${
@@ -158,17 +156,20 @@ const SignUpForm = () => {
             title="Click to register user"
             aria-label="Add user"
           >
-            {t("sign_up")}
+            Sign up
           </button>
-          <p className={css.registrationText}>
-            <span className={css.registrationTextInfo}>
-              {t("have_account")}
-            </span>{" "}
-            <Link to={"/signin"} className={css.signInLink}>
-              {t("sign_in")}
-            </Link>
-          </p>
-          <GoogleBtn type="Up" />
+
+          <div className={css.signUpInfo}>
+            <p className={css.registrationText}>
+              <span className={css.registrationTextInfo}>
+                Already have an account?&nbsp;
+              </span>{" "}
+              <Link to={"/signin"} className={css.signInLink}>
+                Sign In
+              </Link>
+            </p>
+            <GoogleBtn type="Up" />
+          </div>
         </form>
       </div>
     </div>
