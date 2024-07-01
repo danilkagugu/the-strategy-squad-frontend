@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const BASE_URL = "http://localhost:3030";
+export const BASE_URL = "https://the-strategy-squad-backend.onrender.com";
 
 export const instance = axios.create({
-  baseURL: "http://localhost:3030",
+  baseURL: BASE_URL,
 });
 
 export const setToken = (token) => {
@@ -57,3 +57,4 @@ export const requestResetPassword = async (token, password) => {
     const { data } = await instance.post("/api/users/password/reset", { token, password });
     return data;
 }
+
