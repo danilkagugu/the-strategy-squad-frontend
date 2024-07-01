@@ -7,6 +7,8 @@ import {
   updateWaterRecord,
 } from "../../services/waterApi";
 
+import { toast } from "react-toastify";
+
 export const getWaterPerDay = createAsyncThunk(
   "water/perDay",
   async (query, thunkAPI) => {
@@ -38,6 +40,7 @@ export const addWaterRecord = createAsyncThunk(
       const response = await createWaterRecord(body);
       return response.data;
     } catch (e) {
+      toast.error(e.message || "Something went wrong");
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -63,6 +66,7 @@ export const editWaterRecord = createAsyncThunk(
 
       return response.data;
     } catch (e) {
+      toast.error(e.message || "Something went wrong");
       return thunkAPI.rejectWithValue(e.message);
     }
   }
