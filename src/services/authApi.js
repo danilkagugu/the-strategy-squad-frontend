@@ -47,3 +47,14 @@ export const requestGoogleSignUp = async () => {
   const { data } = await instance.get("/api/auth/google");
   setToken(data.token);
 };
+
+export const requestPasswordRecover = async (email) => {
+  const { data } = await instance.post("/api/users/password/send/email", {email});
+  return data;
+};
+ 
+export const requestResetPassword = async (token, password) => {
+    const { data } = await instance.post("/api/users/password/reset", { token, password });
+    return data;
+}
+

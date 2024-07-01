@@ -28,7 +28,7 @@
 }
 
 .tryTrackerBtn {
-  display: inline-block;
+  display: flex;
   border-radius: 30px;
   padding: 14px 19px;
   width: 116px;
@@ -39,7 +39,8 @@
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.01em;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
   color: var(--dark-grey-medium);
   transition: background 0.3s ease;
 }
@@ -50,7 +51,7 @@
 }
 
 .signInBtn {
-  display: inline-block;
+  display: flex;
   border: 1px solid var(--dark-grey-medium);
   border-radius: 30px;
   padding: 14px 28px;
@@ -60,7 +61,8 @@
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.01em;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
   color: var(--dark-grey-medium);
   transition: 0.3s ease;
 }

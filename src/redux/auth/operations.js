@@ -6,6 +6,9 @@ import {
   requestLogOut,
   setToken,
   requestUpdate,
+  requestPasswordRecover,
+  requestResetPassword,
+
 } from "../../services/authApi.js";
 import { toast } from "react-toastify";
 
@@ -103,6 +106,34 @@ export const getUserInfo = createAsyncThunk(
       return response;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const apiPasswordRecover = createAsyncThunk(
+  "auth/passwordRecover",
+  async (email, thunkAPI) => {
+    try {
+      const data = await requestPasswordRecover(email);
+      toast.success("Password recovery email has been sent");
+      return data;
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Something went wrong");
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
+
+export const apiResetPassword = createAsyncThunk(
+  "auth/resetPassword",
+  async ({ token, password }, thunkAPI) => {
+    try {
+      const data = await requestResetPassword(token, password);
+      toast.success("Password has been successfully reset");
+      return data;
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Something went wrong");
+      return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
