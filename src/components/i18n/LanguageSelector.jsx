@@ -23,9 +23,9 @@ const LanguageSelector = () => {
       </div>
       <div
         className={`${css.languageBtn} ${
-          activeLanguage === "ua" ? css.active : ""
+          activeLanguage === "uk" ? css.active : ""
         }`}
-        onClick={(e) => changeLanguage("ua", e)}
+        onClick={(e) => changeLanguage("uk", e)}
       >
         Ua
       </div>
