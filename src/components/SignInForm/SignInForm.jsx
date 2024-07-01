@@ -67,10 +67,15 @@ const SignInForm = ({ onLogin }) => {
                     </div>
                     <button className={css.submitBtn} type="submit" title="Click to register user" aria-label="Add user">Sign in</button>
 
-                    <p className={css.registrationText}><span className={css.registrationTextInfo}>Don&apos;t have an account?&nbsp;</span> <Link to={"/signup"} className={css.signInLink}> Sign Up
-                    </Link></p>
 
-                    <GoogleBtn type="In" />
+                    <div className={css.signInInfo}>
+                        <Link to={"/password-recover"} className={css.forgotPasswordText}>Forgot your password?
+                        </Link>
+
+                        <p className={css.registrationText}><span className={css.registrationTextInfo}>Don&apos;t have an account?&nbsp;</span> <Link to={"/signup"} className={css.signInLink}> Sign Up
+                        </Link></p>
+
+                        <GoogleBtn type="In" /></div>
                 </form>
             </div>
         </div>

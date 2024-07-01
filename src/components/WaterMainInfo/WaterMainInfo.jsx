@@ -24,7 +24,7 @@ export default function WaterMainInfo() {
   const todayData = currentDay();
 
   useEffect(() => {
-    if (waters) {
+    if (waters && waters.data) {
       const todayWaters = waters.data.filter((item) => {
         const itemDate = item.time.split("-").slice(0, 3).join("-");
         return itemDate === todayData;

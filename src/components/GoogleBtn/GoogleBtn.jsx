@@ -33,26 +33,4 @@ export default GoogleBtn;
 
 
 
-// import { BASE_URL } from '../../services/authApi';
-// import { FcGoogle } from 'react-icons/fc';
-
-// import css from './GoogleBtn.module.css';
-
-// const GoogleBtn = ({ type, className }) => {
-//     const handleGoogleLogin = () => {
-//         window.location.href = `${BASE_URL}/api/auth/google`;
-//     };
-
-//     return (
-//         <button
-//             className={`${css.googleBtn} ${className}`}
-//             onClick={handleGoogleLogin}
-//         >
-//             <FcGoogle className={css.googleIcon} /> Sign {type} with Google
-//         </button>
-//     );
-// };
-
-// export default GoogleBtn;
-
 

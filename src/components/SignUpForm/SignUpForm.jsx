@@ -93,10 +93,13 @@ const SignUpForm = () => {
                         </label>
                     </div>
                     <button className={css.submitBtn} type="submit" title="Click to register user" aria-label="Add user">Sign up</button>
-                    <p className={css.registrationText}><span className={css.registrationTextInfo}>Already have an account?&nbsp;</span> <Link to={"/signin"} className={css.signInLink}>
-                        Sign In
-                    </Link></p>
-                    <GoogleBtn type="Up" />
+
+                    <div className={css.signUpInfo}>
+                        <p className={css.registrationText}><span className={css.registrationTextInfo}>Already have an account?&nbsp;</span> <Link to={"/signin"} className={css.signInLink}>
+                            Sign In
+                        </Link></p>
+                        <GoogleBtn type="Up" />
+                    </div>
                 </form>
 
             </div>
