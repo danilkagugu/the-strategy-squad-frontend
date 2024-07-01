@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { apiRefreshUser } from "../../redux/auth/operations";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PasswordRecoverPage from "../../pages/PasswordRecoverPage/PasswordRecoverPage";
+import ResetPasswordPage from "../../pages/ResetPasswordPage/ResetPasswordPage";
 // import GoogleRedirect from '../GoogleRedirect/GoogleRedirect';
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
@@ -61,6 +63,22 @@ function App() {
               <PrivateRoute>
                 <TrackerPage />
               </PrivateRoute>
+            }
+          />
+          <Route
+            path="/password-recover"
+            element={
+              <RestrictedRoute>
+                <PasswordRecoverPage />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="/reset-password"
+            element={
+              <RestrictedRoute>
+                <ResetPasswordPage />
+              </RestrictedRoute>
             }
           />
           <Route path="*" element={<NotFoundPage />} />

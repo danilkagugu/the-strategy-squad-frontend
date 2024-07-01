@@ -79,16 +79,16 @@
 }
 
 .item {
-  display: inline-block;
+  display: flex;
   border-radius: 30px;
   padding: 9px 12px;
-  text-align: center;
   font-weight: 700;
   font-size: 8px;
   line-height: 1;
   letter-spacing: -0.01em;
-  text-align: center;
   height: 26px;
+  align-items: center;
+  justify-content: center;
 }
 
 .habit {
