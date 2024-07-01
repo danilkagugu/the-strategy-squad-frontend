@@ -164,7 +164,7 @@ const SignUpForm = () => {
           <div className={css.signUpInfo}>
             <p className={css.registrationText}>
               <span className={css.registrationTextInfo}>
-                {t("have_account")}?
+                {t("have_account")}?&nbsp;
               </span>{" "}
               <Link to={"/signin"} className={css.signInLink}>
                 {t("sign_in")}

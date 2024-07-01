@@ -119,7 +119,7 @@ const SignInForm = ({ onLogin }) => {
 
             <p className={css.registrationText}>
               <span className={css.registrationTextInfo}>
-                {t("have_not_acc")}?
+                {t("have_not_acc")}?&nbsp;
               </span>{" "}
               <Link to={"/signup"} className={css.signInLink}>
                 {" "}
