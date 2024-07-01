@@ -5,8 +5,10 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import { useDispatch } from "react-redux";
 import { apiRefreshUser } from "../../redux/auth/operations";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import PasswordRecoverPage from "../../pages/PasswordRecoverPage/PasswordRecoverPage";
+import ResetPasswordPage from "../../pages/ResetPasswordPage/ResetPasswordPage";
 // import GoogleRedirect from '../GoogleRedirect/GoogleRedirect';
 import "../i18n/i18n.js";
 
@@ -62,6 +64,22 @@ function App() {
               <PrivateRoute>
                 <TrackerPage />
               </PrivateRoute>
+            }
+          />
+          <Route
+            path="/password-recover"
+            element={
+              <RestrictedRoute>
+                <PasswordRecoverPage />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="/reset-password"
+            element={
+              <RestrictedRoute>
+                <ResetPasswordPage />
+              </RestrictedRoute>
             }
           />
           <Route path="*" element={<NotFoundPage />} />
