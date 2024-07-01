@@ -114,16 +114,16 @@ const SignInForm = ({ onLogin }) => {
 
           <div className={css.signInInfo}>
             <Link to={"/password-recover"} className={css.forgotPasswordText}>
-              Forgot your password?
+              {t("forgot_password")}?
             </Link>
 
             <p className={css.registrationText}>
               <span className={css.registrationTextInfo}>
-                Don&apos;t have an account?&nbsp;
+                {t("have_not_acc")}?
               </span>{" "}
               <Link to={"/signup"} className={css.signInLink}>
                 {" "}
-                Sign Up
+                {t("sign_up")}
               </Link>
             </p>
 

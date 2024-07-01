@@ -17,7 +17,7 @@
   "email": "Email",
   "password": "Password",
   "repeat_password": "Repeat Password",
-  "have_account": "Already have account?",
+  "have_account": "Already have account",
   "for_woman": "For woman",
   "for_man": "For man",
   "formula_text": " V is the volume of the water norm in liters per day, M is your body weight, T is the time of active sports, or another type of activity commensurate in terms of loads (in the absence of these, you must set 0)",
@@ -79,12 +79,13 @@
     "email": "Enter your email",
     "password": "Enter your password"
   },
-  "have_not_acc": "Don't have an account? ",
+  "have_not_acc": "Don't have an account",
   "whoops": "Whoops",
   "page_not_found": "Page not found",
   "home": "Home",
   "positive_number": "Amount must be a positive number",
   "correct_data": "Correct entered data",
   "edit_amount_water": "Edit the entered amount of water",
-  "or": "or"
+  "or": "or",
+  "forgot_password": "Forgot your password"
 }
