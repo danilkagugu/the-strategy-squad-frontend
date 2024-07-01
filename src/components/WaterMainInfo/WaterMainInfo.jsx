@@ -8,13 +8,14 @@ import { useEffect, useState } from "react";
 import WaterModal from "../WaterModal/WaterModal";
 import scrollController from "../../services/noScroll";
 import { useDispatch, useSelector } from "react-redux";
-import { addWaterRecord } from "../../redux/water/operations";
+import { addWaterRecord, getWaterPerDay } from "../../redux/water/operations";
 import { currentDay } from "../../services/currentDay";
 import { convertTime } from "../../services/currentDay";
 import { selectUserData } from "../../redux/auth/selectors";
 import { selectWaterPerDay } from "../../redux/water/selectors";
+import LanguageSelector from "../i18n/LanguageSelector";
 
-export default function WaterMainInfo() {
+export default function WaterMainInfo({ setSelectDay }) {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const user = useSelector(selectUserData);
@@ -24,7 +25,7 @@ export default function WaterMainInfo() {
   const todayData = currentDay();
 
   useEffect(() => {
-    if (waters) {
+    if (waters && waters.data) {
       const todayWaters = waters.data.filter((item) => {
         const itemDate = item.time.split("-").slice(0, 3).join("-");
         return itemDate === todayData;
@@ -56,6 +57,8 @@ export default function WaterMainInfo() {
 
   function openModal() {
     setIsOpen(true);
+    setSelectDay(currentDay());
+    dispatch(getWaterPerDay(currentDay()));
     scrollController.disabledScroll();
   }
   function closeModal() {
@@ -82,7 +85,10 @@ export default function WaterMainInfo() {
           onSubmitData={onSubmitData}
         />
       )}
-      <Logo />
+      <div className={style.header}>
+        <Logo />
+        <LanguageSelector />
+      </div>
       <WaterDailyNorma dailyNorma={dailyNorma} />
       <WaterProgressBar progress={progress} />
       <AddWaterBtn

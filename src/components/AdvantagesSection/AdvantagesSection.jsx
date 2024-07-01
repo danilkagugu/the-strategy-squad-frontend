@@ -16,8 +16,10 @@ import customers3TabDesc from "../../assets/customers/desktop-tablet/customers3-
 import customers3TabDesc2x from "../../assets/customers/desktop-tablet/customers3-tab-desc@2x.png";
 import { useEffect, useState } from "react";
 import { getCustomers } from "../../services/getCustomers";
+import { useTranslation } from "react-i18next";
 
 const AdvantagesSection = (props) => {
+  const { t } = useTranslation();
   const [customers, setCustomers] = useState(0);
 
   useEffect(() => {
@@ -78,11 +80,12 @@ const AdvantagesSection = (props) => {
         </div>
         <div>
           <p className={css.text}>
-            Our <span className={css.textAccent}>happy </span> <br />
+            {t("our")} <span className={css.textAccent}>{t("happy")}</span>{" "}
+            <br />
             {customers > 1 && (
               <span className={css.textAccent}> {customers} </span>
             )}
-            customers
+            {t("customers")}
           </p>
         </div>
       </div>
@@ -92,14 +95,16 @@ const AdvantagesSection = (props) => {
             <svg className={css.iconEllipse} width={8} height={8}>
               <use href={`${sprite}#icon-ellipse`}></use>
             </svg>
-            Habit drive
+            {t("habit_drive")}
           </p>
         </li>
         <li>
-          <p className={`${css.view} ${css.item}`}>View statistics</p>
+          <p className={`${css.view} ${css.item}`}>{t("view_statistics")}</p>
         </li>
         <li>
-          <p className={`${css.personal} ${css.item}`}>Personal rate setting</p>
+          <p className={`${css.personal} ${css.item}`}>
+            {t("personal_rate_setting")}
+          </p>
         </li>
       </ul>
     </div>

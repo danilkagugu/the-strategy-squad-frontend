@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PasswordRecoverPage from "../../pages/PasswordRecoverPage/PasswordRecoverPage";
 import ResetPasswordPage from "../../pages/ResetPasswordPage/ResetPasswordPage";
 // import GoogleRedirect from '../GoogleRedirect/GoogleRedirect';
+import "../i18n/i18n.js";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const NotFoundPage = lazy(() =>
@@ -91,5 +92,3 @@ function App() {
 }
 
 export default App;
-
-
