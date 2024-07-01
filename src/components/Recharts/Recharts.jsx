@@ -11,6 +11,8 @@ import {
 } from "recharts";
 
 import css from "./Recharts.module.css";
+import { useSelector } from "react-redux";
+import { selectUserData } from "../../redux/auth/selectors";
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -40,8 +42,17 @@ const CustomDot = (props) => {
     />
   );
 };
-
+const tics = (water) => {
+  const ticks = [];
+  for (let i = 0; i <= water; i += 500) {
+    ticks.push(i);
+  }
+  return ticks;
+};
 const Recharts = ({ data }) => {
+  const { waterNorm } = useSelector(selectUserData);
+
+  const maxTics = tics(waterNorm);
   return (
     <ResponsiveContainer width="100%" height={350}>
       <AreaChart data={data}>
@@ -53,7 +64,7 @@ const Recharts = ({ data }) => {
         </defs>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
-        <YAxis domain={[0, 2500]} ticks={[0, 500, 1000, 1500, 2000, 2500]} />
+        <YAxis domain={[0, waterNorm]} ticks={maxTics} />
         <Tooltip content={<CustomTooltip />} />
         <Area
           type="monotone"
@@ -67,7 +78,7 @@ const Recharts = ({ data }) => {
           <CustomDot
             key={`dot-${index}`}
             cx={entry.date}
-            cy={(entry.value / 2500) * 400} // Adjusted for proper scaling
+            cy={(entry.value / waterNorm) * 400}
           />
         ))}
       </AreaChart>
