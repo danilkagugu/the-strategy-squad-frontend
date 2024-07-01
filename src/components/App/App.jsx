@@ -5,9 +5,10 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import { useDispatch } from "react-redux";
 import { apiRefreshUser } from "../../redux/auth/operations";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import GoogleRedirect from '../GoogleRedirect/GoogleRedirect';
+import "../i18n/i18n.js";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const NotFoundPage = lazy(() =>
@@ -73,5 +74,3 @@ function App() {
 }
 
 export default App;
-
-
