@@ -64,10 +64,10 @@ const SignUpForm = () => {
           className={css.formRegistration}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h1 className={css.formTitle}>Sign Up</h1>
+          <h1 className={css.formTitle}>{t("sign_up")}</h1>
           <div className={css.inputConatiner}>
             <label className={css.labelRegistration}>
-              <span className={css.formRegistrationText}>Email</span>
+              <span className={css.formRegistrationText}>{t("email")}</span>
               <input
                 className={`${css.formInputRegistration} ${
                   errors.email && touchedFields.email
@@ -79,14 +79,14 @@ const SignUpForm = () => {
                 type="email"
                 {...register("email")}
                 autoComplete="email"
-                placeholder="Enter your email"
+                placeholder={t("placeholder.email")}
               />
               {errors.email && touchedFields.email ? (
                 <div className={css.errorMsg}>{errors.email.message}</div>
               ) : null}
             </label>
             <label className={css.labelRegistration}>
-              <span className={css.formRegistrationText}>Password</span>
+              <span className={css.formRegistrationText}>{t("password")}</span>
               <div className={css.inputIconWrapper}>
                 <input
                   className={`${css.formInputRegistration} ${
@@ -99,7 +99,7 @@ const SignUpForm = () => {
                   type={isVisible ? "text" : "password"}
                   {...register("password")}
                   autoComplete="new-password"
-                  placeholder="Enter your password"
+                  placeholder={t("placeholder.password")}
                 />
                 <svg
                   width="20"
@@ -117,7 +117,9 @@ const SignUpForm = () => {
               ) : null}
             </label>
             <label className={css.labelRegistration}>
-              <span className={css.formRegistrationText}>Repeat Password</span>
+              <span className={css.formRegistrationText}>
+                {t("repeat_password")}
+              </span>
               <div className={css.inputIconWrapper}>
                 <input
                   className={`${css.formInputRegistration} ${
@@ -130,7 +132,7 @@ const SignUpForm = () => {
                   type={isVisible ? "text" : "password"}
                   {...register("repeatPassword")}
                   autoComplete="new-password"
-                  placeholder="Repeat your password"
+                  placeholder={t("placeholder.password")}
                 />
                 <svg
                   width="20"
@@ -156,16 +158,16 @@ const SignUpForm = () => {
             title="Click to register user"
             aria-label="Add user"
           >
-            Sign up
+            {t("sign_up")}
           </button>
 
           <div className={css.signUpInfo}>
             <p className={css.registrationText}>
               <span className={css.registrationTextInfo}>
-                Already have an account?&nbsp;
+                {t("have_account")}?
               </span>{" "}
               <Link to={"/signin"} className={css.signInLink}>
-                Sign In
+                {t("sign_in")}
               </Link>
             </p>
             <GoogleBtn type="Up" />
