@@ -1,303 +1,302 @@
 .singUpFormWrapper {
-    border-radius: 30px;
-    height: 780px;
-    background-color: var(--light-gray);
-
+  border-radius: 30px;
+  height: 780px;
+  background-color: var(--light-gray);
 }
 
 .signUpContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 112px 16px 0px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 112px 16px 0px;
 }
 
 .inputConatiner {
-    display: flex;
-    flex-direction: column;
-    row-gap: 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
 }
 
 .logoSingUp {
-    padding: 24px 16px 0px 16px;
+  padding: 24px 16px 0px 16px;
 }
 
 .formRegistration {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .singUpIcon {
-    display: none;
+  display: none;
 }
 
 .formTitle {
-    color: var(--dark-grey-medium);
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 1;
-    letter-spacing: -0.01em;
-    padding-bottom: 32px;
+  color: var(--dark-grey-medium);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  padding-bottom: 32px;
 }
 
 .labelRegistration {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .formRegistrationText {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: var(--dark-grey-hard);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--dark-grey-hard);
 }
 
 .inputIconWrapper {
-    position: relative;
+  position: relative;
 }
 
 .formInputRegistration {
-    box-sizing: border-box;
-    border: 1px solid rgba(47, 47, 47, 0.2);
-    background-color: var(--light-gray);
-    border-radius: 15px;
-    padding: 16px;
-    width: 100%;
-    height: 50px;
-    color: var(--dark-grey-medium);
+  box-sizing: border-box;
+  border: 1px solid rgba(47, 47, 47, 0.2);
+  background-color: var(--light-gray);
+  border-radius: 15px;
+  padding: 16px;
+  width: 100%;
+  height: 50px;
+  color: var(--dark-grey-medium);
 }
 
 .formInputError {
-    color: red;
-    border-color: red;
+  color: red;
+  border-color: red;
 }
 
 .formInputError:focus {
-    color: red;
-    border-color: red !important;
-    outline: none;
-
+  color: red;
+  border-color: red !important;
+  outline: none;
 }
 
 .formInputValid {
-    color: var(--dark-grey-medium);
-    border-color: rgba(47, 47, 47, 0.2);
+  color: var(--dark-grey-medium);
+  border-color: rgba(47, 47, 47, 0.2);
 }
 
 .formInputRegistration::placeholder {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: rgba(47, 47, 47, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: rgba(47, 47, 47, 0.6);
 }
 
 .formInputRegistration:focus {
-    border-color: rgba(47, 47, 47, 0.6);
-    outline: none;
+  border-color: rgba(47, 47, 47, 0.6);
+  outline: none;
 }
 
 .formInputRegistration:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px var(--light-gray) inset;
-    -webkit-text-fill-color: var(--dark-grey-medium) !important;
-    transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0px 1000px var(--light-gray) inset;
+  -webkit-text-fill-color: var(--dark-grey-medium) !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .formInputRegistration:-internal-autofill-selected {
-    background-color: var(--light-gray) !important;
-    color: var(--dark-grey-medium) !important;
+  background-color: var(--light-gray) !important;
+  color: var(--dark-grey-medium) !important;
 }
 
 .submitBtn {
-    background-color: var(--green-btn);
-    border-radius: 30px;
-    padding: 16px;
-    height: 50px;
-    margin-top: 32px;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    text-align: center;
-    color: var(--dark-grey-medium);
-    transition: background 0.3s ease;
+  background-color: var(--green-btn);
+  border-radius: 30px;
+  padding: 16px;
+  height: 50px;
+  margin-top: 32px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--dark-grey-medium);
+  transition: background 0.3s ease;
 }
 
 .submitBtn:hover,
 .submitBtn:focus {
-    background-color: var(--green-btn-hover);
+  background-color: var(--green-btn-hover);
 }
 
 .signUpInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .errorMsg {
-    color: red;
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+  color: red;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .registrationText {
-    display: flex;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    margin: 10px 0px 0px
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 10px 0px 0px;
 }
 
 .registrationTextInfo {
-    font-weight: 400;
-    color: rgba(47, 47, 47, 0.5)
+  font-weight: 400;
+  color: rgba(47, 47, 47, 0.5);
 }
 
 .signInLink {
-    font-weight: 700;
-    color: var(--dark-grey-hard);
-    text-decoration: none;
-    text-decoration: underline;
+  font-weight: 700;
+  color: var(--dark-grey-hard);
+  text-decoration: none;
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
+.signInLink:hover,
+.signInLink:focus {
+  color: var(--green-btn);
+}
 
 @media screen and (min-width: 768px) {
+  .singUpFormWrapper {
+    height: 960px;
+  }
 
-    .singUpFormWrapper {
-        height: 960px;
-    }
+  .signUpContainer {
+    padding: 155px 134px 0px;
+  }
 
-    .signUpContainer {
-        padding: 155px 134px 0px
-    }
+  .inputConatiner {
+    row-gap: 20px;
+  }
 
-    .inputConatiner {
-        row-gap: 20px;
-    }
+  .logoSingUp {
+    padding: 32px 488px 0px 33px;
+  }
 
-    .logoSingUp {
-        padding: 32px 488px 0px 33px;
-    }
+  .formTitle {
+    font-size: 36px;
+    line-height: 38px;
+  }
 
-    .formTitle {
-        font-size: 36px;
-        line-height: 38px;
-    }
+  .formRegistrationText {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
 
-    .formRegistrationText {
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
+  .singUpIcon {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
 
-    .singUpIcon {
-        display: block;
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        stroke-width: 0;
-        stroke: currentColor;
-        fill: currentColor;
-    }
+  .formInputRegistration {
+    height: 56px;
+  }
 
-    .formInputRegistration {
-        height: 56px;
-    }
+  .formInputRegistration::placeholder {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
 
-    .formInputRegistration::placeholder {
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
+  .submitBtn {
+    padding: 18px;
+    height: 60px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
 
-    .submitBtn {
-        padding: 18px;
-        height: 60px;
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
-
-    .registrationText {
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
-
+  .registrationText {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .singUpFormWrapper {
-        height: 736px;
-    }
+  .singUpFormWrapper {
+    height: 736px;
+  }
 
-    .signUpContainer {
-        padding: 49px 118px 0px
-    }
+  .signUpContainer {
+    padding: 49px 118px 0px;
+  }
 
-    .inputConatiner {
-        row-gap: 20px;
-    }
+  .inputConatiner {
+    row-gap: 20px;
+  }
 
-    .logoSingUp {
-        padding: 32px 488px 0px 33px;
-    }
+  .logoSingUp {
+    padding: 32px 488px 0px 33px;
+  }
 
-    .formTitle {
-        font-size: 36px;
-        line-height: 1;
-        letter-spacing: -0.01em;
-    }
+  .formTitle {
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
 
-    .formRegistrationText {
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
+  .formRegistrationText {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
 
-    .singUpIcon {
-        display: block;
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        stroke-width: 0;
-        stroke: currentColor;
-        fill: currentColor;
-    }
+  .singUpIcon {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
 
-    .formInputRegistration {
-        width: 436px;
-        height: 56px;
-    }
+  .formInputRegistration {
+    width: 436px;
+    height: 56px;
+  }
 
-    .formInputRegistration::placeholder {
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
+  .formInputRegistration::placeholder {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
 
-    .submitBtn {
-        padding: 18px;
-        height: 60px;
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
+  .submitBtn {
+    padding: 18px;
+    height: 60px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
 
-    .registrationText {
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
-
-
+  .registrationText {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
 }
