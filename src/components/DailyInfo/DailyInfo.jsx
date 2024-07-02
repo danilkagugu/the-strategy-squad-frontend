@@ -11,19 +11,9 @@ import { addWaterRecord } from "../../redux/water/operations";
 import { convertMonthsNumberToStr } from "../../services/currentDay";
 import { numberOfDay } from "../../services/currentDay";
 import { convertTime } from "../../services/currentDay";
-// import { toast } from "react-toastify";
-// import { useSelector } from "react-redux";
-// import { selectError } from "../../redux/water/selectors";
 
 export default function DailyInfo({ selectDay }) {
   const [isOpen, setIsOpen] = useState(false);
-
-  // const responseError = useSelector(selectError);
-  // console.log(responseError);
-
-  // if (responseError) {
-  //   toast.error(responseError);
-  // }
 
   const selectedMonth = String(selectDay.slice(5, 7));
   const selectedDay = selectDay.slice(-2);
@@ -46,7 +36,6 @@ export default function DailyInfo({ selectDay }) {
   }
 
   const onSubmitData = (data, counter) => {
-    // try {
     const time = convertTime(data.time);
     addNewWater({
       ...data,
@@ -54,12 +43,6 @@ export default function DailyInfo({ selectDay }) {
       amount: counter,
     });
     closeModal();
-    //   toast.success("You add water successfully.");
-    // } catch (er) {
-    //   console.log(er);
-    //   console.log(responseError);
-    //   toast.error(responseError);
-    // }
   };
 
   return (
