@@ -43,7 +43,7 @@
   "our": "Наші",
   "happy": "щасливі",
   "customers": "користувачі",
-  "habit_drive": "Потрібен переклад",
+  "habit_drive": "Звичка",
   "view_statistics": "Переглянути статистику",
   "statistics": "Статистика",
   "month": "Місяць",
@@ -66,7 +66,7 @@
   "sure_delete": "Ви впевнені, що хочете видалити запис",
   "sign_up": "Зареєструватися",
   "sign_in": "Увійти",
-  "sign_in_google": "Увійдіть за допомогою Google",
+  "sign_in_google": "за допомогою Google",
   "amount_water": "Кількість води",
   "amount_water_used": "Введіть кількість використаної води",
   "record_time": "Час запису",
@@ -77,7 +77,9 @@
   "try_tracker": "Спробуйте трекер",
   "placeholder": {
     "email": "Уведіть свою пошту",
-    "password": "Уведіть свій пароль"
+    "password": "Уведіть свій пароль",
+    "enter_new_password": "Введіть новий пароль",
+    "confirm_new_password": "Підтвердити новий пароль"
   },
   "have_not_acc": "Немає облікового запису",
   "whoops": "Ой",
@@ -87,5 +89,16 @@
   "correct_data": "Правильно введені дані",
   "edit_amount_water": "Відредагуйте введену кількість води",
   "or": "або",
-  "forgot_password": "Забули свій пароль"
+  "forgot_password": "Забули свій пароль",
+  "password_changed": "Пароль змінено",
+  "log_new_password": "Тепер ви можете увійти за допомогою нового пароля",
+  "reset_your_password": "Скинути пароль",
+  "password_dont_match": "Паролі не збігаються",
+  "failed_reset_password": "Не вдалося скинути пароль. Будь ласка спробуйте ще раз",
+  "new_password": "Новий пароль",
+  "confirm_password": "Підтвердьте пароль",
+  "reset_password": "Скинути пароль",
+  "get_password_recovery": "Отримайте інструкції щодо відновлення пароля, надіслані на цю електронну адресу",
+  "instructions_sent_email": "Інструкції надіслано на вашу електронну пошту",
+  "submit": "Надіслати"
 }

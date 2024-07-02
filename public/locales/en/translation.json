@@ -66,7 +66,7 @@
   "sure_delete": "Are you sure you want to delete the entry",
   "sign_up": "Sign Up",
   "sign_in": "Sign In",
-  "sign_in_google": "Sign in with Google",
+  "sign_in_google": "with Google",
   "amount_water": "Amount of water",
   "amount_water_used": "Enter the value of the water used",
   "record_time": "Recording time",
@@ -77,7 +77,9 @@
   "try_tracker": "Try tracker",
   "placeholder": {
     "email": "Enter your email",
-    "password": "Enter your password"
+    "password": "Enter your password",
+    "enter_new_password": "Enter new password",
+    "confirm_new_password": "Confirm new password"
   },
   "have_not_acc": "Don't have an account",
   "whoops": "Whoops",
@@ -87,5 +89,16 @@
   "correct_data": "Correct entered data",
   "edit_amount_water": "Edit the entered amount of water",
   "or": "or",
-  "forgot_password": "Forgot your password"
+  "forgot_password": "Forgot your password",
+  "password_changed": "Password changed",
+  "log_new_password": "You can now log in with your new password",
+  "reset_your_password": "Reset your password",
+  "password_dont_match": "Passwords do not match",
+  "failed_reset_password": "Failed to reset password. Please try again",
+  "new_password": "New Password",
+  "confirm_password": "Confirm Password",
+  "reset_password": "Reset Password",
+  "get_password_recovery": "Get the password recovery instructions sent to this email",
+  "instructions_sent_email": "Instructions sent to your email",
+  "submit": "Submit"
 }

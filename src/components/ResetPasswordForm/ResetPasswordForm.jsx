@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { requestResetPassword } from "../../services/authApi";
 import css from "./ResetPasswordForm.module.css";
 import { useState } from "react";
 
 const ResetPasswordForm = ({ onPasswordReset }) => {
+  const { t } = useTranslation();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -13,7 +15,7 @@ const ResetPasswordForm = ({ onPasswordReset }) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      alert(t("password_dont_match"));
       return;
     }
     try {
@@ -24,11 +26,11 @@ const ResetPasswordForm = ({ onPasswordReset }) => {
       if (response.status === 204) {
         onPasswordReset();
       } else {
-        alert("Failed to reset password. Please try again.");
+        alert(t("failed_reset_password"));
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to reset password. Please try again.");
+      alert(t("failed_reset_password"));
     }
   };
 
@@ -36,29 +38,29 @@ const ResetPasswordForm = ({ onPasswordReset }) => {
     <div className={css.resetFormWrap}>
       <form className={css.resetForm} onSubmit={handleSubmit}>
         <label className={css.label}>
-          New Password
+          {t("new_password")}
           <input
             className={css.formInput}
             type="password"
-            placeholder="Enter new password"
+            placeholder={t("enter_new_password")}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
         <label className={css.label}>
-          Confirm Password
+          {t("confirm_password")}
           <input
             className={css.formInput}
             type="password"
-            placeholder="Confirm new password"
+            placeholder={t("confirm_new_password")}
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </label>
         <button className={css.submitBtn} type="submit">
-          Reset Password
+          {t("reset_password")}
         </button>
       </form>
     </div>

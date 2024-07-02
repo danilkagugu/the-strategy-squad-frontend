@@ -23,7 +23,9 @@ const GoogleBtn = ({ type }) => {
               </span>
             </span>
           </span>
-          <span className={css.textLogoGoogle}>Sign {type} with Google</span>
+          <span className={css.textLogoGoogle}>
+            {type} {t("sign_in_google")}
+          </span>
         </a>
       </div>
     </>
