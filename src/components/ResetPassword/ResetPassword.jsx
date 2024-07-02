@@ -19,10 +19,13 @@ const ResetPassword = () => {
       <div className={css.infoContainer}>
         {passwordReset ? (
           <div>
-            <p>{t("password_changed")}</p>
-            <p>{t("log_new_password")}</p>
-            <Link to="/signin">
-              <button className={css.signInBtn}>{t("sign_in")}</button>
+            <div className={css.infoWrap}>
+              <h1 className={css.infoTitle}>{t("password_changed")}</h1>
+              <p className={css.text}>{t("log_new_password")}</p>
+            </div>
+
+            <Link to="/signin" className={css.signInBtn}>
+              {t("sign_in")}
             </Link>
           </div>
         ) : (
