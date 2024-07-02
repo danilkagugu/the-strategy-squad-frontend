@@ -23,9 +23,9 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
     const year = date.getFullYear();
     const month = ("0" + (date.getMonth() + 1)).slice(-2);
     const dayFormatted = ("0" + date.getDate()).slice(-2);
+    console.log(dayFormatted);
     return `${year}-${month}-${dayFormatted}`;
   };
-
   const getAmountForDayAndMonth = (day, month) => {
     const fullWaterOfDay = data.filter(
       (item) =>
@@ -40,7 +40,9 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
 
     return Math.round((totalAmount / user?.waterNorm) * 100);
   };
-
+  const today = new Date();
+  const currentDay = today.getDate();
+  const currentMonthToday = today.getMonth() + 1;
   return (
     <ul className={css.listDay}>
       {allDay.map((day, index) => (
@@ -50,10 +52,15 @@ const CalendarItem = ({ allDay, currentMonth, clickOnDay }) => {
               onClick={() => {
                 clickOnDay(formatDay(day));
               }}
-              className={`${css.dayBox} ${getAmountForDayAndMonth(day, currentMonth) >= 100
+              className={`${css.dayBox} ${
+                getAmountForDayAndMonth(day, currentMonth) >= 100
                   ? css.dayBoxFull
                   : ""
-                }`}
+              } ${
+                day === currentDay && currentMonthToday === currentMonth
+                  ? css.currentDay
+                  : ""
+              }`}
             >
               {day.toString()}
             </button>
