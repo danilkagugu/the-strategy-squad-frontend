@@ -8,7 +8,7 @@
 
 .title {
   color: var(--dark-grey-medium);
-  font-family: Gilroy;
+  font-family: Gilroy-Regular;
   font-size: 36px;
   font-weight: 400;
   line-height: 38px;
@@ -18,7 +18,7 @@
 
 .userName {
   color: var(--dark-grey-medium);
-  font-family: Gilroy;
+  font-family: Gilroy-Bold;
   font-size: 36px;
   font-weight: 700;
   line-height: 38px;

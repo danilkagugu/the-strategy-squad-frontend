@@ -16,7 +16,22 @@
   --dark-grey-light: rgba(50, 63, 71, 0.2);
   --dark-grey-medium-gray: rgba(50, 63, 71, 0.4);
   --dark-grey-hard: #2f2f2f;
+}
 
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("./fonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("./fonts/Gilroy-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: bold;
+  font-display: swap;
 }
 
 a {

@@ -5,6 +5,12 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--dark-grey-medium);
+  transition: color 0.3s ease;
+}
+
+.logo:hover,
+.logo:focus {
+  color: var(--green-btn);
 }
 
 @media (min-width: 768px) {
