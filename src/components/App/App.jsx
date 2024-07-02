@@ -8,7 +8,6 @@ import { apiRefreshUser } from "../../redux/auth/operations";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// import GoogleRedirect from '../GoogleRedirect/GoogleRedirect';
 import "../i18n/i18n.js";
 import Loader from "../Loader/Loader.jsx";
 

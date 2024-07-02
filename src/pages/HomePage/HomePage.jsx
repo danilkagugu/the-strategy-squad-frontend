@@ -14,23 +14,17 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   const currentToken = useSelector(selectToken);
-  // const navigate = useNavigate()
 
   const token = searchParams.get("token");
   useEffect(() => {
     if (token) {
       dispatch(logInWithGoogle(token));
-
-      // navigate('/tracker')
     }
   }, []);
 
   useEffect(() => {
     if (currentToken && token) {
-      console.log(token, currentToken);
-      // navigate('/tracker')
       dispatch(getUserInfo());
-
       window.location.href = "/tracker";
     }
   }, [currentToken]);

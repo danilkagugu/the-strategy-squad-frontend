@@ -5,14 +5,12 @@ import css from "./PasswordRecover.module.css";
 import { useTranslation } from "react-i18next";
 
 const PasswordRecover = () =>
-  // { onEmailSent }
   {
     const { t } = useTranslation();
     const [emailSent, setEmailSent] = useState(false);
 
     const handleEmailSent = () => {
       setEmailSent(true);
-      // onEmailSent();
     };
 
     return (

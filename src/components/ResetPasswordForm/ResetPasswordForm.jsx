@@ -4,8 +4,6 @@ import { requestResetPassword } from "../../services/authApi";
 import css from "./ResetPasswordForm.module.css";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-// import { toast } from "react-toastify";
-// import { useState } from "react";
 
 const UserPasswordSchema = Yup.object().shape({
   password: Yup.string()

@@ -18,15 +18,6 @@ const WaterItem = ({ item, selectDay }) => {
 
   const initialTime = convertTimeToAMPM(time.slice(-5));
 
-  // const date = new Date(item);
-  // console.log(date);
-
-  // const formattedTime = date.toLocaleTimeString("en-US", {
-  //   hour: "numeric",
-  //   minute: "2-digit",
-  //   hour12: true,
-  // });
-
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenDelete, setIsOpenDelete] = useState(false);
 

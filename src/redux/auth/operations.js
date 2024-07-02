@@ -39,9 +39,6 @@ export const logInWithGoogle = createAsyncThunk(
   "auth/googleLogin",
   async (formData, thunkAPI) => {
     try {
-      // const data = await requestGoogleSignUp(formData);
-      // toast.success(data.message);
-
       return { token: formData };
     } catch (err) {
       toast.error(err.response?.data?.message || "Something went wrong");
