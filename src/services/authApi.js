@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "https://the-strategy-squad-backend.onrender.com";
+export const BASE_URL = "http://localhost:3030";
 
 export const instance = axios.create({
   baseURL: BASE_URL,
@@ -49,12 +49,13 @@ export const requestGoogleSignUp = async () => {
 };
 
 export const requestPasswordRecover = async (email) => {
-  const { data } = await instance.post("/api/users/password/send/email", {email});
+  const { data } = await instance.post("/api/users/password/send/email", {
+    email,
+  });
   return data;
 };
- 
-export const requestResetPassword = async (token, password) => {
-    const { data } = await instance.post("/api/users/password/reset", { token, password });
-    return data;
-}
 
+export const requestResetPassword = async (body) => {
+  const data = await instance.post("/api/users/password/save", body);
+  return data;
+};

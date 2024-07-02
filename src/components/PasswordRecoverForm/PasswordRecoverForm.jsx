@@ -12,8 +12,8 @@ const PasswordRecoverForm = ({ onEmailSent }) => {
     setErrorMessage(""); // Очистить сообщение об ошибке перед новым запросом
 
     try {
-      await requestPasswordRecover(email);
-      onEmailSent();
+      const mail = await requestPasswordRecover(email);
+      if (mail) onEmailSent();
     } catch (error) {
       setErrorMessage(error.message);
     }
