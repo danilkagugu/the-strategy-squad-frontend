@@ -43,7 +43,6 @@ const waterSlice = createSlice({
       })
       .addCase(getWaterPerDay.rejected, handleRejected)
 
-      .addCase(getWaterPerMonth.pending, handlePending)
       .addCase(getWaterPerMonth.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
