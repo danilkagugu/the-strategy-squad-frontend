@@ -100,7 +100,9 @@
 .saveBtn {
   background-color: var(--green-btn);
   margin-top: 24px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 40px;
   height: 46px;
   width: 116px;
