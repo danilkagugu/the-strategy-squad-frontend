@@ -21,7 +21,9 @@ const PasswordRecover = () =>
 
         <div className={css.infoContainer}>
           {emailSent ? (
-            <p>{t("instructions_sent_email")}</p>
+            <div className={css.infoWrap}>
+              <p className={css.infoText}>{t("instructions_sent_email")}</p>
+            </div>
           ) : (
             <div>
               <div className={css.infoWrap}>

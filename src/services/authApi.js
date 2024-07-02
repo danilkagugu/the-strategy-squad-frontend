@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export const BASE_URL = "https://the-strategy-squad-backend.onrender.com";
+// export const BASE_URL = "https://the-strategy-squad-backend.onrender.com";
+export const BASE_URL = "http://localhost:3030";
 
 export const instance = axios.create({
   baseURL: BASE_URL,
