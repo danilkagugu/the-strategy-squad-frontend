@@ -69,7 +69,7 @@ const schema = yup.object().shape({
 		}),
 });
 
-const UserSettingsForm = ({ onClose, closeSetings }) => {
+const UserSettingsForm = ({ onClose, closeSettings }) => {
 	const { t } = useTranslation();
 	const user = useSelector(selectUserData);
 	const dispatch = useDispatch();
@@ -114,7 +114,7 @@ const UserSettingsForm = ({ onClose, closeSetings }) => {
 	};
 
 	const onSubmit = async data => {
-		closeSetings(false);
+		closeSettings(false);
 		data.waterNorm = data.waterNorm * 1000;
 
 		const formData = new FormData();
