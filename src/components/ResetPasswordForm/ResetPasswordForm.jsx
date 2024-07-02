@@ -70,7 +70,7 @@ const ResetPasswordForm = ({ onPasswordReset }) => {
             }`}
             type={"password"}
             {...register("password")}
-            placeholder={t("enter_new_password")}
+            placeholder={t("placeholder.enter_new_password")}
           />
 
           {errors.password && touchedFields.password ? (
@@ -89,7 +89,7 @@ const ResetPasswordForm = ({ onPasswordReset }) => {
             }`}
             type={"password"}
             {...register("repeatPassword")}
-            placeholder={t("confirm_new_password")}
+            placeholder={t("placeholder.confirm_new_password")}
           />
           {errors.repeatPassword && touchedFields.repeatPassword ? (
             <div className={css.errorMsg}>{errors.repeatPassword.message}</div>

@@ -63,3 +63,7 @@
     grid-template-columns: repeat(auto-fit, minmax(38px, 1fr));
   }
 }
+
+.currentDay {
+  background-color: var(--white);
+}
