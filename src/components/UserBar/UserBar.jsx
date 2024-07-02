@@ -66,7 +66,7 @@ const UserBar = ({ name, avatarURL }) => {
               modalRef={modalRef}
               closeModal={closeModal}
               openModal={openModal}
-              closeSetings={setIsOpen}
+              closeSettings={setIsOpen}
             />
           </ClickOutSide>
         </div>
