@@ -1,27 +1,27 @@
-import css from "./ResetPasswordForm.module.css"
+import { requestResetPassword } from "../../services/authApi";
+import css from "./ResetPasswordForm.module.css";
 import { useState } from "react";
 
 const ResetPasswordForm = ({ onPasswordReset }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const params = new URLSearchParams(location.search);
+  const token = params.get("token");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-
     try {
-      const response = await fetch("/api/users/password/reset", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ token, password }),
-      });
+      const response = await requestResetPassword({ token, password });
 
-      if (response.ok) {
+      console.log(response);
+
+      if (response.status === 204) {
         onPasswordReset();
       } else {
         alert("Failed to reset password. Please try again.");
@@ -65,4 +65,4 @@ const ResetPasswordForm = ({ onPasswordReset }) => {
   );
 };
 
-export default ResetPasswordForm
+export default ResetPasswordForm;
