@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 const UserPasswordSchema = Yup.object().shape({
   password: Yup.string()
-    .min(6, "Too Short!")
+    .min(6, "Minimum 6 characters!")
     .max(50, "Too Long!")
     .required("Password is required"),
   repeatPassword: Yup.string()
@@ -18,7 +18,6 @@ const UserPasswordSchema = Yup.object().shape({
 });
 
 const INITIAL_FORM_DATA = {
-  email: "",
   password: "",
   repeatPassword: "",
 };
