@@ -5,11 +5,12 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import { useDispatch } from "react-redux";
 import { apiRefreshUser } from "../../redux/auth/operations";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import GoogleRedirect from '../GoogleRedirect/GoogleRedirect';
 import "../i18n/i18n.js";
+import Loader from "../Loader/Loader.jsx";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const NotFoundPage = lazy(() =>
@@ -18,8 +19,12 @@ const NotFoundPage = lazy(() =>
 const SignInPage = lazy(() => import("../../pages/SignInPage/SignInPage"));
 const SignUpPage = lazy(() => import("../../pages/SignUpPage/SignUpPage"));
 const TrackerPage = lazy(() => import("../../pages/TrackerPage/TrackerPage"));
-const PasswordRecoverPage = lazy(() => import("../../pages/PasswordRecoverPage/PasswordRecoverPage"));
-const ResetPasswordPage = lazy(() => import("../../pages/ResetPasswordPage/ResetPasswordPage"));
+const PasswordRecoverPage = lazy(() =>
+  import("../../pages/PasswordRecoverPage/PasswordRecoverPage")
+);
+const ResetPasswordPage = lazy(() =>
+  import("../../pages/ResetPasswordPage/ResetPasswordPage")
+);
 
 function App() {
   const dispatch = useDispatch();
@@ -31,7 +36,7 @@ function App() {
   return (
     <Container>
       {" "}
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           {/* <Route path="/" element={<Navigate to="/"/>}/> */}
           <Route

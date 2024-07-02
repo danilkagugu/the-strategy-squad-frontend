@@ -9,7 +9,6 @@ import {
   logInWithGoogle,
 } from "./operations";
 
-
 const INITIAL_STATE = {
   userData: null,
   token: null,
@@ -35,15 +34,10 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(logInWithGoogle.fulfilled, (state, action) => {
-        console.log(action)
+        console.log(action);
         state.loading = false;
-        // state.userData = action.payload.user;
         state.token = action.payload.token;
-
       })
-      // .addCase(logInWithGoogle.rejected, (state, action) => {
-      //   state.error = action.payload;
-      // })
       .addCase(apiLogoutUser.fulfilled, () => {
         return INITIAL_STATE;
       })
