@@ -7,12 +7,14 @@ import {
   apiUpdateUser,
   getUserInfo,
   logInWithGoogle,
+
 } from "./operations";
 
 
 const INITIAL_STATE = {
   userData: null,
   token: null,
+  refreshToken: null,
   isLoggedIn: false,
   isRefresh: false,
   loading: false,
@@ -25,13 +27,18 @@ const authSlice = createSlice({
 
   extraReducers: (builder) =>
     builder
-      .addCase(apiRegisterUser.fulfilled, (state) => {
+      .addCase(apiRegisterUser.fulfilled, (state, action) => {
         state.loading = false;
+        state.userData = action.payload.user;
+        state.token = action.payload.token;
+        state.refreshToken = action.payload.refreshToken;
+        state.isLoggedIn = true;
       })
       .addCase(apiLoginUser.fulfilled, (state, action) => {
         state.loading = false;
         state.userData = action.payload.user;
         state.token = action.payload.token;
+        state.refreshToken = action.payload.refreshToken;
         state.isLoggedIn = true;
       })
       .addCase(logInWithGoogle.fulfilled, (state, action) => {
@@ -41,9 +48,7 @@ const authSlice = createSlice({
         state.token = action.payload.token;
 
       })
-      // .addCase(logInWithGoogle.rejected, (state, action) => {
-      //   state.error = action.payload;
-      // })
+
       .addCase(apiLogoutUser.fulfilled, () => {
         return INITIAL_STATE;
       })

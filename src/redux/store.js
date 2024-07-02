@@ -12,11 +12,12 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { waterReducer } from "./water/slice";
+import { setUpAxiosInterceptors } from "./auth/operations";
 
 const authConfig = {
   key: "auth",
   storage,
-  whitelist: ["token"],
+  whitelist: ["token", "refreshToken"],
 };
 
 export const store = configureStore({
@@ -31,5 +32,7 @@ export const store = configureStore({
       },
     }),
 });
+
+setUpAxiosInterceptors(store);
 
 export const persistor = persistStore(store);

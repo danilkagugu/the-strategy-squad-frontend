@@ -6,8 +6,13 @@ import {
   requestLogOut,
   setToken,
   requestUpdate,
+  requestRefreshToken,
+  clearToken,
+  instance,
+
 } from "../../services/authApi.js";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 export const apiRegisterUser = createAsyncThunk(
   "auth/register",
@@ -51,7 +56,7 @@ export const logInWithGoogle = createAsyncThunk(
 );
 
 export const apiRefreshUser = createAsyncThunk(
-  "auth/refresh",
+  "auth/refreshing",
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const token = state.auth.token;
@@ -95,6 +100,8 @@ export const apiUpdateUser = createAsyncThunk(
   }
 );
 
+
+
 export const getUserInfo = createAsyncThunk(
   "user/info",
   async (_, thunkAPI) => {
@@ -106,3 +113,81 @@ export const getUserInfo = createAsyncThunk(
     }
   }
 );
+
+
+
+export const apiRefreshToken = createAsyncThunk(
+  "user/refreshing",
+  async (_, thunkAPI) => {
+    try {
+      const data = await requestRefreshToken();
+      return data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
+
+
+
+
+export const setUpAxiosInterceptors = (store) => {
+  console.log(axios.interceptors.request)
+  instance.interceptors.request.use((config) => {
+    const state = store.getState();
+    console.log(state)
+    const token = state.auth.token;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  });
+
+  instance.interceptors.response.use(
+    (response) => response,
+    async (error) => {
+      const originalRequest = error.config;
+      console.log("djjdn")
+      if (error.response.status === 401 && !originalRequest._retry) {
+        originalRequest._retry = true;
+
+        try {
+          const { data } = await store.dispatch(apiRefreshToken());
+          setToken(data.token);
+          originalRequest.headers.Authorization = `Bearer ${data.token}`;
+          return axios(originalRequest);
+        } catch (refreshError) {
+          store.dispatch(apiLogoutUser());
+          clearToken();
+          return Promise.reject(refreshError);
+        }
+      }
+
+      return Promise.reject(error);
+    }
+  );
+};
+
+// export const setUpAxiosInterceptors = (store) => {
+//   axios.interceptors.response.use(
+//     (response) => response,
+//     async (error) => {
+//       const originalRequest = error.config;
+//       if (error.response.status === 401 && !originalRequest._retry) {
+//         originalRequest._retry = true;
+//         try {
+//           const { refreshToken } = store.getState().auth;
+//           const { data } = await axios.post('/api/users/refreshing', { refreshToken });
+
+//           setToken(data.token);
+//           store.dispatch(setToken({ token: data.token, refreshToken: data.refreshToken }));
+//           originalRequest.headers.Authorization = `Bearer ${data.token}`;
+//           return axios(originalRequest);
+//         } catch (err) {
+//           return Promise.reject(err);
+//         }
+//       }
+//       return Promise.reject(error);
+//     }
+//   );
+// };
