@@ -170,7 +170,7 @@ const SignUpForm = () => {
                 {t("sign_in")}
               </Link>
             </p>
-            <GoogleBtn type="Up" />
+            <GoogleBtn type={t("sign_up")} />
           </div>
         </form>
       </div>

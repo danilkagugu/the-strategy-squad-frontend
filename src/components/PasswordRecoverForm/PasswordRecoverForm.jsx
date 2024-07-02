@@ -2,8 +2,10 @@ import { useState } from "react";
 // import { requestPasswordRecover } from "../../api"; // Предполагается, что путь к файлу с функцией запроса правильный
 import css from "./PasswordRecoverForm.module.css";
 import { requestPasswordRecover } from "../../services/authApi";
+import { useTranslation } from "react-i18next";
 
 const PasswordRecoverForm = ({ onEmailSent }) => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -23,11 +25,11 @@ const PasswordRecoverForm = ({ onEmailSent }) => {
     <div className={css.recoverFormWrap}>
       <form className={css.recoverForm} onSubmit={handleSubmit}>
         <label className={css.label}>
-          Email
+          {t("email")}
           <input
             className={css.formInput}
             type="email"
-            placeholder="Enter your email"
+            placeholder={t("placeholder.email")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -35,7 +37,7 @@ const PasswordRecoverForm = ({ onEmailSent }) => {
         </label>
         {errorMessage && <p className={css.error}>{errorMessage}</p>}
         <button className={css.submitBtn} type="submit">
-          Submit
+          {t("submit")}
         </button>
       </form>
     </div>

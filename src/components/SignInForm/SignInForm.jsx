@@ -127,7 +127,7 @@ const SignInForm = ({ onLogin }) => {
               </Link>
             </p>
 
-            <GoogleBtn type="In" />
+            <GoogleBtn type={t("sign_in")} />
           </div>
         </form>
       </div>

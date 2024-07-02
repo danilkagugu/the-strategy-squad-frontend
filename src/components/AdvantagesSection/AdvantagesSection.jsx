@@ -17,6 +17,7 @@ import customers3TabDesc2x from "../../assets/customers/desktop-tablet/customers
 import { useEffect, useState } from "react";
 import { getCustomers } from "../../services/getCustomers";
 import { useTranslation } from "react-i18next";
+import LanguageSelector from "../i18n/LanguageSelector.jsx";
 
 const AdvantagesSection = (props) => {
   const { t } = useTranslation();
@@ -34,6 +35,9 @@ const AdvantagesSection = (props) => {
     <div
       className={`${css.sectionWrapper} ${isHideMobile ? css.mobileHide : ""}`}
     >
+      <div className={css.languageBtn}>
+        <LanguageSelector />
+      </div>
       <div className={css.customersWrapper}>
         <div>
           <ul className={css.imgWrapper}>
