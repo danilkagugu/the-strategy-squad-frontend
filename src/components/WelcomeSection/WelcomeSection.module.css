@@ -1,5 +1,4 @@
 .welcomeWrapper {
-  /* width: 343px; */
   background-color: var(--light-gray);
   border-radius: 30px;
   padding: 24px 16px 67px 16px;
@@ -115,7 +114,8 @@
 
   .signInBtn {
     padding: 18px 40px;
-    width: 135px;
+    min-width: 135px;
+    width: max-content;
     height: 60px;
     font-size: 16px;
   }

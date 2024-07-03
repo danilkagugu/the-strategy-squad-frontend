@@ -34,7 +34,6 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(logInWithGoogle.fulfilled, (state, action) => {
-        console.log(action);
         state.loading = false;
         state.token = action.payload.token;
       })

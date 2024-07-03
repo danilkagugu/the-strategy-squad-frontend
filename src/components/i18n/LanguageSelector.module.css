@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #b3e3ff33; */
   color: var(var(--dark-grey-light));
   border-color: var(--dark-grey-medium);
   border-radius: 50%;
@@ -21,7 +20,6 @@
 }
 
 .languageBtn:hover {
-  /* background-color: #d3eaf733; */
   color: #059c83;
   transition: color 0.5s, background-color 0.5s;
 }

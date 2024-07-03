@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next";
 const UserPanel = () => {
   const { t } = useTranslation();
   const { avatarURL, name } = useSelector(selectUserData);
-  // console.log("avatarURL: ", avatarURL);
 
   return (
     <div className={css.userPanel}>
@@ -20,4 +19,3 @@ const UserPanel = () => {
 };
 
 export default UserPanel;
-// avatarURL;

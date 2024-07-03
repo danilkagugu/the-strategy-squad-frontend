@@ -1,8 +1,6 @@
 .sectionWrapper {
   position: relative;
   border-radius: 30px;
-  /* width: 343px;
-  height: 353px; */
   background-image: url("../../assets/background/mobile/home-bg-mob.png");
   background-repeat: no-repeat;
   background-size: cover;

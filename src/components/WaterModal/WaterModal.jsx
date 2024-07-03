@@ -4,9 +4,6 @@ import ModalWrapper from "../ModalWrapper/ModalWrapper";
 import css from "./WaterModal.module.css";
 import { useTranslation } from "react-i18next";
 
-// const onSubmitDataExam = (data, counter) =>
-//   console.log({ ...data, amount: counter });
-
 const WaterModal = ({
   isOpen,
   onCloseModal,
