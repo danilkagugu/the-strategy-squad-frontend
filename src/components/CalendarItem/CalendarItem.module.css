@@ -65,5 +65,6 @@
 }
 
 .currentDay {
-  background-color: var(--white);
+  color: var(--white);
+  background-color: var(--dark-grey-hard);
 }
