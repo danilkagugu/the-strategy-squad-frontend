@@ -110,7 +110,7 @@ const WaterForm = ({
       <label className={css.label}>
         <span className={css.text}>{t("record_time")}</span>:
         <input
-          className={css.input}
+          className={errors.time ? css.errorInput : css.input}
           name="time"
           type="text"
           defaultValue={inputTime}
@@ -124,7 +124,7 @@ const WaterForm = ({
       <label>
         <span className={css.title}>{t("amount_water_used")}:</span>
         <input
-          className={css.input}
+          className={errors.amount ? css.errorInput : css.input}
           name="amount"
           type="number"
           value={counter}
